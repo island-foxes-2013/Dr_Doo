@@ -6,9 +6,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
 SimpleCov.start 'rails'
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
-<<<<<<< HEAD
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -18,15 +15,12 @@ require 'capybara/rails'
 require 'capybara/rspec'
 
 DatabaseCleaner.strategy = :truncation
-=======
->>>>>>> create_model_unit_tests
 
 RSpec.configure do |config|
   config.include Capybara::DSL, :type => :feature
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
-<<<<<<< HEAD
   config.use_transactional_fixtures = false
   config.before :each do
     DatabaseCleaner.start
@@ -34,12 +28,9 @@ RSpec.configure do |config|
   config.after :each do
     DatabaseCleaner.clean
   end
-=======
 
   # Include factory girl for testing with factory-made objects
   config.include FactoryGirl::Syntax::Methods
-
->>>>>>> create_model_unit_tests
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.

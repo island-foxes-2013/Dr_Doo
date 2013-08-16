@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 feature "Create Forms" do
-  scenario "as a Provider I want to create a new form" do
-    pending    
-  end
-
   scenario "as a Provider I want to add a field that exists in the database" do
    pending
   end
