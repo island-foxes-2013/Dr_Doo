@@ -1,0 +1,77 @@
+#field_templates {
+  width: 25%;
+  height: 1000px;
+  background-color: gray;
+  float: right;
+  display: inline-block;
+}
+
+.field_name {
+	background-color: yellow;
+	border-radius: 10px;
+}
+
+#container {
+	width: 74%;
+	height: 1000px;
+	background-color: #B8B8B8;
+  display: inline-block;
+}
+
+ul {
+list-style-type: none;
+
+}
+
+ul li {
+  background-color: blue;
+  height: 30px !important;
+  width: 620px !important;
+  border-radius: 5px;
+  padding-top: 3px;
+  color: white;
+  text-align: center;
+  vertical-align: text-middle;
+}
+
+input {
+  height: 20px;
+  border-radius: 6px;
+  float: right;
+}
+
+.field {
+  margin: 5px;
+  display: inline-block;
+}
+
+.name {
+  width: 220px;
+  height: 20px;
+  background-color: blue;
+}
+
+.address {
+  width: 420px;
+  height: 20px;
+  background-color: yellow;
+}
+
+.age {
+  width: 100px;
+  height: 20px;
+  background-color: red;
+}
+
+.block {
+  width: 120px;
+  height: 20px;
+  background-color: orange;
+}
+
+#containter-left {
+  width: 74%;
+  height: 1000px;
+  background-color: #B8B8B8;
+  display: inline-block;
+}

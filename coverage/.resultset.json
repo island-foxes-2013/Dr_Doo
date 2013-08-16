@@ -1,0 +1,279 @@
+{
+  "RSpec": {
+    "coverage": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/controllers/application_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/controllers/application_controller.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/controllers/application_controller.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/booleananswer.rb": [
+=======
+=======
+>>>>>>> create_model_unit_tests
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/booleananswer.rb": [
+<<<<<<< HEAD
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/dateanswer.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/dateanswer.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/dateanswer.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/field.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/field.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/form.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/formfields.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/integeranswer.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/provider.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/stringanswer.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/user.rb": [
+        1,
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/field.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+        null,
+        null
+      ]
+    },
+    "timestamp": 1376617562
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/booleananswer.rb": [
+=======
+        1,
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/dateanswer.rb": [
+        1,
+=======
+        1,
+        null,
+        null
+      ],
+=======
+>>>>>>> create_model_unit_tests
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/form.rb": [
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/field.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/form.rb": [
+        1,
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/integeranswer.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/integeranswer.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/formfields.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/integeranswer.rb": [
+        1,
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/label.rb": [
+        1,
+        1,
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/label.rb": [
+        1,
+        1,
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/provider.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/provider.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/provider.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/stringanswer.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/stringanswer.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/stringanswer.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "/Users/njayanty/Documents/Dr_Doolittle/dr_doo/app/models/user.rb": [
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/user.rb": [
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+      "/Users/apprentice/Desktop/dr_doo/dr_doo/app/models/user.rb": [
+>>>>>>> create_model_unit_tests
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "timestamp": 1376617454
+=======
+    "timestamp": 1376620215
+>>>>>>> Created model unit test files. Currently writing tests
+=======
+    "timestamp": 1376630643
+>>>>>>> create_model_unit_tests
+  }
+}

@@ -1,0 +1,269 @@
+Run options: include {:focus=>true}
+
+All examples were filtered out; ignoring {:focus=>true}
+FFFF..FF..FFF..FF....FFFF..F.FFF..FFFFFFF...FFF..F..FFF..F..
+
+Failures:
+
+  1) Users GET /users works! (now write some real specs)
+     Failure/Error: get users_index_path
+     NameError:
+       undefined local variable or method `users_index_path' for #<RSpec::Core::ExampleGroup::Nested_11::Nested_1:0x007f876de331d0>
+     # ./spec/requests/users_spec.rb:7:in `block (3 levels) in <top (required)>'
+
+  2) Stringanswer#save requires a valid user
+     Failure/Error: str_ans = Stringanswer.new(field_id: 1, value: "Island Foxes")
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id, value
+     # ./spec/models/stringanswer_spec.rb:38:in `new'
+     # ./spec/models/stringanswer_spec.rb:38:in `block (3 levels) in <top (required)>'
+
+  3) Stringanswer#save requires a valid value
+     Failure/Error: str_ans = user.stringanswers.new(field_id: 1)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id
+     # ./spec/models/stringanswer_spec.rb:28:in `block (3 levels) in <top (required)>'
+
+  4) Stringanswer#save requires a valid field_id
+     Failure/Error: str_ans = user.stringanswers.new(value: "Island Foxes")
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: value
+     # ./spec/models/stringanswer_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+  5) Stringanswer#new allows mass-assignment on value
+     Failure/Error: expect{ Stringanswer.new(value: "Island Foxes") }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: value> with backtrace:
+         # ./spec/models/stringanswer_spec.rb:8:in `new'
+         # ./spec/models/stringanswer_spec.rb:8:in `block (4 levels) in <top (required)>'
+         # ./spec/models/stringanswer_spec.rb:8:in `block (3 levels) in <top (required)>'
+     # ./spec/models/stringanswer_spec.rb:8:in `block (3 levels) in <top (required)>'
+
+  6) Stringanswer#new allows mass-assignment on field_id
+     Failure/Error: expect{ Stringanswer.new(field_id: 1) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: field_id> with backtrace:
+         # ./spec/models/stringanswer_spec.rb:12:in `new'
+         # ./spec/models/stringanswer_spec.rb:12:in `block (4 levels) in <top (required)>'
+         # ./spec/models/stringanswer_spec.rb:12:in `block (3 levels) in <top (required)>'
+     # ./spec/models/stringanswer_spec.rb:12:in `block (3 levels) in <top (required)>'
+
+  7) Dateanswer#save requires a valid user
+     Failure/Error: date_ans = Dateanswer.new(field_id: 1, value: Date.today)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id, value
+     # ./spec/models/dateanswer_spec.rb:40:in `new'
+     # ./spec/models/dateanswer_spec.rb:40:in `block (3 levels) in <top (required)>'
+
+  8) Dateanswer#save requires a valid value
+     Failure/Error: date_ans = user.dateanswers.new(field_id: 1)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id
+     # ./spec/models/dateanswer_spec.rb:30:in `block (3 levels) in <top (required)>'
+
+  9) Dateanswer#save requires a valid field_id
+     Failure/Error: date_ans = user.dateanswers.new(value: Date.today)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: value
+     # ./spec/models/dateanswer_spec.rb:35:in `block (3 levels) in <top (required)>'
+
+  10) Dateanswer#new allows mass-assignment on value
+     Failure/Error: expect{ Dateanswer.new(value: Date.today) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: value> with backtrace:
+         # ./spec/models/dateanswer_spec.rb:10:in `new'
+         # ./spec/models/dateanswer_spec.rb:10:in `block (4 levels) in <top (required)>'
+         # ./spec/models/dateanswer_spec.rb:10:in `block (3 levels) in <top (required)>'
+     # ./spec/models/dateanswer_spec.rb:10:in `block (3 levels) in <top (required)>'
+
+  11) Dateanswer#new allows mass-assignment on field_id
+     Failure/Error: expect{ Dateanswer.new(field_id: 1) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: field_id> with backtrace:
+         # ./spec/models/dateanswer_spec.rb:14:in `new'
+         # ./spec/models/dateanswer_spec.rb:14:in `block (4 levels) in <top (required)>'
+         # ./spec/models/dateanswer_spec.rb:14:in `block (3 levels) in <top (required)>'
+     # ./spec/models/dateanswer_spec.rb:14:in `block (3 levels) in <top (required)>'
+
+  12) Label#save requires a valid field_id
+     Failure/Error: expect(label).not_to be_valid
+       expected valid? to return false, got true
+     # ./spec/models/label_spec.rb:40:in `block (3 levels) in <top (required)>'
+
+  13) Label#save requires a valid name
+     Failure/Error: expect(label).not_to be_valid
+       expected valid? to return false, got true
+     # ./spec/models/label_spec.rb:30:in `block (3 levels) in <top (required)>'
+
+  14) Label#save requires a valid form_id
+     Failure/Error: expect(label).not_to be_valid
+       expected valid? to return false, got true
+     # ./spec/models/label_spec.rb:35:in `block (3 levels) in <top (required)>'
+
+  15) Label#new doesn't allow mass-assignment on form_id
+     Failure/Error: expect{ Label.new(form_id: 1) }.to raise_error
+       expected Exception but nothing was raised
+     # ./spec/models/label_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+  16) Label#new allows mass-assignment on field_id
+     Failure/Error: expect{ Label.new(field) }.not_to raise_error
+       expected no Exception, got #<NoMethodError: undefined method `stringify_keys' for #<Field:0x007f876deaa1e0>> with backtrace:
+         # ./spec/models/label_spec.rb:15:in `new'
+         # ./spec/models/label_spec.rb:15:in `block (4 levels) in <top (required)>'
+         # ./spec/models/label_spec.rb:15:in `block (3 levels) in <top (required)>'
+     # ./spec/models/label_spec.rb:15:in `block (3 levels) in <top (required)>'
+
+  17) Integeranswer#save requires a valid user
+     Failure/Error: int_ans = Integeranswer.new(field_id: 1, value: 242)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id, value
+     # ./spec/models/integeranswer_spec.rb:39:in `new'
+     # ./spec/models/integeranswer_spec.rb:39:in `block (3 levels) in <top (required)>'
+
+  18) Integeranswer#save requires a valid value
+     Failure/Error: int_ans = user.intanswers.new(field_id: 1)
+     NoMethodError:
+       undefined method `intanswers' for #<User id: nil, created_at: nil, updated_at: nil>
+     # ./spec/models/integeranswer_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+  19) Integeranswer#save requires a valid field_id
+     Failure/Error: int_ans = user.intanswers.new(value: 242)
+     NoMethodError:
+       undefined method `intanswers' for #<User id: nil, created_at: nil, updated_at: nil>
+     # ./spec/models/integeranswer_spec.rb:34:in `block (3 levels) in <top (required)>'
+
+  20) Integeranswer#new allows mass-assignment on value
+     Failure/Error: expect{ int_ans = Integeranswer.new(value: 242) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: value> with backtrace:
+         # ./spec/models/integeranswer_spec.rb:9:in `new'
+         # ./spec/models/integeranswer_spec.rb:9:in `block (4 levels) in <top (required)>'
+         # ./spec/models/integeranswer_spec.rb:9:in `block (3 levels) in <top (required)>'
+     # ./spec/models/integeranswer_spec.rb:9:in `block (3 levels) in <top (required)>'
+
+  21) Integeranswer#new allows mass-assignment on field_id
+     Failure/Error: expect{ int_ans = Integeranswer.new(value: 242) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: value> with backtrace:
+         # ./spec/models/integeranswer_spec.rb:13:in `new'
+         # ./spec/models/integeranswer_spec.rb:13:in `block (4 levels) in <top (required)>'
+         # ./spec/models/integeranswer_spec.rb:13:in `block (3 levels) in <top (required)>'
+     # ./spec/models/integeranswer_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+  22) Integeranswer#new 
+     Failure/Error: it { should repsond_to(:field_id) }
+     NoMethodError:
+       undefined method `repsond_to' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1:0x007f876fc60d60>
+     # ./spec/models/integeranswer_spec.rb:23:in `block (3 levels) in <top (required)>'
+
+  23) Integeranswer#new 
+     Failure/Error: it { should repsond_to(:user_id) }
+     NoMethodError:
+       undefined method `repsond_to' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1:0x007f876fc5e858>
+     # ./spec/models/integeranswer_spec.rb:22:in `block (3 levels) in <top (required)>'
+
+  24) Forms GET /forms works! (now write some real specs)
+     Failure/Error: get forms_index_path
+     NameError:
+       undefined local variable or method `forms_index_path' for #<RSpec::Core::ExampleGroup::Nested_10::Nested_1:0x007f876fd91860>
+     # ./spec/requests/forms_spec.rb:7:in `block (3 levels) in <top (required)>'
+
+  25) Form#save requires a valid provider
+     Failure/Error: expect(form).not_to be_valid
+       expected valid? to return false, got true
+     # ./spec/models/form_spec.rb:26:in `block (3 levels) in <top (required)>'
+
+  26) Form#save requires a valid name
+     Failure/Error: form = provider.users.new
+     NoMethodError:
+       undefined method `users' for #<Provider id: nil, created_at: nil, updated_at: nil>
+     # ./spec/models/form_spec.rb:20:in `block (3 levels) in <top (required)>'
+
+  27) Field#save requires a data_type
+     Failure/Error: expect(field).not_to be_valid
+       expected valid? to return false, got true
+     # ./spec/models/field_spec.rb:30:in `block (3 levels) in <top (required)>'
+
+  28) Field#save requires a default_label
+     Failure/Error: field = Field.new(data_type: "string")
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: data_type
+     # ./spec/models/field_spec.rb:24:in `new'
+     # ./spec/models/field_spec.rb:24:in `block (3 levels) in <top (required)>'
+
+  29) Field#new should respond to #data_type
+     Failure/Error: it { should respond_to(:data_type) }
+       expected #<Field id: nil, default_label: nil, field_type: nil, created_at: nil, updated_at: nil> to respond to :data_type
+     # ./spec/models/field_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+  30) Field#new should allow mass-assignment on data_type
+     Failure/Error: expect{
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: data_type> with backtrace:
+         # ./spec/models/field_spec.rb:14:in `new'
+         # ./spec/models/field_spec.rb:14:in `block (4 levels) in <top (required)>'
+         # ./spec/models/field_spec.rb:13:in `block (3 levels) in <top (required)>'
+     # ./spec/models/field_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+  31) Booleananswer#save requires a valid user_id
+     Failure/Error: bool_answer = Booleananswer.new(field_id: 1, value: false)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id, value
+     # ./spec/models/booleananswer_spec.rb:34:in `new'
+     # ./spec/models/booleananswer_spec.rb:34:in `block (3 levels) in <top (required)>'
+
+  32) Booleananswer#save requires a valid value
+     Failure/Error: bool_answer = user.booleananswers.new(field_id: 1)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: field_id
+     # ./spec/models/booleananswer_spec.rb:24:in `block (3 levels) in <top (required)>'
+
+  33) Booleananswer#save requires a valid field_id
+     Failure/Error: bool_answer = user.booleananswers.new(value: true)
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: value
+     # ./spec/models/booleananswer_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+  34) Booleananswer#new allows mass-assignment on value
+     Failure/Error: expect{ Booleananswer.new(value: true) }.not_to raise_error
+       expected no Exception, got #<ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: value> with backtrace:
+         # ./spec/models/booleananswer_spec.rb:9:in `new'
+         # ./spec/models/booleananswer_spec.rb:9:in `block (4 levels) in <top (required)>'
+         # ./spec/models/booleananswer_spec.rb:9:in `block (3 levels) in <top (required)>'
+     # ./spec/models/booleananswer_spec.rb:9:in `block (3 levels) in <top (required)>'
+
+Finished in 0.20172 seconds
+60 examples, 34 failures
+
+Failed examples:
+
+rspec ./spec/requests/users_spec.rb:5 # Users GET /users works! (now write some real specs)
+rspec ./spec/models/stringanswer_spec.rb:37 # Stringanswer#save requires a valid user
+rspec ./spec/models/stringanswer_spec.rb:27 # Stringanswer#save requires a valid value
+rspec ./spec/models/stringanswer_spec.rb:32 # Stringanswer#save requires a valid field_id
+rspec ./spec/models/stringanswer_spec.rb:7 # Stringanswer#new allows mass-assignment on value
+rspec ./spec/models/stringanswer_spec.rb:11 # Stringanswer#new allows mass-assignment on field_id
+rspec ./spec/models/dateanswer_spec.rb:39 # Dateanswer#save requires a valid user
+rspec ./spec/models/dateanswer_spec.rb:29 # Dateanswer#save requires a valid value
+rspec ./spec/models/dateanswer_spec.rb:34 # Dateanswer#save requires a valid field_id
+rspec ./spec/models/dateanswer_spec.rb:9 # Dateanswer#new allows mass-assignment on value
+rspec ./spec/models/dateanswer_spec.rb:13 # Dateanswer#new allows mass-assignment on field_id
+rspec ./spec/models/label_spec.rb:38 # Label#save requires a valid field_id
+rspec ./spec/models/label_spec.rb:28 # Label#save requires a valid name
+rspec ./spec/models/label_spec.rb:33 # Label#save requires a valid form_id
+rspec ./spec/models/label_spec.rb:18 # Label#new doesn't allow mass-assignment on form_id
+rspec ./spec/models/label_spec.rb:13 # Label#new allows mass-assignment on field_id
+rspec ./spec/models/integeranswer_spec.rb:38 # Integeranswer#save requires a valid user
+rspec ./spec/models/integeranswer_spec.rb:28 # Integeranswer#save requires a valid value
+rspec ./spec/models/integeranswer_spec.rb:33 # Integeranswer#save requires a valid field_id
+rspec ./spec/models/integeranswer_spec.rb:8 # Integeranswer#new allows mass-assignment on value
+rspec ./spec/models/integeranswer_spec.rb:12 # Integeranswer#new allows mass-assignment on field_id
+rspec ./spec/models/integeranswer_spec.rb:23 # Integeranswer#new 
+rspec ./spec/models/integeranswer_spec.rb:22 # Integeranswer#new 
+rspec ./spec/requests/forms_spec.rb:5 # Forms GET /forms works! (now write some real specs)
+rspec ./spec/models/form_spec.rb:24 # Form#save requires a valid provider
+rspec ./spec/models/form_spec.rb:19 # Form#save requires a valid name
+rspec ./spec/models/field_spec.rb:28 # Field#save requires a data_type
+rspec ./spec/models/field_spec.rb:23 # Field#save requires a default_label
+rspec ./spec/models/field_spec.rb:19 # Field#new should respond to #data_type
+rspec ./spec/models/field_spec.rb:12 # Field#new should allow mass-assignment on data_type
+rspec ./spec/models/booleananswer_spec.rb:33 # Booleananswer#save requires a valid user_id
+rspec ./spec/models/booleananswer_spec.rb:23 # Booleananswer#save requires a valid value
+rspec ./spec/models/booleananswer_spec.rb:28 # Booleananswer#save requires a valid field_id
+rspec ./spec/models/booleananswer_spec.rb:8 # Booleananswer#new allows mass-assignment on value
+
+Randomized with seed 18721
+
