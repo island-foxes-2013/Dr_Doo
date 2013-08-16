@@ -35,19 +35,16 @@ group :test, :development do
   gem 'selenium-webdriver'
   gem 'ruby_gntp'
   gem 'launchy'
-<<<<<<< HEAD
   gem 'database_cleaner'
 end
 
 gem 'jquery-ui-rails'
 gem "gridster-rails", "~> 0.1.0.1"
-=======
-  gem 'factory_girl_rails'
-end
+gem 'factory_girl_rails'
+
 
 gem 'pry-rails', :group => :development
 
->>>>>>> create_model_unit_tests
 gem 'simplecov', :require => false, :group => :test
 
 # To use ActiveModel has_secure_password

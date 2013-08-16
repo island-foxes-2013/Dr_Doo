@@ -73,8 +73,6 @@ GEM
     guard-rspec (3.0.2)
       guard (>= 1.8)
       rspec (~> 2.13)
-    faker (1.2.0)
-      i18n (~> 0.5)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -203,9 +201,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   gridster-rails (~> 0.1.0.1)
-  faker
   guard-rspec
-  faker
   jquery-rails
   jquery-ui-rails
   launchy
