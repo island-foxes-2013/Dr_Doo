@@ -33,7 +33,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'selenium-webdriver'
-  gem 'ruby_gntp'
+  gem 'growl'
   gem 'launchy'
   gem 'database_cleaner'
 end
