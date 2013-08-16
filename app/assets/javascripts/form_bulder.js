@@ -1,5 +1,5 @@
 $(function() {
-  $('.field').draggable();
+  // $('.field').draggable();
   // var $elem = $('')
   // $('.name_field').draggable();
 
@@ -14,23 +14,44 @@ $(function() {
 
 
       $(function() {
-        $('.field').draggable({
+
+         // $(":text").prop("disabled", true);
+        $('.input').draggable({
           helper: 'clone'
+    
         });
+      });
  
-        $('#containter-left').droppable({
-          accept: '.field',
+        $('.well').droppable({
+          accept: '.input',
           drop: function(ev, ui) {
             var droppedItem = $(ui.draggable).clone();
+            console.log(droppedItem.addClass('added'))
             $(this).append(droppedItem);
-            var sum = 0
+            // console.log(this)
+            // var sum = 0
             // $('#grocery_list .item').each(function() {
             //   sum += new Number($(this).find('td').last().text());
             // });
             // $('#grocery_list td').last().text((sum).toFixed(2));
           }
         });
-      });
+
+
+
+
+
+    
+        // $('#containter-left').bind('dblclick', function(e){
+        //   if ($(e.target).hasClass('added')){
+        //     $(e.target).remove();
+        //   }
+        //   // $(e.target).remove();
+        // });
+        // $('#drag_it').mouseup(function(){
+
+        // })
+   
 
 
 });
