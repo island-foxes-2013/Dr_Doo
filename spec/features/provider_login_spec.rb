@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Providers" do
+feature "Provider Login" do
   scenario "as a Provider I want to sign up" do
     pending    
   end
