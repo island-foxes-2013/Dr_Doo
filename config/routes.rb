@@ -1,7 +1,9 @@
 DrDoo::Application.routes.draw do
 
+  devise_for :users
+  
   resources :forms
-  root to: 'forms#index'
+  root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

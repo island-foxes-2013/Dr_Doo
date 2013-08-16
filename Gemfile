@@ -21,9 +21,13 @@ group :assets do
 end
 
 gem 'faker'
-
 gem 'jquery-rails'
-gem 'pry-rails', :group => :development
+gem 'jquery-ui-rails'
+gem "gridster-rails", "~> 0.1.0.1"
+gem 'cancan'
+gem 'devise'
+gem 'figaro'
+gem 'rolify'
 
 group :test, :development do
   gem 'factory_girl_rails'
@@ -33,19 +37,19 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'selenium-webdriver'
-  gem 'ruby_gntp'
+  gem 'growl'
   gem 'launchy'
   gem 'database_cleaner'
 end
 
-gem 'jquery-ui-rails'
-gem "gridster-rails", "~> 0.1.0.1"
-gem 'factory_girl_rails'
 
+group :development do
+  gem 'pry-rails'
+end
 
-gem 'pry-rails', :group => :development
-
-gem 'simplecov', :require => false, :group => :test
+group :test do 
+  gem 'simplecov', :require => false
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

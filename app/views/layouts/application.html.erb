@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>DrDoo</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/home-page.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+  <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">doolittle</a>
+        <ul class="nav pull-right">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Sign up</a>
+          </li>
+          <li>
+            <a href="#">Sign in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 <%= yield %>
 
 </body>
