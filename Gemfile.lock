@@ -106,11 +106,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-<<<<<<< HEAD
     pry-rails (0.3.2)
-=======
-    pry-rails (0.3.1)
->>>>>>> create_model_unit_tests
       pry (>= 0.9.10)
     rack (1.4.5)
     rack-cache (1.2)
@@ -203,14 +199,10 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
-<<<<<<< HEAD
   database_cleaner
   factory_girl_rails
   faker
   gridster-rails (~> 0.1.0.1)
-=======
-  factory_girl_rails
->>>>>>> create_model_unit_tests
   faker
   guard-rspec
   faker
