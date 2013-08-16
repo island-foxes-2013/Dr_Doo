@@ -34,11 +34,32 @@ ul li {
   vertical-align: text-middle;
 }
 
-input {
+.selectables {
+  margin-top: 50px;
+  border: 1px solid #e3e3e3;
+  padding: 19px;
+
+}
+.well {
+  min-height: 300px;
+  margin-top: 10%;
+}
+
+.form_block {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+#form_submit {
+  float: right;
+}
+
+/*input {
   height: 20px;
   border-radius: 6px;
   float: right;
-}
+}*/
 
 .field {
   margin: 5px;
@@ -75,3 +96,15 @@ input {
   background-color: #B8B8B8;
   display: inline-block;
 }
+
+.input {
+    position: absolute;
+    padding: 2px;
+
+}
+
+
+
+
+
+
