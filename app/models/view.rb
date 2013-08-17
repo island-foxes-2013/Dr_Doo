@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class View < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -7,9 +7,5 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-	has_many :stringanswers
-	has_many :dateanswers
-	has_many :integeranswers
-	has_many :booleananswers
-	has_many :forms
+  # attr_accessible :title, :body
 end

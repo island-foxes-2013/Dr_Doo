@@ -12,7 +12,7 @@ describe Label do
 
     it "allows mass-assignment on field_id" do
       expect{ Label.new(field_id: 1) }.not_to raise_error
-      expect{ Label.new(field) }.not_to raise_error
+      expect{ Label.new(field_id: field) }.not_to raise_error
     end
 
     it "doesn't allow mass-assignment on form_id" do
@@ -22,6 +22,7 @@ describe Label do
 
     it{ should respond_to(:name) }
     it{ should respond_to(:form_id) }
+    it{ should respond_to(:field_id) }
   end
 
   context "#save" do
