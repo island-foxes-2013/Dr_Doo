@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    name { "Fox McCloud" }
+    # TODO: Add attributes to user model
   end
 end

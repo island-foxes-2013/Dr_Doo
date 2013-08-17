@@ -2,11 +2,17 @@ require 'spec_helper'
 
 describe Booleananswer do
 
-  let(:user) { User.new }
+  let(:user) { FactoryGirl.build(:user) }
+  let(:field) { FactoryGirl.build(:field) }
 
   context "#new" do
     it "allows mass-assignment on value" do
       expect{ Booleananswer.new(value: true) }.not_to raise_error
+    end
+
+    it "allows mass-assignment on value" do
+      expect{ Booleananswer.new(field_id: 1) }.not_to raise_error
+      expect{ Booleananswer.new(field_id: field) }.not_to raise_error
     end
 
     it "should not allow mass-assignment on user_id" do

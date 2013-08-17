@@ -4,4 +4,6 @@ class Form < ActiveRecord::Base
 	has_many :labels
 	has_many :fields, through: :labels
   # attr_accessible :title, :body
+
+  validates :name, :provider_id, presence: true
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Form do
 
-  let(:provider) { Provider.new }
+  let(:provider) { FactoryGirl.build(:provider) }
 
   context "#new" do
     it "should allow mass-assignment on name" do
@@ -15,7 +15,7 @@ describe Form do
 
   context "#save" do
     it "requires a valid name" do
-      form = provider.users.new
+      form = provider.forms.new
       expect(form).not_to be_valid
     end
 

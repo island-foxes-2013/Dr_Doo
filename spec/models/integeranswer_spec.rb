@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Integeranswer do
 
-  let(:user) { User.new }
+  let(:user) { FactoryGirl.build(:user) }
+  let(:field) { FactoryGirl.build(:field) }
 
   context "#new" do
     it "allows mass-assignment on value" do
@@ -10,7 +11,8 @@ describe Integeranswer do
     end
 
     it "allows mass-assignment on field_id" do
-      expect{ int_ans = Integeranswer.new(value: 242) }.not_to raise_error
+      expect{ int_ans = Integeranswer.new(field_id: 1) }.not_to raise_error
+      expect{ int_ans = Integeranswer.new(field_id: field) }.not_to raise_error
     end
 
     it "doesn't allow mass-assignment on user_id" do
@@ -19,19 +21,19 @@ describe Integeranswer do
     end
 
     it { should respond_to(:value) }
-    it { should repsond_to(:user_id) }
-    it { should repsond_to(:field_id) }
+    it { should respond_to(:user_id) }
+    it { should respond_to(:field_id) }
 
   end
 
   context "#save" do
     it "requires a valid value" do
-      int_ans = user.intanswers.new(field_id: 1)
+      int_ans = user.integeranswers.new(field_id: 1)
       expect(int_ans).not_to be_valid
     end
 
     it "requires a valid field_id" do
-      int_ans = user.intanswers.new(value: 242)
+      int_ans = user.integeranswers.new(value: 242)
       expect(int_ans).not_to be_valid
     end
 

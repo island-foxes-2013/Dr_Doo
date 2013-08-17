@@ -1,8 +1,7 @@
 FactoryGirl.define do
-
   factory :field do
     label { "Name" }
     brand { "String" }
-    size { "Integer" }
+    size { 100 }
   end
 end
