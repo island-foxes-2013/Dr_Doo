@@ -1,11 +1,23 @@
 .brand {
    font-family: "Lobster";
    font-size: 99px;
+
 }
 
 .hero-unit {
+   background-image:url('http://www.nlm.nih.gov/hmd/happening/acquisitions/images/Hecht_Braunwald.jpg') ; 
+   overflow: hidden;
+   color: #F4F4F0;
 }
 
+.btnPrimaryBackground {
+   background-color: #595144;
+}
 .navbar {
-   margin-bottom: 0;
+   margin-bottom: 1px;
+   background-color: #ffffff;
+}
+
+.row-fluid {
+   padding: 10px;
 }
