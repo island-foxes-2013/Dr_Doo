@@ -64,5 +64,7 @@ module DrDoo
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.filter_parameters += [:password, :password_confirmation]
   end
 end

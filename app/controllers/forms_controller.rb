@@ -1,7 +1,12 @@
 class FormsController < ApplicationController
 
 	def index
-		@fields = Field.all
-		@label = Label.new
+	  # @Forms = Forms.all
+    @user = User.last
 	end
+
+  def new
+    @fields = Field.all
+    @label = Label.new
+  end
 end

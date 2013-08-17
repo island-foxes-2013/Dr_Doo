@@ -1,4 +1,5 @@
 /*!
+
  * Bootstrap v2.3.2
  *
  * Copyright 2013 Twitter, Inc
@@ -3009,6 +3010,8 @@ table th[class*="span"],
   display: block;
 }
 
+<<<<<<< HEAD
+=======
 .dropdown-backdrop {
   position: fixed;
   top: 0;
@@ -3018,6 +3021,7 @@ table th[class*="span"],
   z-index: 990;
 }
 
+>>>>>>> master
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
