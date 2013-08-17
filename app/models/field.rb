@@ -7,4 +7,6 @@ class Field < ActiveRecord::Base
 	has_many :integeranswers
 	has_many :booleananswers
   # attr_accessible :title, :body
+
+  validates :label, :brand, presence: true
 end
