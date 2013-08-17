@@ -6,6 +6,7 @@ class CompleteFormsController < ApplicationController
   end
 
   def show
+    Form.find()
   end
   
   def edit
