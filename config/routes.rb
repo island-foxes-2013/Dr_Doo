@@ -5,7 +5,7 @@ DrDoo::Application.routes.draw do
   devise_for :users 
 
   resources :forms
-  resources :complete_forms, only: [:new, :create, :show, :edit, :delete]
+  resources :complete_forms, except: [:index]
   root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
