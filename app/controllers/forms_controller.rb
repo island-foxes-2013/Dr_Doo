@@ -1,8 +1,7 @@
 class FormsController < ApplicationController
 
 	def index
-	  # @Forms = Forms.all
-    @user = User.last
+	  @forms = Forms.all
 	end
 
   def new
