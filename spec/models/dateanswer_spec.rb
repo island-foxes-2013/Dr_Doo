@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Dateanswer do
 
-  let(:user) { User.new }
-  let(:field) { Field.new }
+  let(:user) { FactoryGirl.build(:user) }
+  let(:field) { FactoryGirl.build(:field) }
 
   context "#new" do
     it "allows mass-assignment on value" do

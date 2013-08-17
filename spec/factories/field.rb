@@ -1,7 +1,4 @@
-FactoryGirl.define do
-
-  factory :field do
-    default_label { "Name" }
-    field_type { "String" }
-  end
+FactoryGirl.define :field do |field|
+  field.label "Name"
+  field.brand "String"
 end
