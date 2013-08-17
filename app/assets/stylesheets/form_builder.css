@@ -20,7 +20,7 @@
 
 .field {
   /*margin: 7px !important;*/
-  margin: 4px !important;
+  margin: 4px 7px !important;
 }
 
 /*.added {
@@ -59,11 +59,9 @@
 }*/
 
 .item {
-  background-color: blue;
 }
 
 .added_drop {
-  background-color: blue;
 }
 
 .block {

@@ -1,9 +1,8 @@
 class Form < ActiveRecord::Base
-	attr_accessible :provider_id, :name
-	belongs_to :provider
-	has_many :labels
-	has_many :fields, through: :labels
-  # attr_accessible :title, :body
+	attr_accessible :user_id, :title
+	belongs_to :user
+	has_many :fields
+	has_many :elements, through: :fields
 
-  validates :name, :provider_id, presence: true
+  validates :title, :user_id, presence: true
 end

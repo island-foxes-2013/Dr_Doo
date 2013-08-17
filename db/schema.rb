@@ -29,38 +29,33 @@ ActiveRecord::Schema.define(:version => 20130815232111) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "fields", :force => true do |t|
-    t.string   "label"
-    t.string   "brand"
+  create_table "elements", :force => true do |t|
+    t.string   "name"
+    t.string   "data_type"
     t.string   "size"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "forms", :force => true do |t|
-    t.integer  "provider_id"
+  create_table "fields", :force => true do |t|
+    t.integer  "form_id"
+    t.integer  "element_id"
     t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "forms", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "integeranswers", :force => true do |t|
     t.integer  "user_id"
     t.integer  "field_id"
     t.integer  "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "labels", :force => true do |t|
-    t.integer  "form_id"
-    t.integer  "field_id"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "providers", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

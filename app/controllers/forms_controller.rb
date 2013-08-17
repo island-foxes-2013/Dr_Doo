@@ -1,7 +1,8 @@
 class FormsController < ApplicationController
 
 	def index
-    @fields = Field.all.sort { |a,b| a.size <=> b.size }
-		@label = Label.new
+    @form_elements = Element.all #.sort { |a,b| a.size <=> b.size }
+		@label = Field.new
+		@form = Form.new
 	end
 end

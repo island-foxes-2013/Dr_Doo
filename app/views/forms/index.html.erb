@@ -1,38 +1,20 @@
 
 <div class='form_block'>
-    <script>
-  $(function() {
-    $( ".well" ).sortable();
-    $( ".well" ).disableSelection();
-  });
-  </script>
   <div class="well">
-  
-    <button id='form_submit' class="btn btn-primary btn-large">Submit Form →</button>
-    <h3 class="heading">Patient Information</h3>
-
- <!--    <div class='input name'><input class="field span4" type="text" name="" placeholder="Full Name"></div>
-    <div class='input'><input class="field span4" type="text" name="" placeholder="SSN (##-##-####)"></div>
-   <div class='input'><input class="field span1" type="text" name="" placeholder="Age"></div>
-   <div class='input'><input class="field span1" type="text" name="" placeholder="Sex"></div>
-  <div class='input'><input class="field span6" type="text" name="" placeholder="Home Address"></div>
-  <div class='input'><input class="field span3" type="text" name="" placeholder="City"></div>
-  <div class='input'><input class="field span1" type="text" name="" placeholder="State"></div>
-  <div class='input'><input class="field span5" type="text" name="" placeholder="Phone"></div>
-  <div class='input'><input class="field span5" type="text" name="" placeholder="Alternate Phone"></div>
-  <div class='input'><input class="field span4" type="text" name="" placeholder="Email"></div>
-  <div class='input'><input class="field span3" type="text" name="" placeholder="Driver License"></div>
-  <div class='input'><input class="field span8" type="text" name="" placeholder="How did you hear about us?"></div>
-  </div> -->
-<input class="field span8" type="text" name="" placeholder="How did you hear about us?">
-
+    <%= form_for @form do |f| %>
+      <%= f.submit 'Submit Form →', class: "btn btn-primary btn-large" %>
+      <h3><%= f.text_field :title, placeholder: 'title here' %></h3>
+      <% if @form_elements %>
+        <% @form_elements.each do |element| %>
+          <input class="field <%= element.size %>"  type="text" name="<%= element.data_type %>[:<%= element.name %>]" data-id='<%= element.id %>' placeholder="<%= element.name.gsub('_'," ").capitalize %>">
+        <% end %>
+      <% end %>
+    <% end %>  
+  </div>
 </div>
+
+
    
 <div class='form_block selectables'>
-  <% if @fields %>
-    <% @fields.each do |field| %>
-    <div class="item"><input class="field <%= field.size %>"  type="text" name="<%= field.brand %>[:<%= field.label %>]" data-id=<%= field.id %> placeholder="<%= field.label.gsub('_'," ").capitalize %>">
-    </div>
-    <% end %>
-  <% end %>  
 </div>
+

@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
 	has_many :dateanswers
 	has_many :integeranswers
 	has_many :booleananswers
-  # attr_accessible :title, :body
+	has_many :forms
 end
