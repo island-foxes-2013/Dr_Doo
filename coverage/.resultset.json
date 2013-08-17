@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/view.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/view.rb": [
         1,
         null,
         null,
@@ -14,7 +14,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/user.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/user.rb": [
         1,
         null,
         null,
@@ -31,7 +31,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/application_controller.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -45,15 +45,15 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/helpers/application_helper.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/helpers/forms_helper.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/helpers/forms_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/forms_controller.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/controllers/forms_controller.rb": [
         1,
         null,
         1,
@@ -67,78 +67,92 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/form.rb": [
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/form.rb": [
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/booleananswer.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/dateanswer.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/field.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/integeranswer.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/label.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/provider.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/home_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/booleananswer.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/dateanswer.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/field.rb": [
-        1,
-        1,
-        1,
-        1,
+      "/home/jared/Documents/DevBootCamp/git/Dr_Doo/app/models/stringanswer.rb": [
         1,
         1,
         1,
         1,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/integeranswer.rb": [
         1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/label.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/provider.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/stringanswer.rb": [
-        1,
-        1,
-        1,
-        null,
         null
       ]
     },
-    "timestamp": 1376708536
+    "timestamp": 1376717532
   },
   "Cucumber Features": {
     "coverage": {

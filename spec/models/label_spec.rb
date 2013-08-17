@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Label do
 
-  let(:form) { Form.new }
-  let(:field) { Field.new }
+  let(:form) { FactoryGirl.build(:form) }
+  let(:field) { FactoryGirl.build(:field) }
 
   context "#new" do
     it "allows mass-assignment on name" do

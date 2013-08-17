@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Stringanswer do
 
-  let(:user) { User.new }
+  let(:user) { FactoryGirl.build(:user) }
+  let(:field) { FactoryGirl.build(:field) }
   
   context "#new" do
     it "allows mass-assignment on value" do
@@ -11,7 +12,7 @@ describe Stringanswer do
 
     it "allows mass-assignment on field_id" do
       expect{ Stringanswer.new(field_id: 1) }.not_to raise_error
-      expect{ Stringanswer.new(field) }.not_to raise_error
+      expect{ Stringanswer.new(field_id: field) }.not_to raise_error
     end
 
     it "doesn't allow mass-assignment on user_id" do
