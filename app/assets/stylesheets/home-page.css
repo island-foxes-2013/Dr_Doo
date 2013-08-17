@@ -5,19 +5,29 @@
 }
 
 .hero-unit {
-   background-image:url('http://www.nlm.nih.gov/hmd/happening/acquisitions/images/Hecht_Braunwald.jpg') ; 
-   overflow: hidden;
-   color: #F4F4F0;
+   background-image:url('http://www.nlm.nih.gov/hmd/happening/acquisitions/images/Hecht_Braunwald.jpg');
+   background-position: -30px -450px; 
+   color: #F2E0C7;
 }
 
-.btnPrimaryBackground {
+.hero-unit p {
+ color: #FFFFFF;
+}
+
+.btn-primary {
+ background-image: url("");
+ background-color: #A5967D;
+}
+
+.btn-primary:hover {
+   background-image: url("");
    background-color: #595144;
 }
-.navbar {
-   margin-bottom: 1px;
-   background-color: #ffffff;
+.navbar-inner {
+   margin-bottom: 0;
+   background-color: #25231F;
 }
 
 .row-fluid {
-   padding: 10px;
+   padding: 0px;
 }

@@ -36,7 +36,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -58,7 +58,7 @@
         null,
         1,
         null,
-        0,
+        1,
         null,
         null,
         1,
@@ -74,6 +74,8 @@
         1,
         1,
         null,
+        null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/controllers/home_controller.rb": [
@@ -87,14 +89,18 @@
         1,
         1,
         1,
+        1,
         null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/models/dateanswer.rb": [
         1,
         1,
         1,
+        1,
         null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/models/field.rb": [
@@ -107,13 +113,17 @@
         1,
         1,
         null,
+        null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/models/integeranswer.rb": [
         1,
         1,
         1,
+        1,
         null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/models/label.rb": [
@@ -122,6 +132,8 @@
         1,
         1,
         null,
+        null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Dr_Doo/app/models/provider.rb": [
@@ -138,7 +150,7 @@
         null
       ]
     },
-    "timestamp": 1376708536
+    "timestamp": 1376766402
   },
   "Cucumber Features": {
     "coverage": {
