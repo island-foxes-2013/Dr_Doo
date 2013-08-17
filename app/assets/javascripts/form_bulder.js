@@ -13,20 +13,19 @@ $(function() {
 // gridster.add_widget('<li class="new">The HTML of the widget...</li>', 2, 1);
 
 
-      $(function() {
+  
 
          // $(":text").prop("disabled", true);
         $('.input').draggable({
           helper: 'clone'
-    
         });
-      });
+
  
         $('.well').droppable({
-          accept: '.input',
+          accept: 'div',
           drop: function(ev, ui) {
             var droppedItem = $(ui.draggable).clone();
-            console.log(droppedItem.addClass('added'))
+            $(droppedItem).children().addClass('added');
             $(this).append(droppedItem);
             // console.log(this)
             // var sum = 0

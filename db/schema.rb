@@ -30,10 +30,11 @@ ActiveRecord::Schema.define(:version => 20130815232111) do
   end
 
   create_table "fields", :force => true do |t|
-    t.string   "default_label"
-    t.string   "field_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "label"
+    t.string   "brand"
+    t.integer  "size"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "forms", :force => true do |t|

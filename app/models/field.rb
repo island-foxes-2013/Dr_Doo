@@ -1,5 +1,5 @@
 class Field < ActiveRecord::Base
-	attr_accessible :default_label, :field_type
+	attr_accessible :label, :brand, :size
 	has_many :labels
 	has_many :forms, through: :labels
 	has_many :stringanswers
