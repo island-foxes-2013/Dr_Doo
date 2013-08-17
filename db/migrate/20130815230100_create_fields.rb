@@ -3,7 +3,7 @@ class CreateFields < ActiveRecord::Migration
     create_table :fields do |t|
     	t.string :label
     	t.string :brand
-    	t.integer :size
+    	t.string :size
 
       t.timestamps
     end

@@ -51,11 +51,13 @@
   background-color: orange;
 }*/
 
-.input {
+/*.input {
     padding: 2px;
+    background-color: blue;
     display: inline-block;
+  position: relative;
 }
-
+*/
 .block {
   height: 20px;
   min-width: 50px;

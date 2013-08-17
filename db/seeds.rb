@@ -12,13 +12,16 @@ provider1 = Provider.create
 provider2 = Provider.create
 provider3 = Provider.create
 
-default_values = {name: 'string', date_of_birth: 'date', eye_color: 'string', gender: 'string', weight: 'integer',
-	height: 'integer', allergies: "string", physician_name: "string", pregnant: "boolean", phone: "integer"}
+default_values = {full_name: ['string', 'span4'], date_of_birth: ['date', 'span2'], eye_color: ['string', 'span2'], gender: ['string', 'span1'], 
+	weight: ['integer', 'span1'], height: ['integer', 'span1'], allergies: ["string", 'span10'], 
+	physician_name: ["string", 'span4'], pregnant: ["boolean", 'span2'], phone: ["integer", 'span3'], ssn: ['string', 'span2'], age: ['integer', 'span1'], 
+	sex: ['string', 'span1'], home_address: ['string', 'span8'], city: ['string', 'span4'], state: ['string', 'span2'], 
+	zip: ['integer', 'span2'], primary_phone: ['integer', 'span4'], secondary_phone: ['integer', 'span4'], email: ['string', 'span4'], 
+	driver_license: ['string', 'span4'], how_did_you_hear_about_us?: ['string', 'span10'] }
 
-
-	default_values.each do |key, value|
-		Field.create(label: key, brand: value)
-	end
+default_values.each do |key, value|
+	Field.create(label: key, brand: value.first, size: value.last )
+end
 
 providers = [provider1, provider2, provider3]
 	providers.each do |provider|
@@ -29,9 +32,7 @@ all_fields = Field.all
 all_forms = Form.all
 
 all_forms.each do |form|
-	all_fields.each do |field|
-		form.labels.create(field_id: field.id, name: field.label )
-	end
+  all_fields.each do |field|
+	  form.labels.create(field_id: field.id, name: field.label )
+  end
 end
-
-
