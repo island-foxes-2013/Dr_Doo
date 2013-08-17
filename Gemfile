@@ -65,3 +65,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+# Required for Ruby on Rails development on Linux
+gem 'therubyracer'

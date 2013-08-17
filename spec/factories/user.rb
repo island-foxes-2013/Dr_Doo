@@ -7,3 +7,4 @@ FactoryGirl.define do
 
 
 end
+

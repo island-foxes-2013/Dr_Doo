@@ -1,7 +1,7 @@
 FactoryGirl.define do
-
   factory :field do
-    default_label { "Name" }
-    field_type { "String" }
+    label { "Name" }
+    brand { "String" }
+    size { 100 }
   end
 end
