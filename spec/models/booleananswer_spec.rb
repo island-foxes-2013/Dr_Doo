@@ -21,17 +21,17 @@ describe Booleananswer do
 
   context "#save" do
     it "requires a valid value" do
-      bool_answer = user.booleananswers.new(field_id: 1)
+      bool_ans = user.booleananswers.new(field_id: 1)
       expect(bool_ans).not_to be_valid
     end
 
     it "requires a valid field_id" do
-      bool_answer = user.booleananswers.new(value: true)
+      bool_ans = user.booleananswers.new(value: true)
       expect(bool_ans).not_to be_valid
     end
 
     it "requires a valid user_id" do
-      bool_answer = Booleananswer.new(field_id: 1, value: false)
+      bool_ans = Booleananswer.new(field_id: 1, value: false)
       expect(bool_ans).not_to be_valid
     end
   end

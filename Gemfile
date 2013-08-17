@@ -61,3 +61,5 @@ gem 'simplecov', :require => false, :group => :test
 
 # To use debugger
 # gem 'debugger'
+
+gem 'therubyracer'
