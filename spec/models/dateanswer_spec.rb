@@ -12,7 +12,7 @@ describe Dateanswer do
 
     it "allows mass-assignment on field_id" do
       expect{ Dateanswer.new(field_id: 1) }.not_to raise_error
-      expect{ Dateanswer.new(field) }.not_to raise_error
+      expect{ Dateanswer.new(field_id: field) }.not_to raise_error
     end
 
     it "doesn't allow mass-assignment on user_id" do

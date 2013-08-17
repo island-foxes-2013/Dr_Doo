@@ -12,7 +12,7 @@ describe Booleananswer do
 
     it "allows mass-assignment on value" do
       expect{ Booleananswer.new(field_id: 1) }.not_to raise_error
-      expect{ Booleananswer.new(field) }.not_to raise_error
+      expect{ Booleananswer.new(field_id: field) }.not_to raise_error
     end
 
     it "should not allow mass-assignment on user_id" do

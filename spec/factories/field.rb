@@ -1,5 +1,7 @@
-FactoryGirl.define :field do |field|
-  field.label "Name"
-  field.brand "String"
-  field.size 100
+FactoryGirl.define do
+  factory :field do
+    label { "Name" }
+    brand { "String" }
+    size { 100 }
+  end
 end

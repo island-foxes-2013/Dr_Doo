@@ -1,3 +1,5 @@
-FactoryGirl.define :user do |user|
-  # TODO: Add attributes to user model
+FactoryGirl.define do
+  factory :user do
+    # TODO: Add attributes to user model
+  end
 end
