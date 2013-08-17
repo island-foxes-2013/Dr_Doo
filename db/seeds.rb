@@ -17,7 +17,7 @@ default_values = {name: 'string', date_of_birth: 'date', eye_color: 'string', ge
 
 
 	default_values.each do |key, value|
-		Field.create(default_label: key, field_type: value)
+		Field.create(label: key, brand: value)
 	end
 
 providers = [provider1, provider2, provider3]
@@ -30,7 +30,7 @@ all_forms = Form.all
 
 all_forms.each do |form|
 	all_fields.each do |field|
-		form.labels.create(field_id: field.id, name: field.default_label )
+		form.labels.create(field_id: field.id, name: field.label )
 	end
 end
 
