@@ -62,4 +62,5 @@ gem 'simplecov', :require => false, :group => :test
 # To use debugger
 # gem 'debugger'
 
+# Required for Ruby on Rails development on Linux
 gem 'therubyracer'
