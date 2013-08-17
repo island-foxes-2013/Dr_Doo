@@ -23,9 +23,9 @@
   margin: 4px !important;
 }
 
-.added {
+/*.added {
   margin: 1px !important;
-}
+}*/
 
 /*.name {
   width: 220px;
@@ -56,8 +56,16 @@
     background-color: blue;
     display: inline-block;
   position: relative;
+}*/
+
+.item {
+  background-color: blue;
 }
-*/
+
+.added_drop {
+  background-color: blue;
+}
+
 .block {
   height: 20px;
   min-width: 50px;

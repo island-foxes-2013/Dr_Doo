@@ -14,35 +14,39 @@ $(function() {
 
 
 
-var dropped = false;
-  $(".well").droppable({
-     drop: function(event, ui) {
-            dropped = true;
-            $.ui.ddmanager.current.cancelHelperRemoval = true;
-            ui.helper.appendTo(this);
-    }
- });
+// var dropped = false;
+
  $(".item").draggable({
-     revert: 'invalid',
+     
      helper: function(){
         $copy = $(this).clone();
         return $copy;
      },
-      start: function(event, ui) {
-                    dropped = false;
-                    // $(this).addClass("hide");
-                },
-                stop: function(event, ui) {
-                    if (dropped==true) {
-                        // $(this).remove();
-                    } else {
-                        // $(this).removeClass("hide");
-                    }
-                    $(this).draggable({revert: 'invalid'});
-                }
+
         });
 
+  $(".well").droppable({
+    accept: '.item',
+     drop: function(event, ui) {
+       $(this).append($(ui.draggable).clone())
+       $(".well .item").addClass("added_drop");
+       $(".added").removeClass("item ui-draggable");
+          $('.added').sortable();
+    
+        // $(".added").draggable({
+        //         // containment: 'parent',
+        //         // grid: [150,150]
+        //     });
+  
+       
+            // dropped = true;
+            // $.ui.ddmanager.current.cancelHelperRemoval = true;
+            // ui.helper.appendTo(this);
+    }
+  })
 
+    
+ // });
 
 
 
