@@ -1,7 +1,7 @@
 class Dateanswer < ActiveRecord::Base
-	attr_accessible :field_id, :value
-	belongs_to :user
-	belongs_to :field
+	has_many :useranswers, :as => :answer
+  belongs_to :field
+  attr_accessible :field_id, :value
 
-  validates :user_id, :field_id, :value, presence: true
+  validates :field_id, :value, presence: true
 end

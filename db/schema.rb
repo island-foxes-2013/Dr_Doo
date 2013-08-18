@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817003101) do
+ActiveRecord::Schema.define(:version => 20130818202604) do
 
   create_table "booleananswers", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "field_id"
     t.boolean  "value"
     t.datetime "created_at", :null => false
@@ -22,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20130817003101) do
   end
 
   create_table "dateanswers", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "field_id"
     t.date     "value"
     t.datetime "created_at", :null => false
@@ -53,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20130817003101) do
   end
 
   create_table "integeranswers", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "field_id"
     t.integer  "value"
     t.datetime "created_at", :null => false
@@ -61,11 +58,19 @@ ActiveRecord::Schema.define(:version => 20130817003101) do
   end
 
   create_table "stringanswers", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "field_id"
     t.string   "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "useranswers", :force => true do |t|
+    t.integer  "form_id"
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.string   "answer_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

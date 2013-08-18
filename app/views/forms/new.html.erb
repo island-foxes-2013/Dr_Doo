@@ -5,8 +5,9 @@
       <h3><%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></h3>
       <% if @form_elements %>
         <% @form_elements.each do |element| %>
-          <input class='field <%= element.size %>'  type='text' name='fields[][:element_id]' value='<%= element.id %>' placeholder='<%= element.name.gsub('_',' ').capitalize %>'>
-          <input type='hidden' name='fields[][:name]' value='<%= element.name %>'>
+          <%= text_field_tag nil, nil, placeholder: element.name.gsub('_',' ').capitalize  %>
+          <%= hidden_field_tag 'fields[][element_id]', element.id %>
+          <%= hidden_field_tag 'fields[][name', element.name %>
         <% end %>
       <% end %>
     <% end %>  
@@ -16,3 +17,6 @@
 <div class='form_block selectables'>
 </div>
 
+  
+
+          

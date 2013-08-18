@@ -214,6 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   cancan
   capybara
   coffee-rails (~> 3.2.1)

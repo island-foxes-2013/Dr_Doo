@@ -3,6 +3,7 @@ class Form < ActiveRecord::Base
 	belongs_to :user
 	has_many :fields
 	has_many :elements, through: :fields
+	has_many :useranswers
 
   validates :title, :user_id, presence: true
 end
