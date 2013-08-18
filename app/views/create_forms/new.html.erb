@@ -5,7 +5,7 @@
       <h3><%= f.text_field :title, placeholder: 'Form Title' %></h3>
       <% if @form_elements %>
         <% @form_elements.each do |element| %>
-          <input class="field <%= element.size %>"  type="text" name="<%= element.data_type %>[:<%= element.name %>]" data-id='<%= element.id %>' placeholder="<%= element.name.gsub('_'," ").capitalize %>">
+          <input class="field <%= element.size %>"  type="text" name="<%= element.data_type %>[:<%= element.id %>]" value='<%= element.name %>' placeholder="<%= element.name.gsub('_'," ").capitalize %>">
         <% end %>
       <% end %>
     <% end %>  
@@ -14,3 +14,5 @@
 
 <div class='form_block selectables'>
 </div>
+
+id  form_id element_id  name

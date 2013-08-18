@@ -12,4 +12,14 @@ class FormsController < ApplicationController
     @label = Field.new
     @form = Form.new
   end
+
+  def create
+    user = User.first
+    form = user.forms.create(title: 'test patient form')
+    p '%' * 100
+    p params
+    p params[:form]
+    p params[:string]
+    p params[:integer]
+  end
 end
