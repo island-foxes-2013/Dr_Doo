@@ -1,8 +1,8 @@
 require 'faker'
 
-user1 = User.create
-user2 = User.create
-user3 = User.create
+user1 = User.create(email: 'me@me.com', password: '12345678', password_confirmation: '12345678')
+user2 = User.create(email: 'steve@me.com', password: '12345678', password_confirmation: '12345678')
+user3 = User.create(email: 'you@me.com', password: '12345678', password_confirmation: '12345678')
 
 default_values = {full_name: ['string', 'span5'], ssn: ['string', 'span3'], age: ['integer', 'span1'], sex: ['string', 'span1'], 
 	home_address: ['string', 'span10'], city: ['string', 'span4'], state: ['string', 'span3'], zip: ['integer', 'span3'],

@@ -23,6 +23,10 @@
   margin: 4px 7px !important;
 }
 
+#submit {
+  float: right;
+}
+
 /*.added {
   margin: 1px !important;
 }*/

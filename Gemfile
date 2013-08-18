@@ -28,6 +28,7 @@ gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'rolify'
+gem 'actionmailer'
 
 group :test, :development do
   gem 'factory_girl_rails'
