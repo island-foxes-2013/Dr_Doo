@@ -6,7 +6,7 @@ class CompleteFormsController < ApplicationController
   end
 
   def show
-    Form.find()
+   my_form = current_user.forms.find(form.id)
   end
   
   def edit
