@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130818002603) do
 
   create_table "fields_forms", :id => false, :force => true do |t|
     t.integer "field_id"
-    t.integer "user_id"
+    t.integer "form_id"
   end
 
   create_table "forms", :force => true do |t|
