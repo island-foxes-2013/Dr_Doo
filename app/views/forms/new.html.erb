@@ -1,3 +1,11 @@
+<div class="navbar form_subnav">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="active"><a href="#">Section 1</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#">Section 2</a></li>
+    </ul>
+</div>
 <div class='form_block'>
   <div class='well'>
     <%= form_for @form do |f| %>
@@ -8,14 +16,20 @@
         <% @form_elements.sample(8).each do |element| %>
           <div class='field_type'><%= label_tag element.label, nil, class: 'field_type ' + element.size %><br>
           <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: 'field_type ' + element.size  %>
+      <h3><%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></h3>
+      <% if @form_elements %>
+        <% @form_elements.each do |element| %>
+          <p class='form_field <%= element.name %>'><p>
+          <%= text_field_tag nil, nil, placeholder: element.name.gsub('_',' ').capitalize  %>
           <%= hidden_field_tag 'fields[][element_id]', element.id %>
           <%= hidden_field_tag 'fields[][name', element.label %></div>
         <% end %>
       <% end %>
-    <% end %>  
   </div>
+      <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large pull-right' %>
+     <% end %>  
 </div>
-  
+<br>
 <div class='form_block selectables'>
   <% if @form_elements %>
     <% @form_elements.each do |element| %>
@@ -28,19 +42,3 @@
   <% end %>
 </div>
 
-<script>
- $(function() {
-    $( ".column" ).sortable({
-      connectWith: ".column"
-    });
- 
-    $( ".field_type" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" );
- 
-    $( ".field_type" ).click(function() {
-      $( this ).toggleClass( "ui-icon-minusthick" ).toggleClass( "ui-icon-plusthick" );
-      $( this ).parents( ".portlet:first" ).find( ".portlet-content" ).toggle();
-    });
- 
-    $( ".column" ).disableSelection();
-  });
-  </script>

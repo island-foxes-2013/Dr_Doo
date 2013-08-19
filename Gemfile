@@ -28,6 +28,7 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'actionmailer'
+gem 'bootstrap-sass'
 
 group :test, :development do
   gem 'meta_request'

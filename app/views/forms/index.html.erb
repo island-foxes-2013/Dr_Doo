@@ -1,18 +1,34 @@
-<p>Welcome <%=@user.email %>
-<div class='form_block'>
-  <div class="well">
-    <%= form_for @form do |f| %>
-      
-      <h3><%= f.text_field :title, placeholder: 'title here' %></h3>
-      <% if @form_elements %>
-        <% @form_elements.each do |element| %>
-          <input class="field <%= element.size %>"  type="text" name="<%= element.data_type %>[:<%= element.name %>]" data-id='<%= element.id %>' placeholder="<%= element.name.gsub('_'," ").capitalize %>">
+<div class ='profile'>
+<h1>&nbsp;Welcome <%=@user.email %>! <small><br>&nbsp;Create a new form or send a completed one</small></h1>
+<div class = 'pull-right'><a href="#">Logo here</a></div>
+  <div class="notifications">
+    <h4 class="heading">You have new notifications!</h4>
+      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+      <a class="dom-link pull-right dom-link-1" href="#">More</a>
+  </div>
+  <div class = 'user_info'>  
+    <h4>User Info</h4>
+    <%= form_tag form_create_or_update_contact_info_path(14), method: 'post'  do %>
+        <% @user_contact_info.each do |answer| %>
+          <div class='field_tag'>
+          <h6 class='pull right'><%= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
+              <%= text_field_tag :value, answer.last  %>
+         </h6>
         <% end %>
-      <% end %>
+      </div>
+      <%= button_to "Update Info", { id: :'create_or_update_contact_info' } %>
+    <% end %>
+  </div>
+  <div class='user_forms'>
+    <h4 class=>Your Forms</h4>
+    <% @user.forms.each do |form| %>
+      <h6><%= form.title %>
+       <%#link_to 'form.title', edit_form_path(@form) %> 
+       <%# link_to 'Delete', form_path(@form), :remote => true, :method => :delete, :confirm => 'Are you Sure?' %> 
+      </h6>
+    <% end %>
+  </div>
 </div>
-    <%= f.submit 'Submit Form →', class: "btn btn-primary btn-large" %>  
-   <% end %>
-</div>
-  
-<div class='form_block selectables'>
-</div>
+

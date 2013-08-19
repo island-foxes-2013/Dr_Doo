@@ -17,6 +17,7 @@ class CompleteFormsController < ApplicationController
     # user = User.find(1)
     # @form = User.forms.first
     @form_answers = @form.answers.first.value
+   # my_form = current_user.forms.find(form.id)
   end
 
   
