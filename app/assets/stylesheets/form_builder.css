@@ -27,6 +27,20 @@
   float: right;
 }
 
+.field_type {
+  display: inline-block;
+}
+
+label {
+  margin: 0 !important;
+  margin-left: 2px !important;
+  display: inline !important;
+}
+
+input {
+  display: inline !important;
+}
+
 /*.added {
   margin: 1px !important;
 }*/
@@ -62,11 +76,6 @@
   position: relative;
 }*/
 
-.item {
-}
-
-.added_drop {
-}
 
 .block {
   height: 20px;

@@ -1,13 +1,14 @@
 <div class='form_block'>
   <div class='well'>
     <%= form_for @form do |f| %>
-      <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large' %>
-      <h3><%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></h3>
+      <div class='field_tag'><%= f.label 'Title', class: 'span3' %><br>
+      <%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></div>
       <% if @form_elements %>
-        <% @form_elements.each do |element| %>
-          <%= text_field_tag nil, nil, placeholder: element.name.gsub('_',' ').capitalize  %>
+        <% @form_elements.sample(8).each do |element| %>
+          <div class='field_type'><%= label_tag element.label, nil, class: 'field_type ' + element.size %><br>
+          <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: 'field_type ' + element.size  %>
           <%= hidden_field_tag 'fields[][element_id]', element.id %>
-          <%= hidden_field_tag 'fields[][name', element.name %>
+          <%= hidden_field_tag 'fields[][name', element.label %></div>
         <% end %>
       <% end %>
     <% end %>  

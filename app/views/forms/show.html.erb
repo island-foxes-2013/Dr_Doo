@@ -1,0 +1,14 @@
+<div class='form_block'>
+  <div class='well'>
+    <%= form_for @form do |f| %>
+      <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large' %>
+      <h2><%= f.label :title, @form.title %></h2>
+      <% if @form_answers %>
+        <% @form_answers.each do |answer| %>
+          <div class='field_tag'><%= label_tag answer.first, nil, class: 'field_tag' %>
+          <%= text_field_tag nil, answer.last  %></div>
+        <% end %>
+      <% end %>
+    <% end %>  
+  </div>
+</div>

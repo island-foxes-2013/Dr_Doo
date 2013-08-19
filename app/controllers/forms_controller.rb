@@ -6,7 +6,15 @@ class FormsController < ApplicationController
     @user = User.last
 	end
 
+  def show
+    user = User.find(1)
+    @form = user.forms.first
+    @form_answers = @form.answers.first.value
+  end
+
   def new
+
+    @form_elements = Element.all
     @field = Field.new
     @form = Form.new
   end
@@ -18,6 +26,5 @@ class FormsController < ApplicationController
     # params[:fields].each do |field|
     #   form.fields.create(element_id: field[:element_id], name: field[:name] )
     # end
-   
   end
 end
