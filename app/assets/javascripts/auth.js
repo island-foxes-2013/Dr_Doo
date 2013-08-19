@@ -4,44 +4,44 @@ $(document).ready(function() {
     //reset_login();
     $("#loginModal").modal('show');
 
-    $('#login').on('submit', function(event){
-      event.preventDefault();
+    // $('#login').on('submit', function(event){
+    //   event.preventDefault();
 
-      var form_input = $(this).serializeArray();
+    //   var form_input = $(this).serializeArray();
 
-      $.post('/login', form_input).done(function(response){
-        if (response.user == false) {
-          unverified_user();
-          setTimeout(function(){reset_login()}, 1500);
-        }else{
-          reset_login();
-          $("#loginModal").modal('hide');
-          location.reload();
-        }
-      });
-    });
+    //   $.post('/login', form_input).done(function(response){
+    //     if (response.user == false) {
+    //       unverified_user();
+    //       setTimeout(function(){reset_login()}, 1500);
+    //     }else{
+    //       reset_login();
+    //       $("#loginModal").modal('hide');
+    //       location.reload();
+    //     }
+    //   });
+    // });
   });
 
   $('#create_li').on('click', function(){
     //reset_create();
     $("#createModal").modal('show');
 
-    $('#create').on('submit', function(event){
-      event.preventDefault();
+    // $('#create').on('submit', function(event){
+    //   event.preventDefault();
 
-      var form_input = $(this).serializeArray();
+    //   var form_input = $(this).serializeArray();
 
-      $.post('/login', form_input).done(function(response){
-        if (response.user == false) {
-          unverified_user();
-          setTimeout(function(){reset_login()}, 1500);
-        }else{
-          reset_login();
-          $("#createModal").modal('hide');
-          location.reload();
-        }
-      });
-    });
+    //   $.post('/login', form_input).done(function(response){
+    //     if (response.user == false) {
+    //       unverified_user();
+    //       setTimeout(function(){reset_login()}, 1500);
+    //     }else{
+    //       reset_login();
+    //       $("#createModal").modal('hide');
+    //       location.reload();
+    //     }
+    //   });
+    // });
   });
 });
 
