@@ -1,2 +1,0 @@
-module CompleteFormsHelper
-end
