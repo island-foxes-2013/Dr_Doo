@@ -13,7 +13,6 @@ class FormsController < ApplicationController
   end
 
   def new
-
     @form_elements = Element.all
     @field = Field.new
     @form = Form.new

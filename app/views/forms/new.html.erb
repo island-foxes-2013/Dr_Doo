@@ -1,8 +1,9 @@
 <div class='form_block'>
   <div class='well'>
     <%= form_for @form do |f| %>
+    <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large' %><br><br>
       <div class='field_tag'><%= f.label 'Title', class: 'span3' %><br>
-      <%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></div>
+      <%= f.text_field :title, placeholder: 'Enter New Form Title Here' %></div><br>
       <% if @form_elements %>
         <% @form_elements.sample(8).each do |element| %>
           <div class='field_type'><%= label_tag element.label, nil, class: 'field_type ' + element.size %><br>
@@ -16,8 +17,30 @@
 </div>
   
 <div class='form_block selectables'>
+  <% if @form_elements %>
+    <% @form_elements.each do |element| %>
+    <div class='column'>
+      <div class='field_type'><%= label_tag element.label, nil, class: 'field_type ' + element.size %><br>
+      <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: 'field_type ' + element.size  %>
+      <%= hidden_field_tag 'fields[][element_id]', element.id %>
+      <%= hidden_field_tag 'fields[][name', element.label %></div></div>
+    <% end %>
+  <% end %>
 </div>
 
-  
-
-          
+<script>
+ $(function() {
+    $( ".column" ).sortable({
+      connectWith: ".column"
+    });
+ 
+    $( ".field_type" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" );
+ 
+    $( ".field_type" ).click(function() {
+      $( this ).toggleClass( "ui-icon-minusthick" ).toggleClass( "ui-icon-plusthick" );
+      $( this ).parents( ".portlet:first" ).find( ".portlet-content" ).toggle();
+    });
+ 
+    $( ".column" ).disableSelection();
+  });
+  </script>
