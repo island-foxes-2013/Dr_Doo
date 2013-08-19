@@ -223,7 +223,7 @@ PLATFORMS
 DEPENDENCIES
   actionmailer
   activerecord-postgres-hstore
-  bootstrap-sass (~> 2.3.2.1)
+  bootstrap-sass
   cancan
   capybara
   database_cleaner

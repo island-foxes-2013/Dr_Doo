@@ -4,9 +4,9 @@ require 'faker'
 default_values = {full_name: ['string', 'span4'], date_of_birth: ['date', 'span2'], eye_color: ['string', 'span2'], gender: ['string', 'span1'], 
 	weight: ['integer', 'span1'], height: ['integer', 'span1'], allergies: ["string", 'span10'], 
 	physician_name: ["string", 'span4'], pregnant: ["boolean", 'span2'], phone: ["integer", 'span3'], ssn: ['string', 'span2'], age: ['integer', 'span1'], 
-	sex: ['string', 'span1'], home_address: ['string', 'span8'], city: ['string', 'span4'], state: ['string', 'span2'], 
+	sex: ['string', 'span1'], street_address: ['string', 'span8'], city: ['string', 'span4'], state: ['string', 'span2'], 
 	zip: ['integer', 'span2'], primary_phone: ['integer', 'span4'], secondary_phone: ['integer', 'span4'], email: ['string', 'span4'], 
-	driver_license: ['string', 'span4'], how_did_you_hear_about_us?: ['string', 'span10'] }
+	driver_license: ['string', 'span4'], how_did_you_hear_about_us?: ['string', 'span10'], fax: ['integer', 'span4'],}
 
 # Create all the default form elements
 default_values.each do |key, value|
@@ -23,7 +23,9 @@ user4 = User.create(email: 'me@me.com', password: '12345678', password_confirmat
 User.all.each do |user|
 	user.forms.create(user_id: user.id, title: Faker::Lorem.sentence(word_count = 2))
 end
+# User 1 Form
 
+user1.forms.create(user_id: user.id, title: 'User Info')
 # Create fields associated with each created form.  This will select from a random number or elements from the default values.
 Form.all.each do |form|
 	rand(8..15).times do
