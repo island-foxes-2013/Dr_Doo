@@ -11,7 +11,7 @@ class FormsController < ApplicationController
   def show
     user = User.find(1)
     @form = user.forms.first
-    @form_answers = @form.answers.first.value
+    @form_answers = @form.answers
   end
 
   def new

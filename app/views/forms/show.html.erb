@@ -1,13 +1,30 @@
 <div class='form_block'>
   <div class='well'>
-    <%= form_for @form do |f| %>
-      <h2><%= f.label :title, @form.title %></h2>
-      <% if @form_answers %>
-        <% @form_answers.each do |answer| %>
-          <div class='field_tag'><%= label_tag answer.first, nil, class: 'field_tag' %>
-          <%= text_field_tag nil, answer.last  %></div>
-        <% end %>
+    <h2><%= @form.title %></h2>
+    <% if @form_answers %>
+      <%# TODO-JW: RESTful approach: You'd still need to figure this 
+                   shit out WRT hstore and the fact that you want to 
+                   pull form_id off of your Answer model. Then in your answers.js file, listen for 'ajax:beforeSend'
+                   on the form with id 'save-all-answers', iterate over 
+                   all of the individual answer forms and submit each of 
+                   them via AJAX %>
+                   
+      <%# TODO-JW: The non-RESTful approach would be to use a single
+                   form_tag and text_field_tag and label_tag helpers
+                   for each answer, then submit all to 
+                   'answers#save_answers_for_form' (see routes file
+                   for more info) %>
+      <% @form_answers.each do |answer| %>
+        <div class='field_tag'>
+          <%= form_for answer do |f| %>
+            <%= f.label :value, nil, class: 'field_tag' %>
+            <%= f.text_field :value  %>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>  
+    <% end %>
+    <%= button_to "Submit Answers", nil, { id: :'save-all-answers', class: :btn } %>
   </div>
 </div>
+
+<%# TODO-JW:  %>
