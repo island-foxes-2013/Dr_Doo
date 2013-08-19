@@ -7,6 +7,26 @@ DrDoo::Application.routes.draw do
   resources :forms
 
   resources :complete_forms, except: [:index]
+
+  # TODO-JW: RESTful way, using AJAX to submit one form per answer
+  resources :answers, only: [:create, :update]
+
+  # TODO-JW (my preference): non-RESTful single route to submit all
+  #                          answers at once (which allows you to
+  #                          wrap the saving of all answers in one
+  #                          DB transaction)
+  #
+  # e.g. ...
+  #
+  # Answer.transaction do |t|
+  #   # normal ActiveRecord code to create new answers
+  #   params[:answers].each do |a|
+  #     Answer.create(a)
+  #   end
+  # end
+
+  post '/save_answers_for_form', to: 'answers#save_answers_for_form'
+
   root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
