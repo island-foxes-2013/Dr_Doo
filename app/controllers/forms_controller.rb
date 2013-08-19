@@ -1,4 +1,6 @@
 class FormsController < ApplicationController
+  # TODO-JW: this controller should probably be locked-down
+  #          only to users who have authenticated, no?
 
 	def index
 		@field = Field.new
@@ -19,7 +21,24 @@ class FormsController < ApplicationController
   end
 
   def create
-    p params
+    @form = Form.new(params[:form])
+
+    # TODO-JW-BEGIN: ---------------->8 snip, snip
+    #   this code could be eliminated if you use
+    #   accepts_nested_attributes_for on your model
+    fields = params[:fields]
+    fields.each do |field|
+      @form.fields.build(field)
+    end
+    # TODO-JW-END: ---------------->8 snip, snip
+
+    if @form.save
+      # TODO-JW: do something more meaningful here
+      render text: params.to_json
+    else
+      # TODO-JW: do something more meaningful here
+      render text: "ERROR!"
+    end
     # user = User.first
     # form = user.forms.create(params[:form])
     # params[:fields].each do |field|
