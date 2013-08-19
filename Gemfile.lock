@@ -47,13 +47,6 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.3)
     database_cleaner (1.1.1)
     devise (3.0.3)
       bcrypt-ruby (~> 3.0)
@@ -223,7 +216,6 @@ DEPENDENCIES
   activerecord-postgres-hstore
   cancan
   capybara
-  coffee-rails (~> 3.2.1)
   database_cleaner
   devise
   factory_girl_rails
