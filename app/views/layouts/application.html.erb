@@ -11,23 +11,27 @@
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
+<%= render "shared/sign_up_form" %>
+<%= render "shared/sign_in_form" %>
+
 </head>
 <body>
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">doolittle</a>
+      <%= link_to "doolittle", root_path, method: :get, class: "brand" %>
       <ul class="nav pull-right">
         <li class="active"><a href="#">Home</a></li>
         <% if user_signed_in? %>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-
-        <li><%= link_to 'Sign up', '#createModal', :id => 'create_li' %></li><!-- <%= link_to "Sign In", new_user_session_path %></li> -->
-        <li><%= link_to 'Sign in', '#loginModal', :id => 'login_li' %></li><!-- <%= link_to "Sign Up", new_user_registration_path %></li> -->
-
+        <li><%= link_to 'Sign up', '#createModal', :id => 'create_li' %></li>
+        <li><%= link_to 'Sign in', '#loginModal', :id => 'login_li' %></li>
         <% end %>
       </ul>
     </div>
   </div>
+
+  <%= yield %>
+
 </body>
 </html>
