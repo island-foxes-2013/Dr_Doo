@@ -4,9 +4,6 @@
 
   <title>DrDoo</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag "bootstrap", :media => 'all'%>
-  <%= javascript_include_tag "bootstrap" %>
 
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -31,6 +28,8 @@
   </div>
 
   <%= yield %>
+
+  <%= javascript_include_tag "application" %>
   
 </body>
 </html>
