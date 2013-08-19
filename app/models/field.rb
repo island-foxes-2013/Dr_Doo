@@ -1,7 +1,8 @@
 class Field < ActiveRecord::Base
-	attr_accessible :form_id, :element_id, :label, :description
+	attr_accessible :element_id, :label
 	belongs_to :form
 	belongs_to :element
 	has_many :answers
 
+  validates :form_id, :element_id, :label, presence: true
 end
