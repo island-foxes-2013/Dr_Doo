@@ -1,7 +1,6 @@
 <div class='form_block'>
   <div class='well'>
     <%= form_for @form do |f| %>
-      <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large' %>
       <h2><%= f.label :title, @form.title %></h2>
       <% if @form_answers %>
         <% @form_answers.each do |answer| %>

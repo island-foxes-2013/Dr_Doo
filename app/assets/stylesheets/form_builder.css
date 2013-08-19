@@ -11,7 +11,7 @@
 .form_block {
   margin-right: auto;
   margin-left: auto;
-  width: 80%;
+  width: 90%;
 }
 
 #form_submit {
@@ -40,6 +40,10 @@ label {
 input {
   display: inline !important;
 }
+
+.column { height: 30px; float: left; padding-bottom: 100px; }
+.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
+  .ui-sortable-placeholder * { visibility: hidden; }
 
 /*.added {
   margin: 1px !important;
