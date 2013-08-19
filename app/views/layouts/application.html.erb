@@ -3,7 +3,7 @@
 <head>
 
   <title>DrDoo</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "bootstrap", :media => 'all'%>
   <%= javascript_include_tag "bootstrap" %>
@@ -12,10 +12,6 @@
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 </head>
-
-<%= render "create_user_form" %>
-<%= render "login_form" %>
-
 <body>
   <div class="navbar">
     <div class="navbar-inner">
@@ -28,20 +24,10 @@
         <li><%= link_to 'Create Account', '#createModal', :id => 'create_li' %></li><!-- <%= link_to "Sign In", new_user_session_path %></li> -->
         <li><%= link_to 'Login', '#loginModal', :id => 'login_li' %></li><!-- <%= link_to "Sign Up", new_user_registration_path %></li> -->
         <% end %>
-        <li>
-          <!-- <a href="#myModal" role="button" data-toggle="modal">Launch demo modal</a> -->
-        </li>
       </ul>
     </div>
   </div>
 
-  <!-- Modal -->
-<!--   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-    </div>
-     
-
-  </div> -->
   <%= yield %>
 
 </body>

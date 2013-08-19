@@ -1,0 +1,13 @@
+<%= form_for @label do |f| %>
+
+<p class='name_field'>
+  Name: <%= text_field_tag :name %>
+</p>
+
+<%= form_for @offer do |f| %>
+  <%= f.label :version, 'Version' %>:
+  <%= f.text_field :version %><br />
+  <%= f.label :author, 'Author' %>:
+  <%= f.text_field :author %><br />
+  <%= f.submit %>
+<% end %>

@@ -7,9 +7,11 @@ actionmailer_jango_config = HashWithIndifferentAccess.new(YAML.load(File.read(Fi
 #current_jango_config = all_jango_config[Rails.env] 
 #now do something with this current_oauth_config variable
 
-puts "======================================================================="
+puts
+puts "=========================================================================="
 puts "Loading actionmailer_jango_config"
-puts "======================================================================="
+puts "=========================================================================="
+puts
 
 ENV['JANGO_USERNAME'] = actionmailer_jango_config[:development][:username]
 ENV['JANGO_PASSWORD'] = actionmailer_jango_config[:development][:password]
