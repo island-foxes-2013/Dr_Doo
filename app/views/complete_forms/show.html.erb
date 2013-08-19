@@ -1,16 +1,23 @@
-<div class ='complete_form'>
-  <%= @myform.fields.each do |field|
+<div class='form_block'>
+  <div class='well'>
+    <h2><%= @form.title %></h2>
+    <% if @form_answers %>
 
-  <div class="navbar">
-    <div class="navbar-inner">
-      <ul class="nav">
-        <%= sections.each do %>
-        <li class="active"><a href="#"><%= section.name %></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#">Section 2</a></li>
-        <% end >
-      </ul>
-    </div>
+                   
+      <%# TODO-JW: The non-RESTful approach would be to use a single
+                   form_tag and text_field_tag and label_tag helpers
+                   for each answer, then submit all to 
+                   'answers#save_answers_for_form' (see routes file
+                   for more info) %>
+      <%= form_tag complete_form_save_all_answers_path(@form), method: 'post'  do %>
+      <% @form_answers.each do |answer| %>
+        <div class='field_tag'>
+            <%= label_tag :value, answer.first, {class: 'field_tag'} %>
+            <%= text_field_tag :value, answer.last  %>
+          <% end %>
+        </div>
+      <%= button_to "Submit Answers", { id: :'save_all_answers' } %>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
-<div>
+</div>

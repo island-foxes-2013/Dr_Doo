@@ -30,6 +30,7 @@ gem 'rolify'
 gem 'actionmailer'
 
 group :test, :development do
+  gem 'meta_request'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'turn', '< 0.8.3'

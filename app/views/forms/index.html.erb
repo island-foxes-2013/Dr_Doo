@@ -2,15 +2,16 @@
 <div class='form_block'>
   <div class="well">
     <%= form_for @form do |f| %>
-      <%= f.submit 'Submit Form →', class: "btn btn-primary btn-large" %>
+      
       <h3><%= f.text_field :title, placeholder: 'title here' %></h3>
       <% if @form_elements %>
         <% @form_elements.each do |element| %>
           <input class="field <%= element.size %>"  type="text" name="<%= element.data_type %>[:<%= element.name %>]" data-id='<%= element.id %>' placeholder="<%= element.name.gsub('_'," ").capitalize %>">
         <% end %>
       <% end %>
-    <% end %>  
-  </div>
+</div>
+    <%= f.submit 'Submit Form →', class: "btn btn-primary btn-large" %>  
+   <% end %>
 </div>
   
 <div class='form_block selectables'>
