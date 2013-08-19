@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
   factory :form do
-    name { "Privacy Policy" }
+    title { "Privacy Policy" }
   end
 end
