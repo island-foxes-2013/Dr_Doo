@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/view.rb": [
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/view.rb": [
         1,
         null,
         null,
@@ -14,7 +14,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/user.rb": [
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/user.rb": [
         1,
         null,
         null,
@@ -26,16 +26,53 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/application_controller.rb": [
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/helpers/application_helper.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/helpers/complete_forms_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/helpers/forms_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/controllers/complete_forms_controller.rb": [
         1,
         1,
         null,
-        1,
+        null,
         1,
         null,
         null,
@@ -43,58 +80,49 @@
         0,
         null,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/helpers/application_helper.rb": [
         1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/helpers/forms_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/forms_controller.rb": [
-        1,
+        null,
         null,
         1,
         null,
+        null,
         1,
+        null,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/controllers/forms_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null,
         1,
         0,
         0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/form.rb": [
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/form.rb": [
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/controllers/home_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/booleananswer.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/dateanswer.rb": [
         1,
         1,
         1,
@@ -103,54 +131,73 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/field.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/integeranswer.rb": [
-        1,
-        1,
-        1,
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/controllers/home_controller.rb": [
         1,
         null,
         1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/label.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/provider.rb": [
-        1,
-        1,
+        8,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Dr_Doo/app/models/stringanswer.rb": [
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/mailers/notifications.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/answer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/element.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/field.rb": [
+        1,
+        1,
         1,
         1,
         1,
         null,
+        null
+      ],
+      "/Users/jeffrey/dev/dbc/foxes-final/Dr_Doo/app/models/person.rb": [
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1376766402
+    "timestamp": 1376937720
   },
   "Cucumber Features": {
     "coverage": {
