@@ -21,8 +21,8 @@ DrDoo::Application.configure do
   address:              'relay.jangosmtp.net',
   port:                 587,
   domain:               'example.com',
-  user_name:            JANGO_USERNAME,
-  password:             JANGO_PASSWORD,
+  # user_name:            JANGO_USERNAME,
+  # password:             JANGO_PASSWORD,
   authentication:       'plain',
   enable_starttls_auto: true  }
 

@@ -3,7 +3,7 @@ class CreateFields < ActiveRecord::Migration
     create_table :fields do |t|
     	t.belongs_to :form
     	t.belongs_to :element
-    	t.string :name
+    	t.string :label
 
       t.timestamps
     end
