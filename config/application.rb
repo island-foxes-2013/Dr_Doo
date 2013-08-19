@@ -66,5 +66,16 @@ module DrDoo
     config.assets.version = '1.0'
 
     config.filter_parameters += [:password, :password_confirmation]
+
+    # These configurations options have been moved from development.rb
+    # Such that they run after the environment variables have been set from the initiator
+    config.action_mailer.smtp_settings = {
+      address:              'relay.jangosmtp.net',
+      port:                 25,
+      domain:               'example.com',
+      user_name:            ENV['JANGO_USERNAME'],
+      password:             ENV['JANGO_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true  }
   end
 end
