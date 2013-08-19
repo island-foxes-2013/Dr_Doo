@@ -17,7 +17,7 @@ class Notifications < ActionMailer::Base
     mail(to: @form_owner.email, subject: "#{@form_owner.email}, you've sent #{@form_recipient.email} your #{@form.name} form to complete!")
   end
 
-  def complete_form_notification(form_owner, form_recipient, form
+  def complete_form_notification(form_owner, form_recipient, form)
     @form = form
     @form_owner = form_owner
     @form_recipient = form_recipient
