@@ -3,17 +3,20 @@ class CompleteFormsController < ApplicationController
   end
 
   def save_all_answers
-    # p params.inspect
- # Answer.transaction do |t|
+    p '%' * 80
+    p params[:answers]
+    Answer.transaction do |t|
     # normal ActiveRecord code to create new answers
-    # params[:answers].each do |a|
-    # Answer.create!(a)
-    # end
- # end
+
+      params[:answers].each do |a|
+        Answer.create!(a)
+      end
+    end
+    redirect_to forms_path
   end
 
   def show
-    @form = Form.find(params[:id])
+    @form = Form.find(2) #(params[:id])
     # user = User.find(1)
     # @form = User.forms.first
     @form_answers = @form.answers.first.value
@@ -38,4 +41,5 @@ class CompleteFormsController < ApplicationController
 
   def destroy
   end
+
 end

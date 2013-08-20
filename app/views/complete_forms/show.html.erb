@@ -22,8 +22,8 @@
       <%= form_tag complete_form_save_all_answers_path(@form), method: 'post'  do %>
       <% @form_answers.each do |answer| %>
         <div class='field_tag'>
-            <%= label_tag :value, answer.first, {class: 'field_tag'} %>
-            <%= text_field_tag :value, answer.last  %>
+            <%= label_tag answer.first %>
+            <input type='text' name='answers[]<%= answer.first %>' >
           <% end %>
         </div>
       <%= button_to "Submit Answers", { id: :'save_all_answers' } %>

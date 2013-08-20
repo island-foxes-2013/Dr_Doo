@@ -5,4 +5,5 @@ class Answer < ActiveRecord::Base
 	belongs_to :form
 
   validates :user_id, :form_id, :field_id, :value, presence: true
+  attr_accessible :value
 end
