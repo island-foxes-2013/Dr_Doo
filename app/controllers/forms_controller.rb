@@ -3,9 +3,9 @@ class FormsController < ApplicationController
   #          only to users who have authenticated, no?
 
 	def index
-		@field = Field.new
-		@form = Form.new
-    @user = User.last
+    @user = User.find(1)
+    @user_contact_info = Form.find(14).answers.first.value
+    
 	end
 
   def show
@@ -18,6 +18,10 @@ class FormsController < ApplicationController
     @form_elements = Element.all
     @field = Field.new
     @form = Form.new
+  end
+
+  def create_or_update_contact_info
+    params inspect
   end
 
   def create

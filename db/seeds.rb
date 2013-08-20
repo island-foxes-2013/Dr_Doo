@@ -25,7 +25,7 @@ User.all.each do |user|
 end
 # User 1 Form
 
-user1.forms.create(user_id: user.id, title: 'User Info')
+
 # Create fields associated with each created form.  This will select from a random number or elements from the default values.
 Form.all.each do |form|
 	rand(8..15).times do
@@ -33,6 +33,33 @@ Form.all.each do |form|
 	  form.fields.create(element_id: element.id, label: element.label)
 	end
 end
+
+user_profile = ['full_name', 'email', 'primary_phone', 'secondary_phone', 'fax', 'street_address', 'city', 'state', 'zip']
+user_info = []
+Element.all.each do |element|
+	user_profile.each do |profile|
+		if element.label == profile
+			user_info << element
+		end
+  end
+end
+
+form = Form.create(user_id: 1, title: 'User Contact Info')
+
+user_info.each do |element|
+	form.fields.create(element_id: element.id, label: element.label)
+end
+
+user_profile_form = Form.find_by_title('User Contact Info')
+
+	value = { }
+		user_profile_form.fields.each do |field|
+			boolean_type = [true, false]
+			model_values = { string: Faker::Lorem.word, boolean: boolean_type.sample, integer: Faker::Number.digit, date: Date.today }
+      value[field.label] = model_values[field.element.data_type.to_sym]
+    end
+		user_profile_form.answers.create(field_id: 1, user_id: 1, value: value )
+
 
 # The next methods are for creating answers to specific forms
 # def randomdate

@@ -13,7 +13,8 @@
     <%= form_tag form_create_or_update_contact_info_path(14), method: 'post'  do %>
         <% @user_contact_info.each do |answer| %>
           <div class='field_tag'>
-          <h6 class='pull right'><%= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
+          <h6 class='pull right'>
+              <%= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
               <%= text_field_tag :value, answer.last  %>
          </h6>
         <% end %>
@@ -79,3 +80,13 @@
 >>>>>>> working on forms#index
     <% end %>
   </div>
+=======
+    <%user.forms.each do |form| %>
+      <h6><%= form.title %>
+       <%= link_to 'Edit'  
+      </h6>
+    <% end %>
+  </div>
+</div>
+
+>>>>>>> added User Info and notfications place holder

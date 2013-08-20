@@ -1,0 +1,33 @@
+.profile {
+   postion: fixed;
+}
+.notifications {
+  position: absolute;
+  padding: 10px 19px 5px 19px;
+  width: 450px;
+  height: 150px;
+  top: 150px;
+  left: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
+
+.user_info {
+  position: absolute;
+  padding: 10px 19px 10px 19px;
+  width: 450px;
+  height: 100px;
+  top: 125px;
+  left: 500px;
+}
+
+h6 {
+   padding: 0px;
+   margin: 0px;
+}
+
+.user_forms {
+  position: absolute;
+  top: 200px;
+  left: -480px;
+}
