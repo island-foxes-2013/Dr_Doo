@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
 	has_many :forms
 
   validates :name, :email, :password, presence: true
+
 	
 end
