@@ -42,5 +42,7 @@ class FormsController < ApplicationController
 
   def edit
     @form = Form.find(params[:id])
+    @form_elements = Element.all
+    @field = Field.new
   end
 end
