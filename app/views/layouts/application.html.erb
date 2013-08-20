@@ -3,20 +3,22 @@
 <head>
 
   <title>DrDoo</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag "bootstrap", :media => 'all'%>
-  <%= javascript_include_tag "bootstrap" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
 
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+
 
 </head>
 
 <body>
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">doolittle</a>
+      <%= link_to "doolittle", root_path, method: :get, class: "brand" %>
       <ul class="nav pull-right">
         <li class="active"><a href="#">Home</a></li>
         <% if user_signed_in? %>
@@ -29,20 +31,12 @@
         <%= link_to "Sign Up", new_user_registration_path %></li>
 
         <% end %>
-        <li>
-          <!-- <a href="#myModal" role="button" data-toggle="modal">Launch demo modal</a> -->
-        </li>
       </ul>
     </div>
   </div>
 
-  <!-- Modal -->
-<!--   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-    </div>
-     
-  </div> -->
   <%= yield %>
 
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

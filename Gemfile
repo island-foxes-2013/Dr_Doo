@@ -12,7 +12,6 @@ gem 'activerecord-postgres-hstore'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -29,8 +28,10 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'actionmailer'
+gem 'bootstrap-sass'
 
 group :test, :development do
+  gem 'meta_request'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'turn', '< 0.8.3'
