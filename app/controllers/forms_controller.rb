@@ -4,7 +4,7 @@ class FormsController < ApplicationController
 
 	def index
     @user = User.find(1)
-    @user_contact_info = Form.find(14).answers.first.value
+    @user_contact_info = Form.find(10).answers.first.value
     
 	end
 

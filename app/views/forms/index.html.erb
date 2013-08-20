@@ -30,66 +30,9 @@
        <%# link_to 'Delete', form_path(@form), :remote => true, :method => :delete, :confirm => 'Are you Sure?' %> 
       </h6>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h6><%=user.name %></h6>
-  <h6><%=user.email %></h6>
-  <h6><%=user.phone %></h6>
-  <h6><%=user.fax %></h6>
-  <h6><%=user.address.street %></h6>
-  <h6><%=user.address.city %></h6>
-  <h6><%=user.address.state %></h6>
-  <h6><%=user.address.zip%></h6>
-</div>
-<div class='user_forms'>
-  <h4 class="heading heading-2">Your Forms</h4>
-    <%user.forms.each do |form| %>
-   <li><%=link_to "<%= user.form %>", user.form </li>
-   <li><%= link_to "send -open up send to user modal" send_to_patient_route %></li>
-   <li><%= link_to "Edit",  forms_edit_path(id: user.id, form_id: form.id) %></li>
-     <li><%= link_to "Delete",  forms_path(id: user.id, form_id: form.id), confirm: 'Are you sure?', method: :delete %></li>
->>>>>>> working on forms#index
     <% end %>
   </div>
-=======
-    <%user.forms.each do |form| %>
-=======
->>>>>>> user forms added
-      <h6><%= form.title %>
-       <%#link_to 'form.title', edit_form_path(@form) %> 
-       <%# link_to 'Delete', form_path(@form), :remote => true, :method => :delete, :confirm => 'Are you Sure?' %> 
-      </h6>
-    <% end %>
-  </div>
-</div>
 
->>>>>>> added User Info and notfications place holder
+    
+
+
