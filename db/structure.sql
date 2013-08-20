@@ -50,7 +50,6 @@ CREATE TABLE answers (
     id integer NOT NULL,
     form_id integer,
     user_id integer,
-    field_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     value hstore
@@ -465,3 +464,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130819031542');
 INSERT INTO schema_migrations (version) VALUES ('20130820044550');
 
 INSERT INTO schema_migrations (version) VALUES ('20130820174414');
+
+INSERT INTO schema_migrations (version) VALUES ('20130820193939');

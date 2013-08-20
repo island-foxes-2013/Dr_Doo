@@ -25,10 +25,8 @@ DrDoo::Application.routes.draw do
   #     Answer.create(a)
   #   end
   # end
-  resources :complete_forms do
-    post '/save_all_answers', to: 'complete_forms#save_all_answers'
-    put '/update_all', to: 'complete_forms#update_all', as: 'update_all'
-  end
+
+  resources :complete_forms, only: [:show, :edit, :update]
 
   authenticated :user do
     root to: 'forms#index'
