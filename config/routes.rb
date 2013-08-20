@@ -29,6 +29,11 @@ DrDoo::Application.routes.draw do
     post '/save_all_answers', to: 'complete_forms#save_all_answers'
     put '/update_all', to: 'complete_forms#update_all', as: 'update_all'
   end
+
+  authenticated :user do
+    root to: 'forms#index'
+  end
+
   root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
