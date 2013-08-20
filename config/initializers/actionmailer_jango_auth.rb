@@ -3,7 +3,7 @@ require "yaml"
 puts
 puts "=========================================================================="
 puts "Loading actionmailer_jango_config"
-puts "          If errors occur, you may be missing the jango.yml"
+puts "           If errors occur, you may be missing the jango.yml"
 puts "                                           This file is not tracked by git"
 puts "=========================================================================="
 puts
