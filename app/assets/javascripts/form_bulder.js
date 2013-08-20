@@ -38,7 +38,7 @@ $(function() {
   $('.field_type').draggable(draggableOptions(true));
 
   $('.form_field_catcher').droppable({
-    accept: '.ui-draggable',
+    accept: '.field_type',
     drop: function(event, ui){
       var $newUiDraggable = ui.draggable.clone();
       var position = {

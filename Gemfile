@@ -21,10 +21,8 @@ end
 
 gem 'faker'
 
-#gem 'jquery-rails'
-#gem 'jquery-ui-rails'
+gem 'jquery-rails'
 
-gem "gridster-rails", "~> 0.1.0.1"
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
