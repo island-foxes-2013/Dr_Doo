@@ -48,11 +48,13 @@ input {
 
 .added {
   padding: 2px !important;
-  position: absolute;
-  /*
   position: static;
   display: inline-block;
-  */
+}
+
+.row_cont {
+  height: 60px;
+  width: 100%;
 }
 
 /*.name {

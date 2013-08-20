@@ -16,34 +16,34 @@ $(function() {
 
 // var dropped = false;
 
- $(".item").draggable({
+ // $(".item").draggable({
      
-     helper: function(){
-        $copy = $(this).clone();
-        return $copy;
-     },
+ //     helper: function(){
+ //        $copy = $(this).clone();
+ //        return $copy;
+ //     },
 
-        });
+ //        });
 
-  $(".well").droppable({
-    accept: '.item',
-     drop: function(event, ui) {
-       $(this).append($(ui.draggable).clone())
-       $(".well .item").addClass("added_drop");
-       $(".added").removeClass("item ui-draggable");
-          $('.added').sortable();
+ //  $(".well").droppable({
+ //    accept: '.item',
+ //     drop: function(event, ui) {
+ //       $(this).append($(ui.draggable).clone())
+ //       $(".well .item").addClass("added_drop");
+ //       $(".added").removeClass("item ui-draggable");
+ //          $('.added').sortable();
     
-        // $(".added").draggable({
-        //         // containment: 'parent',
-        //         // grid: [150,150]
-        //     });
+ //        // $(".added").draggable({
+ //        //         // containment: 'parent',
+ //        //         // grid: [150,150]
+ //        //     });
   
        
-            // dropped = true;
-            // $.ui.ddmanager.current.cancelHelperRemoval = true;
-            // ui.helper.appendTo(this);
-    }
-  })
+ //            // dropped = true;
+ //            // $.ui.ddmanager.current.cancelHelperRemoval = true;
+ //            // ui.helper.appendTo(this);
+ //    }
+ //  })
 
     
  // });

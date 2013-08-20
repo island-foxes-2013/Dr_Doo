@@ -1,6 +1,5 @@
 <div class='form_block well'>
   <div class='form_field_catcher'>
-     
   </div>
 </div>
   
@@ -22,11 +21,11 @@
     revert: 'invalid',
     helper: 'clone',
     containment: '.form_field_catcher',
-    scroll: false,
+    // scroll: false,
 
-    grid: [30, 30],
+    grid: [1, 30],
     snap: true,
-    // snapMode: "outer",
+    snapMode: "outer",
     snapTolerance: 30
   });
 
@@ -38,36 +37,26 @@
 
       $(newlyDroppedButter).removeClass("field_type").addClass("added")
       $(this).append(newlyDroppedButter);
-
       //debugger
 
-      $(newlyDroppedButter).css("top", Math.floor(ui.position.top / 10) * 10);
-      $(newlyDroppedButter).css("left", Math.floor(ui.position.left / 10) * 10);
+      // $(newlyDroppedButter).css("top", Math.floor(ui.position.top / 10) * 10);
+      // $(newlyDroppedButter).css("left", Math.floor(ui.position.left / 10) * 10);
 
       $(newlyDroppedButter).draggable({ 
-        // connectToSortable: newlyDroppedButter,
+        connectToSortable: newlyDroppedButter,
         containment: '.form_field_catcher',
         scroll: false,
-        // obstacle: '.ui-draggable',
-        // preventCollision: true,
-        grid: [30, 30],
+        grid: [10, 30],
         snap: true,
-        // snapMode: "outer",
         snapTolerance: 30
       });
-// $(newlyDroppedButter).position({
-//   my: 'left top',
-//   at: 'right top',
-//   of: otherElement,
-//   collision: 'flipfit'
-// });
     }
   })
 
-  $('.added').dblclick(function(){
-    console.log()
-    $(this).remove();
-  });
+  // $('.added').dblclick(function(){
+  //   console.log()
+  //   $(this).remove();
+  // });
 
 </script>
 
