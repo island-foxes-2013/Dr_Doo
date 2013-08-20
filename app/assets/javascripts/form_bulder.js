@@ -11,8 +11,8 @@ $(function() {
       $(newUiDraggable).removeClass("field_type").addClass("added");
       $(this).append(newUiDraggable);
 
-      $(newUiDraggable).css("top", Math.floor(ui.position.top / 10) * 10);
-      $(newUiDraggable).css("left", Math.floor(ui.position.left / 10) * 10);
+      // $(newUiDraggable).css("top", Math.floor(ui.position.top / 10) * 10);
+      // $(newUiDraggable).css("left", Math.floor(ui.position.left / 10) * 10);
       $(newUiDraggable).draggable(draggableOptions(true));
 
       $(newUiDraggable).dblclick(function(){

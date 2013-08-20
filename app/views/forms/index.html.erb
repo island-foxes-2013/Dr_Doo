@@ -1,8 +1,11 @@
 <div class ='profile'>    
+  <h1>&nbsp;Welcome <%=@user.name %>! <small><br>&nbsp;Manage your forms</small></h1>
+ 
+</div>
+  
 
-<h1>&nbsp;Welcome <%=@user.name %>! <small><br>&nbsp;Create a new form or send a completed one</small></h1>
-<div class = 'pull-right'><a href="#">Logo here</a></div>
   <div class="notifications">
+
     <% if @request_notifications.empty? && @send_notifications.empty? %>
       <h4 class="heading">You have no new notifications.</h4>
     <% else %>
@@ -10,49 +13,50 @@
     <% end %>
     <% if !@request_notifications.empty? %>
       <% @request_notifications.each do |notify| %>
-      <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
-      <!-- <a class="dom-link pull-right dom-link-1" href="#">More</a> -->
+        <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
       <% end %>
     <% end %>
     <% if !@send_notifications.empty? %>
       <% @send_notifications.each do |notify| %>
-      <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
-      <!-- <a class="dom-link pull-right dom-link-1" href="#">More</a> -->
+        <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
       <% end %>
     <% end %>
   </div>
+
   <div class = 'user_info'>  
     <h4>User Info</h4>
     <!-- <%# form_tag '/forms/20', method: 'put'  do %> fix this to display current_user --> 
         <%# @user_contact_info.each do |answer| %>
           <div class='field_tag'>
-          <h6 class='pull right'>
+        
               <%#= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
               <%#= text_field_tag :value, answer.last  %>
-         </h6>
+
         <%# end %>
       </div>
 
-      <%= button_to "Update Info", { id: :'create_or_update_contact_info' } %>
     <%# end %>
   </div>
 
   <div class='user_forms'>
-    <h4 class=>My Forms</h4>
+    <h4>Forms I've Taken</h4>
+    <hr class='hr_line'/>
     <% @user.forms.each do |form| %>
-      <h6><%= form.title %>
-       <%= link_to 'Edit', edit_complete_form_path(form) %> 
-      </h6>
+    <div class='list_forms'>
+      <h6><%= form.title %></h6> 
+      <%= link_to 'Edit', edit_complete_form_path(form) %>
+    </div>
     <% end %>
     <br>
-    <h4 class=>My Created Forms</h4>
+    <h4>Forms I created</h4>
+     <hr class='hr_line'/>
     <% @user.forms.each do |form| %>
-      <h6><%= form.title %>
+    <div class='list_forms'>
+      <h6><%= form.title %></h6>
        <%= link_to 'Edit', edit_form_path(form) %>
        <%= link_to 'Delete', form_path(form), :method => :delete, :confirm => 'Are you Sure?'  %> 
-      </h6>
+      </div>
     <% end %>
     <br>
-    <%= link_to "New Form -->", new_form_path, class: "btn btn-primary btn-large"  %>
   </div>
-</div>
+
