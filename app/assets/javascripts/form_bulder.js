@@ -1,27 +1,44 @@
-function draggableOptions(withinCatcher) {
+function draggableOptions(isFieldType) {
   var options = {
     scroll: false,
+
+    // snap to grid
     grid: [30, 30],
     snap: true,
     snapTolerance: 1,
+
+    // jquery-ui-draggable-collision
+    restraint: '.form_field_catcher',
     preventCollision: true,
-    obstacle: ".added"
+    preventProtrusion: true,
+    obstacle: '.obstacle',
+    start: function(e, ui) {
+      ui.helper.removeClass('obstacle');
+    },
+    stop: function(e, ui) {
+      ui.helper.addClass('obstacle');
+    }
   };
-  if (withinCatcher) {
-    options.containment = '.form_field_catcher';
-  } else {
-    options.revert = 'invalid';
-    options.helper = 'clone';
+
+  if (isFieldType) {
+    $.extend(
+      options,
+      {
+        revert: 'invalid',
+        helper: 'clone'
+      }
+    );
   }
+
   return options;
 }
 
 $(function() {   
 
-  $('.field_type').draggable(draggableOptions(false));
+  $('.field_type').draggable(draggableOptions(true));
 
   $('.form_field_catcher').droppable({
-    accept: '.field_type',
+    accept: '.ui-draggable',
     drop: function(event, ui){
       var $newUiDraggable = ui.draggable.clone();
       var position = {
@@ -29,15 +46,14 @@ $(function() {
         top: Math.floor( (ui.position.top - this.offsetTop) / 10 ) * 10
       };
 
-      console.log('droppable position (relative to page):', {left: this.offsetLeft, top: this.offsetTop});
-      console.log('drop position (relative to page):', {left: ui.position.left, top: ui.position.top});
-      console.log('drop position (relative to droppable):', position);
+      // console.log('droppable position (relative to page):', {left: this.offsetLeft, top: this.offsetTop});
+      // console.log('drop position (relative to page):', {left: ui.position.left, top: ui.position.top});
+      // console.log('drop position (relative to droppable):', position);
 
-      $newUiDraggable.removeClass("field_type").addClass("added");
+      $newUiDraggable.removeClass("field_type").addClass("added").addClass("obstacle");
       $(this).append($newUiDraggable);
       $newUiDraggable.css(position);
-      console.log('drop position (relative to droppable):', {left: $newUiDraggable.css("left"), top: $newUiDraggable.css("top")});
-      $newUiDraggable.draggable(draggableOptions(true));
+      $newUiDraggable.draggable(draggableOptions(false));
 
       $newUiDraggable.dblclick(function(){
         $(this).remove();

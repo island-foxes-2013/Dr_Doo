@@ -24,7 +24,7 @@
       <div class='field_type'>
         <%= label_tag element.label, nil, class: element.size %><br>
         <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
-        <%= hidden_field_tag 'fields][][element_id]', element.id %>
+        <%= hidden_field_tag 'fields[][element_id]', element.id, id: nil %>
       </div>
     <% end %>
   <% end %>

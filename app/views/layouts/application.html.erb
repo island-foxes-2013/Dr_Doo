@@ -3,12 +3,10 @@
 <head>
 
   <title>DrDoo</title>
+  <link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+  <link href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css' rel='stylesheet'>
   <%= stylesheet_link_tag "application", :media => "all" %>
-
   <%= csrf_meta_tags %>
-<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-
 </head>
 
 <body>
@@ -30,6 +28,8 @@
 
   <%= yield %>
 
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
   <%= javascript_include_tag "application" %>
 </body>
 </html>
