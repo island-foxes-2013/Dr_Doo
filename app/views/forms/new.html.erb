@@ -1,5 +1,8 @@
 
 <div class="navbar form_subnav">
+  <div id='buttons'>
+ 
+</div>
   <div class="navbar-inner">
     <ul class="nav">
       <li class="active"><a href="#">Section 1</a></li>
@@ -9,6 +12,7 @@
 </div>
 
 <div class='form_block well'>
+
   <%= form_for(@forms, class: 'form_field_catcher') do |f| %>
     <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large', id: 'create_form_submit' %><br><br>
       <div class='title_tag'>
@@ -35,3 +39,4 @@
  <% end %>
 
 </div>
+

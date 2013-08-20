@@ -3,9 +3,12 @@ class FormsController < ApplicationController
   #          only to users who have authenticated, no?
 
 	def index
-    @user = User.find(1)
-    @user_contact_info = Form.find(10).answers.first.value
-    
+    if current_user
+      @user = current_user
+      @user_contact_info = Form.find(@user.id).answers.first.value
+    else
+      redirect_to root_path
+    end
 	end
 
   def show

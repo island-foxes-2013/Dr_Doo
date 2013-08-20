@@ -20,6 +20,10 @@
   left: 50px !important;
   top: -116px !important;
 }
+#new_form_submit {
+  position: relative !important;
+  left: 10% !important;
+}
 #form_submit {
   float: right;
 }

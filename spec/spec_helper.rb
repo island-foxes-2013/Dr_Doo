@@ -36,8 +36,14 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
-
 end
 
+def log_in(user)
+  visit root_path
+  click_link "Sign in"
+  fill_in "Email", with: user.email
+  fill_in "Password", with: user.password
+  click_button "Login"
+end
 
-
+Capybara.javascript_driver = :selenium

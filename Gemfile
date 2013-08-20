@@ -36,12 +36,12 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'turn', '< 0.8.3'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'guard-rspec'
   gem 'selenium-webdriver'
   gem 'growl'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'capybara'
 end
 
 
