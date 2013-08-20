@@ -1,8 +1,5 @@
 
 <div class="navbar form_subnav">
-  <div id='buttons'>
- 
-</div>
   <div class="navbar-inner">
     <ul class="nav">
       <li class="active"><a href="#">Section 1</a></li>
@@ -12,20 +9,29 @@
 </div>
 
 <div class='form_block well'>
-  <div class='form_field_catcher'>
-    <%= form_tag('/')
-     <%= button_to "submit form", @form, remote: true, id: 'new_form_submit', class: "btn btn-success"%>
-  </div>
+  <%= form_for(@forms, class: 'form_field_catcher') do |f| %>
+    <%= f.submit 'Submit Form →', class: 'btn btn-primary btn-large', id: 'create_form_submit' %><br><br>
+      <div class='title_tag'>
+        <%=  f.label :title, 'Title', class: 'span3' %><br>
+      <%= f.text_field :title, placeholder: 'Enter New Form Title Here' %>
+
+    </div><br>
 </div>  
 
+
 <div class='form_block selectables'>
-  <% if @form_elements %>
-  <% @form_elements.each do |element| %>
-  <div class='field_type'>
-    <%= label_tag element.label, nil, class: element.size %><br>
-    <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
-    <%= hidden_field_tag 'fields[][element_id]', element.id %>
-    <%= hidden_field_tag 'fields[][name', element.label %></div>
+    
+    <%= @form_elements.each do |element| %>
+    <%= f.fields_for :fields do |builder| %>
+<%= :fields %>
+      <div class='field_type'>
+        <%= builder.label :label, element.label, class: element.size %><br>
+        <%= builder.text_field nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
+       
+      </div>
+    
     <% end %>
-    <% end %>
-  </div>
+ <% end %>
+ <% end %>
+
+</div>

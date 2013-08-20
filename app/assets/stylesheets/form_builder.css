@@ -15,9 +15,10 @@
   width: 80%;
 }
 
-#new_form_submit {
+#create_form_submit {
   position: relative !important;
-  left: 10% !important;
+  left: 50px !important;
+  top: -116px !important;
 }
 #form_submit {
   float: right;
@@ -46,6 +47,7 @@ input {
   padding: 2px !important;
   position: static;
   display: inline-block;
+  top: -80px !important;
 }
 
 .row_cont {
@@ -57,6 +59,11 @@ input {
   height: 20px;
   min-width: 50px;
   border: 1px solid #e3e3e3;
+}
+
+.title_tag {
+  position: relative;
+  top: -80px !important;
 }
 
 

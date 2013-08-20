@@ -9,15 +9,15 @@ class FormsController < ApplicationController
 	end
 
   def show
-    user = User.find(1)
-    @form = user.forms.first
-    @form_answers = @form.answers
+    # user = User.find(1)
+    # @form = user.forms.first
+    # @form_answers = @form.answers
   end
 
   def new
     @form_elements = Element.all
     @field = Field.new
-    @form = Form.new
+    @forms = Form.new
   end
 
   def create_or_update_contact_info
@@ -25,24 +25,32 @@ class FormsController < ApplicationController
   end
 
   def create
-    @form = Form.new(params[:form])
+      p 'here I am _____________________________________'
+      p params[:form]
+      p params[:form][:title]
 
-    # TODO-JW-BEGIN: ---------------->8 snip, snip
-    #   this code could be eliminated if you use
-    #   accepts_nested_attributes_for on your model
-    fields = params[:fields]
-    fields.each do |field|
-      @form.fields.build(field)
-    end
-    # TODO-JW-END: ---------------->8 snip, snip
+    user = User.find(1)
+    @form = user.forms.create(params[:form])
 
-    if @form.save
-      # TODO-JW: do something more meaningful here
-      render text: params.to_json
-    else
-      # TODO-JW: do something more meaningful here
-      render text: "ERROR!"
+     p params[:fields]['element_id']
+
+     p params[:fields]['element_label']
+
+    params[:fields].each do |field|
+      p field
+      # @form.fields.create(field)
     end
+    redirect_to form_path(@form)
+    # render json: { comment: "success" }
+
+
+    # if @form.save
+    #   # TODO-JW: do something more meaningful here
+    #   render text: params.to_json
+    # else
+    #   # TODO-JW: do something more meaningful here
+    #   render text: "ERROR!"
+    # end
     # user = User.first
     # form = user.forms.create(params[:form])
     # params[:fields].each do |field|
