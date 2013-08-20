@@ -4,11 +4,12 @@
   padding: 19px;
 
 }
+
 .form_field_catcher {
   margin: 0;
   min-height: 300px !important;
+  position: relative;
 }
-
 .form_block {
   margin-right: auto;
   margin-left: auto;
@@ -45,7 +46,6 @@
 .field_type {
   display: inline-block;
 }
-
 label {
   margin: 0 !important;
   margin-left: 2px !important;
@@ -56,12 +56,9 @@ input {
   display: inline !important;
 }
 
-
 .added {
   padding: 2px !important;
-  position: static;
-  display: inline-block;
-  top: -80px !important;
+  position: absolute;
 }
 
 .row_cont {

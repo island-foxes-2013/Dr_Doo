@@ -9,12 +9,13 @@
 </div>
 
 <div class='form_block well'>
-  <%= form_tag('/forms', method: :post, class: 'form_field_catcher' )%>
+  <%= form_tag('/forms', method: :post, class: 'form_field_catcher') do %>
     <%= submit_tag 'Submit Form →', class: 'btn btn-primary btn-large', id: 'create_form_submit' %><br><br>
-      <div class='title_tag'>
-        <%=  label_tag 'form', 'Title', class: 'span3' %><br>
+    <div class='title_tag'>
+      <%=  label_tag 'form', 'Title', class: 'span3' %><br>
       <%= text_field_tag 'form[title]', nil, placeholder: 'Enter New Form Title Here' %>
-    </div><br>
+    </div>
+  <% end %>
 </div>  
 
 <div class='form_block selectables'>
