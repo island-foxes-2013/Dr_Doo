@@ -5,7 +5,8 @@ class FormsController < ApplicationController
 	def index
     if current_user
       @user = current_user
-      @user_contact_info = Form.find(@user.id).answers.first.value
+      @request_notifications = Notification.where(recipient_email: @user.email, completed: false)
+      @send_notifications = Notification.where(sender_id: @user.id, completed: false)
     else
       redirect_to root_path
     end
