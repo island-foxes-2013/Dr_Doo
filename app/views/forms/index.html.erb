@@ -82,8 +82,11 @@
   </div>
 =======
     <%user.forms.each do |form| %>
+=======
+>>>>>>> user forms added
       <h6><%= form.title %>
-       <%= link_to 'Edit'  
+       <%#link_to 'form.title', edit_form_path(@form) %> 
+       <%# link_to 'Delete', form_path(@form), :remote => true, :method => :delete, :confirm => 'Are you Sure?' %> 
       </h6>
     <% end %>
   </div>

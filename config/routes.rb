@@ -10,7 +10,7 @@ DrDoo::Application.routes.draw do
     post '/create_or_update_contact_info', to: 'forms#create_or_update_contact_info'
   end
 
-  resources :complete_forms, except: [:index]
+  # resources :complete_forms, except: [:index]
 
   # TODO-JW: RESTful way, using AJAX to submit one form per answer
    # resources :answers, only: [:create, :update]
