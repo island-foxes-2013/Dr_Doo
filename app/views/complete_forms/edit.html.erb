@@ -19,14 +19,14 @@
                    for each answer, then submit all to 
                    'answers#save_answers_for_form' (see routes file
                    for more info) %>
-      <%= form_tag complete_form_save_all_answers_path(@form), method: 'post'  do %>
+      <%= form_tag complete_form_update_all_path(@form), method: 'put'  do %>
       <% @form_answers.each do |answer| %>
         <div class='field_tag'>
             <%= label_tag :value, answer.first, {class: 'field_tag'} %>
             <%= text_field_tag :value, answer.last  %>
           <% end %>
         </div>
-      <%= button_to "Submit Answers", { id: :'save_all_answers' } %>
+      <%= button_to "Update Answers", { id: :'update_all_answers' } %>
       <% end %>
     <% end %>
   </div>

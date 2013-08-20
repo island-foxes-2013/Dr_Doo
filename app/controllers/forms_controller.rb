@@ -32,4 +32,14 @@ class FormsController < ApplicationController
     end 
     redirect_to form_path(@form)
   end
+  
+  def destroy
+    @form = Form.find(params[:id])
+    @form.destroy
+    redirect_to forms_path
+  end
+
+  def edit
+    @form = Form.find(params[:id])
+  end
 end
