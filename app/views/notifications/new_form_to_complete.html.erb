@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= @form_recipient.email %>,</h1>
+    <h1><%= @form_recipient.name %>,</h1>
     <p>
-      <%=@form_owner.email %> has sent you a from to complete!<br/>
+      <%=@form_owner.name %> has sent you the form "<%=@form.title %>" to complete!<br/>
       Head on over to <%=@url %> now to get started.
     </p>
     <p>
