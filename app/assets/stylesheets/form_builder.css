@@ -12,9 +12,13 @@
 .form_block {
   margin-right: auto;
   margin-left: auto;
-  width: 90%;
+  width: 80%;
 }
 
+#new_form_submit {
+  position: relative !important;
+  left: 10% !important;
+}
 #form_submit {
   float: right;
 }
