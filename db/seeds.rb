@@ -1,6 +1,6 @@
 require 'faker'
 
-# Update this hash with more form elements as needed.  This hash is the pool of ALL possible feilds a form can be built with.
+# Update this hash with more form elements as needed.  This hash is the pool of ALL possible fields a form can be built with.
 default_values = {full_name: ['string', 'span4'], date_of_birth: ['date', 'span2'], eye_color: ['string', 'span2'], gender: ['string', 'span1'], 
 	weight: ['integer', 'span1'], height: ['integer', 'span1'], allergies: ["string", 'span10'], 
 	physician_name: ["string", 'span4'], pregnant: ["boolean", 'span2'], phone: ["integer", 'span3'], ssn: ['string', 'span2'], age: ['integer', 'span1'], 
