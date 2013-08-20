@@ -25,7 +25,6 @@
   display: inline-block;
 }
 
-
 #create_form_submit {
   position: relative !important;
   left: 50px !important;
@@ -80,8 +79,3 @@ input {
   position: relative;
   top: -80px !important;
 }
-
-
-
-
-

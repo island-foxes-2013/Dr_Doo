@@ -11,17 +11,14 @@
 
 </head>
 
-
-
-</head>
-
 <body>
   <div class="navbar">
     <div class="navbar-inner">
       <%= link_to "doolittle", root_path, method: :get, class: "brand" %>
       <ul class="nav pull-right">
-        <li class="active"><a href="#">Home</a></li>
         <% if user_signed_in? %>
+        <li><%= link_to "Create Form", new_form_path %></li>
+        <li><%= link_to "Profile", forms_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li id="create_li"><%= link_to "Sign In", new_user_session_path %></li>

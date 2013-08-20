@@ -11,9 +11,10 @@ $(function() {
       $(newUiDraggable).removeClass("field_type").addClass("added");
       $(this).append(newUiDraggable);
 
-      // $(newUiDraggable).css("top", Math.floor(ui.position.top / 10) * 10);
-      // $(newUiDraggable).css("left", Math.floor(ui.position.left / 10) * 10);
+      $(newUiDraggable).css("top", Math.floor(ui.position.top / 10) * 10);
+      $(newUiDraggable).css("left", Math.floor(ui.position.left / 10) * 10);
       $(newUiDraggable).draggable(draggableOptions(true));
+
       $(newUiDraggable).dblclick(function(){
         $(this).remove();
       });
@@ -22,7 +23,7 @@ $(function() {
   
   $('.form_field_catcher').submit(function(){
     $('.selectables').remove();
-  })
+  });
 
   // $('.form_field_catcher').on('ajax:success', function(e, data){
   //   console.log(data)
@@ -34,6 +35,7 @@ $(function() {
 });
 
 function draggableOptions(withinCatcher) {
+
   var options = {
     scroll: false,
     grid: [1, 30],

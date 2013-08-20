@@ -1,27 +1,27 @@
 <div class ='profile'>
-<h1>&nbsp;Welcome <%=@user.name %>! <small><br>&nbsp;Create a new form or send a completed one</small></h1>
-<div class = 'pull-right'><a href="#">Logo here</a></div>
-  <div class="notifications">
-    <h4 class="heading">You have new notifications!</h4>
-      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
-      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
-      <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
-      <a class="dom-link pull-right dom-link-1" href="#">More</a>
-  </div>
+  <h1>&nbsp;Welcome <%=@user.name %>! <small><br>&nbsp;Create a new form or send a completed one</small></h1>
+  <div class = 'pull-right'><a href="#">Logo here</a></div>
+    <div class="notifications">
+      <h4 class="heading">You have new notifications!</h4>
+        <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+        <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+        <h6 class="heading">User.name just returned form.title on form.updated_at</h6>
+        <a class="dom-link pull-right dom-link-1" href="#">More</a>
+    </div>
+
   <div class = 'user_info'>  
     <h4>User Info</h4>
-    <!-- <%# form_tag '/forms/20', method: 'put'  do %> fix this to display current_user --> 
-        <% @user_contact_info.each do |answer| %>
-          <div class='field_tag'>
-          <h6 class='pull right'>
-              <%= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
-              <%= text_field_tag :value, answer.last  %>
-         </h6>
-        <% end %>
-      </div>
+    <% @user_contact_info.each do |answer| %>
+      <div class='field_tag'>
+        <h6 class='pull right'>
+         <%= label_tag :value, answer.first.gsub('_',' ').capitalize , {class: 'field_tag'} %>
+         <%= text_field_tag :value, answer.last  %>
+        </h6>
+      </div>      
       <%= button_to "Update Info", { id: :'create_or_update_contact_info' } %>
     <% end %>
   </div>
+
   <div class='user_forms'>
     <h4 class=>My Forms</h4>
     <% @user.forms.each do |form| %>
@@ -39,5 +39,5 @@
     <% end %>
     <br>
     <%= link_to "New Form -->", new_form_path, class: "btn btn-primary btn-large"  %>
-</div>
+  </div>
 </div>
