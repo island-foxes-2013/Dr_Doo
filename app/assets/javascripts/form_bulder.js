@@ -1,21 +1,61 @@
-$(function() {
-   
+function draggableOptions(isFieldType) {
+  var options = {
+    scroll: false,
 
-  $('.field_type').draggable(draggableOptions(false));
+    // snap to grid
+    grid: [30, 30],
+    snap: true,
+    snapTolerance: 1,
+
+    // jquery-ui-draggable-collision
+    restraint: '.form_field_catcher',
+    preventCollision: true,
+    preventProtrusion: true,
+    obstacle: '.obstacle',
+    start: function(e, ui) {
+      ui.helper.removeClass('obstacle');
+    },
+    stop: function(e, ui) {
+      ui.helper.addClass('obstacle');
+    }
+  };
+
+  if (isFieldType) {
+    $.extend(
+      options,
+      {
+        revert: 'invalid',
+        helper: 'clone'
+      }
+    );
+  }
+
+  return options;
+}
+
+$(function() {   
+
+  $('.field_type').draggable(draggableOptions(true));
 
   $('.form_field_catcher').droppable({
     accept: '.field_type',
     drop: function(event, ui){
-      var newUiDraggable = ui.draggable.clone();
+      var $newUiDraggable = ui.draggable.clone();
+      var position = {
+        left: Math.floor( (ui.position.left - this.offsetLeft) / 10 ) * 10,
+        top: Math.floor( (ui.position.top - this.offsetTop) / 10 ) * 10
+      };
 
-      $(newUiDraggable).removeClass("field_type").addClass("added");
-      $(this).append(newUiDraggable);
+      // console.log('droppable position (relative to page):', {left: this.offsetLeft, top: this.offsetTop});
+      // console.log('drop position (relative to page):', {left: ui.position.left, top: ui.position.top});
+      // console.log('drop position (relative to droppable):', position);
 
-      $(newUiDraggable).css("top", Math.floor(ui.position.top / 10) * 10);
-      $(newUiDraggable).css("left", Math.floor(ui.position.left / 10) * 10);
-      $(newUiDraggable).draggable(draggableOptions(true));
+      $newUiDraggable.removeClass("field_type").addClass("added").addClass("obstacle");
+      $(this).append($newUiDraggable);
+      $newUiDraggable.css(position);
+      $newUiDraggable.draggable(draggableOptions(false));
 
-      $(newUiDraggable).dblclick(function(){
+      $newUiDraggable.dblclick(function(){
         $(this).remove();
       });
     }
@@ -32,23 +72,5 @@ $(function() {
   //   // $(this).parent().find('.comment_append').last().append('<hr />');
   //   // $('.comment_form textarea').val('');
   // });
+
 });
-
-function draggableOptions(withinCatcher) {
-
-  var options = {
-    scroll: false,
-    grid: [1, 30],
-    snap: true,
-    snapTolerance: 1,
-    preventCollision: true,
-    obstacle: ".added"
-  };
-  if (!withinCatcher) {
-    options.revert = 'invalid';
-    options.helper = 'clone';
-  } else {
-    options.containment = '.form_field_catcher';
-  }
-  return options;
-}
