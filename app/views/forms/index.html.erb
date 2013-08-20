@@ -26,11 +26,11 @@
     <h4 class=>Your Forms</h4>
     <% @user.forms.each do |form| %>
       <h6><%= form.title %>
-       <%#link_to 'form.title', edit_form_path(@form) %> 
-       <%# link_to 'Delete', form_path(@form), :remote => true, :method => :delete, :confirm => 'Are you Sure?' %> 
+       <%= link_to 'Edit', edit_complete_form_path(form) %> 
+       <%= link_to 'Delete', complete_form_path(form), :method => :delete, :confirm => 'Are you Sure?' %> 
       </h6>
     <% end %>
     <br>
-    <%= link_to "New Form -->", new_form_path {class="btn btn-primary btn-large" } %>
+    <%= link_to "New Form -->", new_form_path, class: "btn btn-primary btn-large"  %>
 </div>
 </div>

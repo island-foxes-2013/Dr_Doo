@@ -22,6 +22,8 @@ class CompleteFormsController < ApplicationController
 
   
   def edit
+    @form = Form.find(params[:id])
+    @form_answers = @form.answers.first.value
   end
 
   def put
