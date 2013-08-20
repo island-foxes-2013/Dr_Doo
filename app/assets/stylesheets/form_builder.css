@@ -15,6 +15,17 @@
   width: 80%;
 }
 
+.show_block {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+.show_field {
+  display: inline-block;
+}
+
+
 #create_form_submit {
   position: relative !important;
   left: 50px !important;
