@@ -1,45 +1,22 @@
 class CompleteFormsController < ApplicationController
-  def new
-  end
-
-  def save_all_answers
-    p '%' * 80
-    p params[:answers]
-    Answer.transaction do |t|
-    # normal ActiveRecord code to create new answers
-
-      params[:answers].each do |a|
-        Answer.create!(a)
-      end
-    end
-    redirect_to forms_path
-  end
-
   def show
-    @form = Form.find(2) #(params[:id])
-    # user = User.find(1)
-    # @form = User.forms.first
-    @form_answers = @form.answers.first.value
-   # my_form = current_user.forms.find(form.id)
+    @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
+    fields = @form_answer.form.fields
+    fields.each do |field|
+      @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
+    end
   end
 
   
   def edit
+    @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
     @form = Form.find(params[:id])
-    @form_answers = @form.answers.first.value
   end
 
-  def update_all
-    p params.inspect
- # Answer.transaction do |t|
-    # normal ActiveRecord code to create new answers
-    # params[:answers].each do |a|
-    # Answer.create!(a)
-    # end
- # 
+  def update
+    @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
+    @form_answer.value = params[:fields]
+    @form_answer.save
+    redirect_to complete_form_path(@form_answer.form)
   end
-
-  def destroy
-  end
-
 end
