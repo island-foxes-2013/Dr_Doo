@@ -36,6 +36,8 @@ class FormsController < ApplicationController
   
   def destroy
     @form = Form.find(params[:id])
+    @form_notifications = Notification.where(form_id: @form.id)
+    @form_notifications.destroy_all
     @form.destroy
     redirect_to forms_path
   end
