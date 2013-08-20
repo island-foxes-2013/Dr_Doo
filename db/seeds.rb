@@ -60,7 +60,7 @@ user_profile_form = Form.find_by_title('User Contact Info')
 			model_values = { string: Faker::Lorem.word, boolean: boolean_type.sample, integer: Faker::Number.digit, date: Date.today }
       value[field.label] = model_values[field.element.data_type.to_sym]
     end
-		user_profile_form.answers.create(field_id: 1, user_id: 1, value: value )
+		user_profile_form.answers.create(user_id: 1, value: value )
 
 
 # The next methods are for creating answers to specific forms
@@ -69,7 +69,6 @@ user_profile_form = Form.find_by_title('User Contact Info')
 # 	Date.new(rand(1950..2013),rand(1..12,), rand(1..29))
 # end
 
-3.times do
 	Form.all.each do |form|
 		user = User.all.sample
 		value = { }
@@ -78,6 +77,5 @@ user_profile_form = Form.find_by_title('User Contact Info')
 			model_values = { string: Faker::Lorem.word, boolean: boolean_type.sample, integer: Faker::Number.digit, date: Date.today }
       value[field.label] = model_values[field.element.data_type.to_sym]
     end
-		form.answers.create(field_id: 1, user_id: user.id, value: value )
+		form.answers.create(user_id: user.id, value: value )
 	end
-end
