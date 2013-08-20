@@ -1,8 +1,8 @@
 .selectables {
-  min-height: 300px;
   margin-top: 50px;
   border: 1px solid #e3e3e3;
   padding: 19px;
+
 }
 .form_field_catcher {
   margin: 0;
@@ -20,12 +20,7 @@
 }
 
 .field {
-  /*margin: 7px !important;*/
   margin: 4px 7px !important;
-}
-
-#submit {
-  float: right;
 }
 
 .field_type {
@@ -42,9 +37,6 @@ input {
   display: inline !important;
 }
 
-.column { height: 30px; float: left; padding-bottom: 30px; }
-.ui-sortable-placeholder { border: 1px solid green; visibility: visible !important; height: 50px !important; }
-  .ui-sortable-placeholder * { visibility: hidden; }
 
 .added {
   padding: 2px !important;
@@ -56,38 +48,6 @@ input {
   height: 60px;
   width: 100%;
 }
-
-/*.name {
-  width: 220px;
-  height: 20px;
-  background-color: blue;
-}
-
-.address {
-  width: 420px;
-  height: 20px;
-  background-color: yellow;
-}
-
-.age {
-  width: 100px;
-  height: 20px;
-  background-color: red;
-}
-
-.block {
-  width: 120px;
-  height: 20px;
-  background-color: orange;
-}*/
-
-/*.input {
-    padding: 2px;
-    background-color: blue;
-    display: inline-block;
-  position: relative;
-}*/
-
 
 .block {
   height: 20px;

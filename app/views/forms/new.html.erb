@@ -6,57 +6,14 @@
 <div class='form_block selectables'>
   <% if @form_elements %>
     <% @form_elements.each do |element| %>
-    <div class='column'>
-      <div class='field_type'><%= label_tag element.label, nil, class: element.size %><br>
-      <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
-      <%= hidden_field_tag 'fields[][element_id]', element.id %>
-      <%= hidden_field_tag 'fields[][name', element.label %></div></div>
+        <div class='field_type'><%= label_tag element.label, nil, class: element.size %><br>
+          <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
+          <%= hidden_field_tag 'fields[][element_id]', element.id %>
+          <%= hidden_field_tag 'fields[][name', element.label %>
+        </div>
     <% end %>
   <% end %>
 </div>
 
-<script>
 
-  $('.field_type').draggable({
-    revert: 'invalid',
-    helper: 'clone',
-    containment: '.form_field_catcher',
-    // scroll: false,
-
-    grid: [1, 30],
-    snap: true,
-    snapMode: "outer",
-    snapTolerance: 30
-  });
-
-  $('.form_field_catcher').droppable({
-    accept: '.field_type',
-    drop: function(event, ui){
-      var fieldCatcherPosition = $(this).offset();
-      var newlyDroppedButter = ui.draggable.clone()
-
-      $(newlyDroppedButter).removeClass("field_type").addClass("added")
-      $(this).append(newlyDroppedButter);
-      //debugger
-
-      // $(newlyDroppedButter).css("top", Math.floor(ui.position.top / 10) * 10);
-      // $(newlyDroppedButter).css("left", Math.floor(ui.position.left / 10) * 10);
-
-      $(newlyDroppedButter).draggable({ 
-        connectToSortable: newlyDroppedButter,
-        containment: '.form_field_catcher',
-        scroll: false,
-        grid: [10, 30],
-        snap: true,
-        snapTolerance: 30
-      });
-    }
-  })
-
-  // $('.added').dblclick(function(){
-  //   console.log()
-  //   $(this).remove();
-  // });
-
-</script>
 
