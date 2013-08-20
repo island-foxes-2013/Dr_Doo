@@ -10,7 +10,7 @@
   </div>
   <div class = 'user_info'>  
     <h4>User Info</h4>
-    <%= form_tag '/forms/20', method: 'put'  do %>
+    <!-- <%# form_tag '/forms/20', method: 'put'  do %> fix this to display current_user --> 
         <% @user_contact_info.each do |answer| %>
           <div class='field_tag'>
           <h6 class='pull right'>
