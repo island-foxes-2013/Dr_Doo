@@ -60,5 +60,15 @@ class FormsController < ApplicationController
     #   form.fields.create(element_id: field[:element_id], name: field[:name] )
     # end
   end
+  
+  def destroy
+    @form = Form.find(params[:id])
+    @form.destroy
+    redirect_to forms_path
+  end
+
+  def edit
+    @form = Form.find(params[:id])
+  end
 
 end

@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(user)
     forms_path
   end
+
+
 end

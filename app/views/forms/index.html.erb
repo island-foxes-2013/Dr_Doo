@@ -10,7 +10,7 @@
   </div>
   <div class = 'user_info'>  
     <h4>User Info</h4>
-    <%= form_tag form_create_or_update_contact_info_path(14), method: 'post'  do %>
+    <%= form_tag '/forms/20', method: 'put'  do %>
         <% @user_contact_info.each do |answer| %>
           <div class='field_tag'>
           <h6 class='pull right'>
@@ -23,11 +23,18 @@
     <% end %>
   </div>
   <div class='user_forms'>
-    <h4 class=>Your Forms</h4>
+    <h4 class=>My Forms</h4>
     <% @user.forms.each do |form| %>
       <h6><%= form.title %>
        <%= link_to 'Edit', edit_complete_form_path(form) %> 
-       <%= link_to 'Delete', complete_form_path(form), :method => :delete, :confirm => 'Are you Sure?' %> 
+      </h6>
+    <% end %>
+    <br>
+    <h4 class=>My Created Forms</h4>
+    <% @user.forms.each do |form| %>
+      <h6><%= form.title %>
+       <%= link_to 'Edit', edit_form_path(form) %>
+       <%= link_to 'Delete', form_path(form), :method => :delete, :confirm => 'Are you Sure?'  %> 
       </h6>
     <% end %>
     <br>

@@ -26,7 +26,14 @@ class CompleteFormsController < ApplicationController
     @form_answers = @form.answers.first.value
   end
 
-  def put
+  def update_all
+    p params.inspect
+ # Answer.transaction do |t|
+    # normal ActiveRecord code to create new answers
+    # params[:answers].each do |a|
+    # Answer.create!(a)
+    # end
+ # 
   end
 
   def destroy

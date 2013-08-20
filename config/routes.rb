@@ -6,10 +6,7 @@ DrDoo::Application.routes.draw do
 
   resources :forms
 
-  resources :forms do 
-    post '/create_or_update_contact_info', to: 'forms#create_or_update_contact_info'
-  end
-
+  
   # resources :complete_forms, except: [:index]
 
   # TODO-JW: RESTful way, using AJAX to submit one form per answer
@@ -30,6 +27,7 @@ DrDoo::Application.routes.draw do
   # end
   resources :complete_forms do
     post '/save_all_answers', to: 'complete_forms#save_all_answers'
+    put '/update_all', to: 'complete_forms#update_all', as: 'update_all'
   end
   root to: 'home#index'
   # The priority is based upon order of creation:
