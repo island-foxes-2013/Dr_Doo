@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
+require 'yaml'
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
@@ -66,14 +67,34 @@ module DrDoo
 
     config.filter_parameters += [:password, :password_confirmation]
 
+    puts
+    puts "=========================================================================="
+    puts "Loading actionmailer_jango_config"
+    puts "           If errors occur, you may be missing the jango.yml"
+    puts "                                           This file is not tracked by git"
+    puts "=========================================================================="
+    puts
+
+    actionmailer_jango_config = HashWithIndifferentAccess.new(YAML.load(File.read(File.expand_path('../jango.yml', __FILE__))))
+    #current_jango_config = all_jango_config[Rails.env]
+    #now do something with this current_oauth_config variable
+
+    ENV['JANGO_USERNAME'] = actionmailer_jango_config[:development][:username]
+    ENV['JANGO_PASSWORD'] = actionmailer_jango_config[:development][:password]
+
+    # CARE if the mailer can't send
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :test
+
     # These configurations options have been moved from development.rb
     # Such that they run after the environment variables have been set from the initiator
     config.action_mailer.smtp_settings = {
       address:              'relay.jangosmtp.net',
       port:                 25,
-      domain:               'DrDoolittle.com',
-      user_name:            'jaredstander',
-      password:             '859163BT',
+      domain:               'DrDoLittle.com',
+      user_name:            ENV['JANGO_USERNAME'],
+      password:             ENV['JANGO_PASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
   end
