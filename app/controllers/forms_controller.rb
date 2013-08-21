@@ -1,7 +1,6 @@
 class FormsController < ApplicationController
-  # TODO-JW: this controller should probably be locked-down
-  #          only to users who have authenticated, no?
-
+  before_filter :authenticate_user!
+  
 	def index
     if current_user
       @user = current_user
