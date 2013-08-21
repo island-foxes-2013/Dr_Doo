@@ -6,7 +6,7 @@ class Notification < ActiveRecord::Base
   after_create :send_notification
 
   belongs_to :form
-  belongs_to :sender, source :user
+  belongs_to :sender, class_name: "User"
 
   def completed
     read_attribute(:completed) || update_attribute(:completed, false)
