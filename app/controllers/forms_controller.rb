@@ -5,7 +5,7 @@ class FormsController < ApplicationController
 	def index
     if current_user
       @user = current_user
-      @request_notifications = Notification.where(recipient_email: @user.email, completed: false)
+      z@request_notifications = Notification.where(recipient_email: @user.email, completed: false)
       @send_notifications = Notification.where(sender_id: @user.id, completed: false)
       
       @form_answer = @user.answers.find_or_create_by_form_id(Form.find_by_title('User Contact Info').id)
