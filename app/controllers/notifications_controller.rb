@@ -8,7 +8,7 @@ class NotificationsController < ApplicationController
     # respond_to do |format|
     #   format.html { redirect_to forms_path }
     #   format.js   { render json: notification }
-    render json: { email: 'success!'}
+    render json: { email: 'success!'} 
     # end
     
   end

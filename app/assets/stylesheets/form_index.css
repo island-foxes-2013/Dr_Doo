@@ -1,8 +1,4 @@
-body {
-  margin-right: auto;
-  margin-left: auto;
-  width: 95%;
-}
+
 
 .notifications {
   padding: 10px 19px;
@@ -31,6 +27,7 @@ body {
 }
 
 .top_zone {
+  height: 450px;
 }
 
 .user_info .show_field {
@@ -74,10 +71,10 @@ body {
   margin-right: 10px;
 }
 
-#delete_link {
+.delete_link {
   color: #680000;
 }
 
-#send_link {
+.send_link {
   color: #006600;
 }

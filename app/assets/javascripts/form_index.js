@@ -7,7 +7,6 @@ $(function() {
     	 $("#emailModal").modal('hide');
     });
   });
-
    $('#email_form').on('ajax:success', function(e, data){
    });
 });

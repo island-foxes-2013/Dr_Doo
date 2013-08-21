@@ -1,6 +1,4 @@
 class FormsController < ApplicationController
-  # TODO-JW: this controller should probably be locked-down
-  #          only to users who have authenticated, no?
 
 	def index
     if current_user
@@ -9,17 +7,11 @@ class FormsController < ApplicationController
       @send_notifications = Notification.where(sender_id: @user.id, completed: false)
       
       @form_answer = @user.answers.find_or_create_by_form_id(Form.find_by_title('User Contact Info').id)
-      fields = @form_answer.form.fields
-      fields.each do |field|
+      @fields = @form_answer.form.fields
+      @fields.each do |field|
         @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
       end
-      
-
     
-      # @form_fields = @form.fields
-      # @contact_form = form.answers.where(user_id: @user.id)
-      # if !@contact_form.empty?
-      #   @contact_form = form.fields
     else
       redirect_to root_path
     end
@@ -33,9 +25,6 @@ class FormsController < ApplicationController
     @form_elements = Element.all
     @field = Field.new
     @forms = Form.new
-  end
-
-  def create_or_update_contact_info
   end
 
   def create

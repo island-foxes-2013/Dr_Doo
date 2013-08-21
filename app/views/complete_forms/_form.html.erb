@@ -4,8 +4,8 @@
       <%= form_tag complete_form_path(form_answer.form), method: 'put'  do %>
       <% form_answer.value.each do |field_key, field_value| %>
       <div class='field_tag'>
-        <%= label_tag "fields[#{field_key}", field_key.humanize, {class: 'field_tag'} %>
-        <%= text_field_tag "fields[#{field_key}", field_value  %>
+        <%= label_tag "fields[#{field_key}", field_key.humanize, class: 'span2' %><br>
+        <%= text_field_tag "fields[#{field_key}", field_value, class: 'span2'  %>
       </div>
       <% end %>
       <%= button_to "Update Answers", { id: :'update_all_answers' } %>

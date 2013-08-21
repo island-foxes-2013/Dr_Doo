@@ -47,3 +47,9 @@
 .row-fluid {
    padding: 0px;
 }
+
+body {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 95% !important;
+}
