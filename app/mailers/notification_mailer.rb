@@ -1,7 +1,7 @@
-class Notifications < ActionMailer::Base
+class NotificationMailer < ActionMailer::Base
   default from: "Notifications@DrDoLittle.com"
 
-  def new_form_to_complete(form_owner, recipient_email, form)
+  def new_form_notification_email(form_owner, recipient_email, form)
     @form = form
     @form_owner = form_owner
     @email = recipient_email
@@ -14,15 +14,12 @@ class Notifications < ActionMailer::Base
     end
   end
 
-  def sent_form_notification(form_owner, recipient_email, form)
+  def sent_new_form_notification_email(form_owner, recipient_email, form)
     @form = form
     @form_owner = form_owner
     @email = recipient_email
     @url = "http://localhost:3000/forms/#{form.id}"
-    p !User.where(email: @email).empty?
-    p @email
     if !User.where(email: @email).empty?
-      p User.where(email: @email)
       @form_recipient = User.where(email: @email).first
       mail(to: @email, subject: "#{@form_owner.name}, you have sent #{@form_recipient.name} your \"#{@form.title}\" form to complete!")
     else
@@ -30,12 +27,16 @@ class Notifications < ActionMailer::Base
     end
   end
 
-  def complete_form_notification(form_owner, recipient_email, form)
-    @form = form
-    @form_owner = form_owner
-    @email = recipient_email
+  def form_completed_email(notification)
+    @form = notification.form
+    @form_owner = notification.sender
+    @email = notification.recipient_email
     @url = "http://localhost:3000/forms/#{form.id}"
+    p User.where(email: @email)
+    p !User.where(email: @email).empty?
+    p @email
     if !User.where(email: @email).empty?
+      p User.where(email: @email)
       @form_recipient = User.where(email: @email).first
       mail(to: @email, subject: "#{@form_owner.name}, #{@form_recipient.name} has completed your \"#{@form.title}\" form!")
     else

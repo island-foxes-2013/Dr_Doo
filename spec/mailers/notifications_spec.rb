@@ -72,6 +72,10 @@ describe Notifications do
   end
 
   describe "complete form notification" do
+
+    let(:existing_user) { FactoryGirl.build(:user, name: "Fox McCloud", email: "fox@corneria.gov", password: "password", password_confirmation: "password") }
+    let(:existing_user_email) { "test@test.com" }
+
     it "should render without error" do
       expect{Notifications.complete_form_notification(form_owner, email, form)}.not_to raise_error
     end
@@ -82,8 +86,6 @@ describe Notifications do
       end
 
       it "should have the recipient's name if they have an account" do
-        let(:existing_user) { FactoryGirl.build(:user, name: "Fox McCloud", email: "fox@corneria.gov", password: "password", password_confirmation: "password") }
-        let(:existing_user_email) { "fox@corneria.gov" }
         @test_mailer = Notifications.complete_form_notification(form_owner, existing_user_email, form)
         @mailer.body.should have_content "#{form_recipient.name}"
       end
