@@ -1,67 +1,62 @@
 <div class ='profile'>    
   <h1>&nbsp;Welcome <%=@user.name %>! <small><br>&nbsp; Manage your forms --></small></h1>
 </div>
-  
-  <div class='top_zone'>
-    <div class="notifications">
-      <% if @request_notifications.empty? && @send_notifications.empty? %>
-        <h4 class="heading">You have no new notifications.</h4>
-      <% else %>
-        <h4 class="heading">You have new notifications!</h4>
-      <% end %>
-      <% if !@request_notifications.empty? %>
-        <% @request_notifications.each do |notify| %>
-          <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
-        <% end %>
-      <% end %>
-      <% if !@send_notifications.empty? %>
-        <% @send_notifications.each do |notify| %>
-          <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
-        <% end %>
-      <% end %>
-    </div>
 
-    <div class = 'user_info'>  
-       <% form_builder = build_field_data(@form_answer.form, @form_answer) %>
-       <% if form_builder %>
-         <h3><%= @form_answer.form.title %></h3>
-          <%= form_tag complete_form_path(@form_answer.form), method: 'put'  do %>
-            <% form_builder.each do |form| %>
-              <div class='show_field'>
-                <%= label_tag 'fields', form[0], class: form[2] %><br>
-                <%= text_field_tag 'field', form[1], class: form[2] %>
-              </div>
-            <% end %>
-            <%= button_to "Update Information", nil, id: 'update_all_answers', class: 'btn btn-warning' %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div> 
+<div class='top_level'>
+  <div class="notifications">
+    <% if @request_notifications.empty? && @send_notifications.empty? %>
+       <h4 class="heading">You have no new notifications.</h4>
+    <% else %>
+      <h4 class="heading">You have new notifications!</h4>
+    <% end %>
 
-  <div class='user_forms'>
-    <h4>Forms I've Taken</h4>
-    <hr class='hr_line'/>
-    <% @user.answers.each do |answer| %>
+    <% if !@request_notifications.empty? %>
+      <% @request_notifications.each do |notify| %>
+        <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
+      <% end %>
+    <% end %>
+
+    <% if !@send_notifications.empty? %>
+      <% @send_notifications.each do |notify| %>
+        <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class = 'user_info'>
+    <h3><%= @form_answer.form.title %></h3>
+    <% @form_answer.value.each do |value| %>
+      <p><b><%= value[0].humanize %>: </b> <%= value[1] %></p><br>
+    <% end %>
+  </div>
+</div>
+
+
+<div class='user_forms'>
+
+  <h4>Forms I've Taken</h4>
+  <hr class='hr_line'/>
+  <% @user.answers.each do |answer| %>
     <div class='list_forms'>
       <h6><%= answer.form.title %></h6> 
       <%= link_to 'Edit', edit_complete_form_path(answer.form.id) %>
     </div>
-    <% end %>
-    <br>
-    <h4>Forms I created</h4>
-     <hr class='hr_line'/>
-    <% @user.forms.each do |form| %>
+  <% end %>
+  <br>
+  <h4>Forms I created</h4>
+  <hr class='hr_line'/>
+  <% @user.forms.each do |form| %>
     <div class='list_forms'>
       <h6><%= form.title %></h6>
+      <%= link_to 'Delete', form_path(form), :method => :delete, :confirm => 'Are you Sure?', class: 'delete_link'  %>
        <%= link_to 'Edit', edit_form_path(form) %>
-       <%= link_to 'Delete', form_path(form), :method => :delete, :confirm => 'Are you Sure?', id: 'delete_link'  %>
+       <%= link_to 'View', form_path(form) %>
        <%= link_to 'Send', '#emailModal', class: 'send_link', 'data-form' => form.id  %>
-      </div>
-    <% end %>
-    <br>
-  </div>
-  
+    </div>
+  <% end %>
+  <br>
+</div>
+
 <%= render partial: "email_form" %>
   
 

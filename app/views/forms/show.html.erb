@@ -1,26 +1,14 @@
-
-<div class="navbar form_subnav">
-  <div class="navbar-inner">
-    <ul class="nav">
-      <li class="active"><a href="#">Section 1</a></li>
-      <li><a href="#"></a></li>
-    </ul>
-  </div>
-</div>
-
-<div class='show_block well'>
+<div class='form_block well'>
   <%= form_for @form do |f| %>
     <h3><%= @form.title %></h3> 
   <% @form.fields.each do |field| %>
     <div class='show_field'>
       <%= label_tag field.label, nil, class: field.element.size %><br>
-      <%= text_field_tag nil, nil, placeholder: field.label.gsub('_',' ').capitalize, class: field.element.size %>
+      <%= text_field_tag nil, nil, placeholder: field.label.humanize, class: field.element.size %>
     </div>
   <% end %>
     <% end %>
 </div>  
-
-<%= will_paginate @forms %>
     
 
 

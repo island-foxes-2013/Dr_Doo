@@ -1,16 +1,6 @@
-
-<div class="navbar form_subnav">
-  <div class="navbar-inner">
-    <ul class="nav">
-      <li class="active"><a href="#">Section 1</a></li>
-      <li><a href="#"></a></li>
-    </ul>
-  </div>
-</div>
-
 <div class='form_block well'>
   <%= form_tag('/forms', method: :post, class: 'form_field_catcher' )%>
-    <%= submit_tag 'Submit Form →', class: 'btn btn-primary btn-large', id: 'create_form_submit' %><br><br>
+    <%= submit_tag 'Submit Form →', class: 'btn btn-primary btn-large create_form_submit' %><br><br>
       <div class='title_tag'>
         <%=  label_tag 'form', 'Title', class: 'span3' %><br>
       <%= text_field_tag 'form[title]', nil, placeholder: 'Enter New Form Title Here' %>
@@ -22,7 +12,7 @@
     <% @form_elements.each do |element| %>
       <div class='field_type'>
         <%= label_tag element.label, nil, class: element.size %><br>
-        <%= text_field_tag nil, nil, placeholder: element.label.gsub('_',' ').capitalize, class: element.size %>
+        <%= text_field_tag nil, nil, placeholder: element.label.humanize, class: element.size %>
         <%= hidden_field_tag 'fields[][element_id]', element.id %>
       </div>
     <% end %>

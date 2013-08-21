@@ -16,6 +16,7 @@
   margin-right: auto;
   margin-left: auto;
   width: 80%;
+  margin-top: 50px;
 }
 
 .show_block {
@@ -28,11 +29,13 @@
   display: inline-block;
 }
 
-#create_form_submit {
-  position: relative !important;
-  left: 50px !important;
-  top: -116px !important;
+.create_form_submit {
+  float: right;
+  position: relative;
+  top: -71px;
+  left: 20px;
 }
+
 #new_form_submit {
   position: relative !important;
   left: 10% !important;
@@ -59,10 +62,10 @@ input {
   display: inline !important;
 }
 
-
 .added {
   padding: 2px;
   top: -80px;
+  margin-top: 10px;
   display: inline-block;
 }
 
@@ -79,5 +82,7 @@ input {
 
 .title_tag {
   position: relative;
-  top: -80px !important;
+  top: -58px !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

@@ -13,7 +13,7 @@ $(function() {
       var newUiDraggable = ui.draggable.clone();
 
       $(newUiDraggable).removeClass('field_type').addClass("added");
-      $(this).append(newUiDraggable);
+      $('.form_field_catcher').append(newUiDraggable);
 
       $(newUiDraggable).draggable(draggableOptions(true));
     }
@@ -22,8 +22,6 @@ $(function() {
   $('.form_field_catcher').submit(function(){
     $('.selectables').remove();
   });
-
-
 });
 
 function draggableOptions(withinCatcher) {
