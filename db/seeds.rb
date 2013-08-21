@@ -1,5 +1,8 @@
 require 'faker'
 
+
+
+
 # Update this hash with more form elements as needed.  This hash is the pool of ALL possible fields a form can be built with.
 default_values = {full_name: ['string', 'span4'], date_of_birth: ['date', 'span2'], eye_color: ['string', 'span2'], 
 	weight: ['integer', 'span1'], height: ['integer', 'span1'], allergies: ["string", 'span10'], 
@@ -20,13 +23,11 @@ user3 = User.create(name: Faker::Name.name, email: 'you@me.com', password: '1234
 user4 = User.create(name: Faker::Name.name, email: 'me@me.com', password: '12345678', password_confirmation: '12345678')
 
 # Create some forms associated with users as the form owners, NOT as form takers...
-# Make some notifications for them as well. Logging i as these users should show content
 User.all.each do |user|
 	user.forms.create(user_id: user.id, title: Faker::Lorem.sentence(word_count = 2))
-	Notification.create(form_id: Form.last.id, recipient_email: user.email, sender_id: user.id)
+
 end
 # User 1 Form
-
 
 # Create fields associated with each created form.  This will select from a random number or elements from the default values.
 Form.all.each do |form|
@@ -35,6 +36,7 @@ Form.all.each do |form|
 	  form.fields.create(element_id: element.id, label: element.label)
 	end
 end
+
 
 user_profile = ['full_name', 'email', 'primary_phone', 'secondary_phone', 'fax', 'street_address', 'city', 'state', 'zip']
 user_info = []
@@ -61,7 +63,6 @@ user_profile_form = Form.find_by_title('User Contact Info')
       value[field.label] = model_values[field.element.data_type.to_sym]
     end
 		user_profile_form.answers.create(user_id: 1, value: value )
-
 
 # The next methods are for creating answers to specific forms
 # for some reason the date format method does not work anymore.  
