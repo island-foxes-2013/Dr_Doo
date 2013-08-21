@@ -12,7 +12,6 @@ class FormsController < ApplicationController
       @fields.each do |field|
         @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
       end
-    
     else
       redirect_to root_path
     end

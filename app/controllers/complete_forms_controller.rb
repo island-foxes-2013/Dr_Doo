@@ -11,14 +11,26 @@ class CompleteFormsController < ApplicationController
 
   
   def edit
-    @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
+     @user = current_user
+    @form_answer = @user.answers.find_or_create_by_form_id(params[:id])
     @form = Form.find(params[:id])
+ 
+  @form_answer = @user.answers.find_or_create_by_form_id(params[:id])
+  @fields = @form_answer.form.fields
+  @fields.each do |field|
+    @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
+    end
   end
 
   def update
+
+    p params
     @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
-    @form_answer.value = params[:fields]
+    params[:fields].each do |field|
+      @form_answer.value[field['label']] = field['value'] 
+    end
     @form_answer.save
-    redirect_to complete_form_path(@form_answer.form)
+    redirect_to forms_path
+    # redirect_to edit_complete_form_path(@form_answer.form)
   end
 end

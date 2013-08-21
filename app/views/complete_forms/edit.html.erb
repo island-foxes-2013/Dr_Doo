@@ -3,11 +3,26 @@
     <div class="navbar-inner">
       <ul class="nav">
         <li class="active"><a href="#">Section 1</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#">Section 2</a></li>
+     <!--    <li><a href="#"></a></li>
+        <li><a href="#">Section 2</a></li> -->
       </ul>
     </div>
   </div>
-
-  <%= render partial: "form", locals: { form_answer: @form_answer, field: @fields } %>
 </div>
+ <div class ='form_block well'>
+   <% form_builder = build_field_data(@form_answer.form, @form_answer) %>
+      <% if form_builder %>
+        <h2><%= @form_answer.form.title %></h2>
+        <%= form_tag complete_form_path(@form_answer.form), method: 'put' do %>
+        <% form_builder.each do |form| %>
+              <div class='show_field'>
+                <%= label_tag nil, form[0].humanize, class: form[2] %><br>
+                <%= text_field_tag 'fields[][value]', form[1], class: form[2] %>
+                <%= hidden_field_tag 'fields[][label]', form[0] %>
+              </div>
+            <% end %>
+            <%= button_to "Update Information", nil, id: 'update_all_answers', class: 'btn btn-warning' %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>

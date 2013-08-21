@@ -42,10 +42,10 @@
   <div class='user_forms'>
     <h4>Forms I've Taken</h4>
     <hr class='hr_line'/>
-    <% @user.forms.each do |form| %>
+    <% @user.answers.each do |answer| %>
     <div class='list_forms'>
-      <h6><%= form.title %></h6> 
-      <%= link_to 'Edit', edit_complete_form_path(form) %>
+      <h6><%= answer.form.title %></h6> 
+      <%= link_to 'Edit', edit_complete_form_path(answer.form.id) %>
     </div>
     <% end %>
     <br>
