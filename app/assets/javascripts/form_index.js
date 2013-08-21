@@ -1,16 +1,54 @@
-$(function() {
+$(document).ready(function() {
 
   $('a[data-form]').on('click', function(e){
-    e.preventDefault();
   	$('#email').val('');
     $("#emailModal").modal('show');
     $("input[name=form_id]").val($(this).data('form'));
     $('#email_submit').on('click', function(){
       $("#emailModal form_id").val('');
-    	$("#emailModal").modal('hide');
+    	 $("#emailModal").modal('hide');
     });
   });
-   $('#email_form').on('ajax:success', function(e, data){
-    console.log(notification);
-   });
+
+  NotificationsController.bindEvents();
 });
+
+var NotificationsController = {
+  bindEvents: function() {
+  // ajax:beforeSend (before form is submitted)
+  // ajax:success (when server returns successfully)
+  // ajax:error (when server returns unsuccessfully)
+  // ajax:complete (when server returns no matter what)
+    $(document).on('ajax:beforeSend', '#email_form', this.beforeSend);
+    $(document).on('ajax:success', '#email_form', this.onSuccess);
+    $(document).on('ajax:error', '#email_form', this.onError);
+  },
+
+  beforeSend: function(e) {
+    // Put a loading animation here.
+  },
+
+  onSuccess: function(e, response, status) {
+    $("#emailModal form_id").val('');
+    $("#emailModal").modal('hide');
+    if ($('h4').first().text() === 'You have no new notifications.') {
+      $('h4').first().text('You have new notifications!');
+      $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"' + response["form_title"] + '\" form to ' + response["recipient_email"] + '.</h6>');
+    }
+    else if ($('h4').first().text() === 'You have new notifications!') {
+      $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"' + response["form_title"] + '\" form to ' + response["recipient_email"] + '.</h6>');
+    }
+  },
+
+  onError: function(e, xhr, status, message) {
+    alert(response["error"]);
+    // if (xhr.responseJSON == null)
+    // {
+    //   window.alert("Please enter a valid email.");
+    // }
+    // else
+    // {
+    //   $(e.target).parent().html(xhr.responseJSON.html);
+    // }
+  }
+}
