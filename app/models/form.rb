@@ -3,5 +3,7 @@ class Form < ActiveRecord::Base
 	belongs_to :user
 	has_many :fields
 	has_many :answers
+  has_many :notifications, dependent: :destroy
+
   validates :title, :user_id, presence: true
 end
