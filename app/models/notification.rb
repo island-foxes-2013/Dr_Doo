@@ -1,27 +1,29 @@
 class Notification < ActiveRecord::Base
-  attr_accessible :form_id, :recipient_email, :sender_id
+  attr_accessible :recipient_email, :sender_id
   validates :form_id, :recipient_email, :sender_id, presence: true
- 
-  
+   
   after_create :send_notification
 
   belongs_to :form
-  belongs_to :sender, class_name: "User"
+  # DOES NOT WORK
+  # belongs_to :sender_id, class_name: "User"
 
-  def completed
-    read_attribute(:completed) || update_attribute(:completed, false)
+  # def completed
+  #   read_attribute(:completed) || update_attribute(:completed, false)
+  # end
+
+  def complete?
+    self.completed
   end
-
-  alias :completed? :completed # TODO LOOK UP SYNTAX
 
   def complete!
     self.completed = true
-    NotificationMailer.form_complete_email(self).deliver
+    self.save
+    NotificationMailer.form_completed_email(self).deliver
   end
 
   def send_notification
-    NotificationMailer.new_form_notification(self).deliver
-    Notifications.sent_form_notification(self).deliver
+    NotificationMailer.form_new_email(self).deliver
+    NotificationMailer.form_sent_email(self).deliver
   end
-
 end

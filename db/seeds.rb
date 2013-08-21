@@ -20,10 +20,9 @@ user3 = User.create(name: Faker::Name.name, email: 'you@me.com', password: '1234
 user4 = User.create(name: Faker::Name.name, email: 'me@me.com', password: '12345678', password_confirmation: '12345678')
 
 # Create some forms associated with users as the form owners, NOT as form takers...
-# Make some notifications for them as well. Logging i as these users should show content
+# Make some notifications for them as well. Logging in as these users should show content
 User.all.each do |user|
 	user.forms.create(user_id: user.id, title: Faker::Lorem.sentence(word_count = 2))
-	Notification.create(form_id: Form.last.id, recipient_email: user.email, sender_id: user.id)
 end
 # User 1 Form
 
