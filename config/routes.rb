@@ -27,12 +27,13 @@ DrDoo::Application.routes.draw do
   # end
 
   resources :complete_forms, only: [:show, :edit, :update]
+  resources :notifications, only: [:create, :update, :destroy]
 
   authenticated :user do
     root to: 'forms#index'
   end
 
-  root to: 'home#index'
+  root to: 'homes#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

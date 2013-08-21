@@ -6,6 +6,13 @@ class FormsController < ApplicationController
       @user = current_user
       @request_notifications = Notification.where(recipient_email: @user.email, completed: false)
       @send_notifications = Notification.where(sender_id: @user.id, completed: false)
+      
+      @form_answer = @user.answers.find_or_create_by_form_id(Form.find_by_title('User Contact Info').id)
+      @fields = @form_answer.form.fields
+      @fields.each do |field|
+        @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
+      end
+    
     else
       redirect_to root_path
     end
@@ -19,9 +26,6 @@ class FormsController < ApplicationController
     @form_elements = Element.all
     @field = Field.new
     @forms = Form.new
-  end
-
-  def create_or_update_contact_info
   end
 
   def create

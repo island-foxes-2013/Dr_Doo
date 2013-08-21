@@ -21,12 +21,12 @@ feature "Provider Sign In" do
     visit new_user_session_path
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
-    click_button "Sign in"
-    expect(current_path).to eq forms_path
+    click_link("Sign In")
+    expect(current_path).to eq new_user_session_path
     expect User.last.email == user.email
   end
   
-  scenario "raises exception if Provider email or username is invalid" do
+  scenario "raises exception if user email or username is invalid" do
     visit new_user_session_path
     fill_in "Email", with: user.email
     fill_in "Password", with: "fasdf"

@@ -1,29 +1,43 @@
-body {
-  margin-right: auto;
-  margin-left: auto;
-  width: 95%;
-}
+
 
 .notifications {
   padding: 10px 19px;
   width: 40%;
   border-radius: 10px;
-  min-height: 100px;
+  height: 400px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   margin: 10px;
+  overflow: auto;
   display: inline-block;
+  position: relative;
+  top: -216px;
 }
 
 .user_info {
   width: 50%;
   padding: 10px 19px;
   border-radius: 10px;
-  min-height: 100px;
+  height: 400px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   margin: 10px;
+  overflow: auto;
   display: inline-block;
+}
+
+.top_zone {
+  height: 450px;
+}
+
+.user_info .show_field {
+  padding: 10px;
+}
+
+.user_info form {
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
 }
 
 .user_forms {
@@ -55,4 +69,12 @@ body {
   float: right;
   display: inline;
   margin-right: 10px;
+}
+
+.delete_link {
+  color: #680000;
+}
+
+.send_link {
+  color: #006600;
 }

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Provider Sign Up" do
+feature "User Sign Up" do
   before do
     visit root_url
   end
