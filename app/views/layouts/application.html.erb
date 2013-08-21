@@ -21,8 +21,9 @@
         <li><%= link_to "Profile", forms_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-        <li id="create_li"><%= link_to "Sign In", new_user_session_path %></li>
-        <li id="login_li"><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li id='login_li'><%=link_to "Sign Up", '/users/sign_in', data: {toggle: "modal", target: "#myModal", remote: false} %></li>
+        <li id="create_li"><% link_to "Sign In", new_user_session_path %></li>
+        <!-- <li id="login_li"><%# link_to "Sign Up", new_user_registration_path %></li> -->
         <% end %>
       </ul>
     </div>
