@@ -4,12 +4,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    p "&&" * 90
-    p params
-    p build_resource(params[:user])
+    build_resource(params[:user])
     if resource.save
-      p "***" * 90
-      p resource
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_up(resource_name, resource)
@@ -23,7 +19,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up(resource_name, resource)
-    p "%%" * 90
     p resource
     sign_in(resource_name, resource)
   end
