@@ -11,6 +11,6 @@ class Answer < ActiveRecord::Base
 
 
   def complete_outstanding_notifications
-    form.notifications.where(email: user.email).each(&:complete!)
+    form.notifications.where(recipient_email: user.email).each(&:complete!)
   end
 end

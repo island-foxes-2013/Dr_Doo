@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
 
   def create
     notification = current_user.forms.find_by_id(params[:form_id]).notifications.create(recipient_email: params[:email])
-    notification.sender = current_user
+    notification.sender_id = current_user.id
 
     if notification.save
       respond_to do |format|
@@ -14,5 +14,3 @@ class NotificationsController < ApplicationController
     end
   end
 end
-
-    notification.sender = current_user
