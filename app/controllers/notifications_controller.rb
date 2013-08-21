@@ -5,12 +5,17 @@ class NotificationsController < ApplicationController
     notification.sender_id = current_user.id
 
     if notification.save
+      response = {recipient_email: notification.recipient_email, form_title: Form.find(notification.form_id).title}
       respond_to do |format|
         format.html { redirect_to forms_path }
-        format.js   { render json: notification }
+        format.js   { render json: response }
       end
     else
-      flash[:error] = "ERROR!"
+      response = {error: "Please enter a valid email."}
+      respond_to do |format|
+        format.html { redirect_to forms_path }
+        format.js   { render json: response }
+      end
     end
   end
 end

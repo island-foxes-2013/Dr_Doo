@@ -11,12 +11,12 @@
       <% end %>
       <% if !@request_notifications.empty? %>
         <% @request_notifications.each do |notify| %>
-          <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
+          <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the "<%=Form.find(notify.form_id).title %>" form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
         <% end %>
       <% end %>
       <% if !@send_notifications.empty? %>
         <% @send_notifications.each do |notify| %>
-          <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
+          <h6 class="heading">You have sent a request to complete your "<%=Form.find(notify.form_id).title %>" form to <%=notify.recipient_email %>.</h6><br/>
         <% end %>
       <% end %>
     </div>
@@ -63,5 +63,3 @@
   </div>
   
 <%= render partial: "email_form" %>
-  
-

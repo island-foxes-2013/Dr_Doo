@@ -71,9 +71,9 @@ module DrDoo
     config.action_mailer.smtp_settings = {
       address:              'relay.jangosmtp.net',
       port:                 25,
-      domain:               'example.com',
-      user_name:            ENV['JANGO_USERNAME'],
-      password:             ENV['JANGO_PASSWORD'],
+      domain:               'DrDoolittle.com',
+      user_name:            'jaredstander',
+      password:             '859163BT',
       authentication:       'plain',
       enable_starttls_auto: true  }
   end
