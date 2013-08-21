@@ -4,7 +4,11 @@
   <h3 id="myModalLabel">Sign up</h3>
 </div>
 <div class="modal-body">
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, 
+                         :url => registration_path(resource_name),
+                         :html => {:id => "sign_in_user"},
+                         :format => :json,
+                         :remote => :true) do |f| %>
     <%= devise_error_messages! %>
 
     <div><%= f.label :name %><br />

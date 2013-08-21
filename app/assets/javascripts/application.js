@@ -15,11 +15,3 @@
 //= require jquery.ui.all
 //= require bootstrap
 //= require_tree .
-
-$("a[data-toggle=modal]").click(function () {
-  var $this  = $(this),
-      target = $this.attr('data-target'),
-      url    = $this.attr('href');
-
-  $(target).load(url);
-});

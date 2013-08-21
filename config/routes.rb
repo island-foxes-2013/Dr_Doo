@@ -2,7 +2,7 @@ DrDoo::Application.routes.draw do
 
   devise_for :views
 
-  devise_for :users 
+  devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions'} 
 
   resources :forms
 
