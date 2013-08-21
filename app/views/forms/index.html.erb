@@ -4,7 +4,7 @@
   
   <div class='top_zone'>
     <div class="notifications">
-      <%z if @request_notifications.empty? && @send_notifications.empty? %>
+      <% if @request_notifications.empty? && @send_notifications.empty? %>
         <h4 class="heading">You have no new notifications.</h4>
       <% else %>
         <h4 class="heading">You have new notifications!</h4>
@@ -54,7 +54,7 @@
       <h6><%= form.title %></h6>
        <%= link_to 'Edit', edit_form_path(form) %>
        <%= link_to 'Delete', form_path(form), :method => :delete, :confirm => 'Are you Sure?', id: 'delete_link'  %>
-       <%= link_to 'Send', notification_path(form), :method => :create, id: 'send_link'  %>
+       <%= link_to 'Send', notification_path(form), :method => :create, id: 'send_link', :remote => true %>
       </div>
     <% end %>
     <br>
