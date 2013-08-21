@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Notifications do
+describe 'Notifications' do
 
   let(:form_owner) { FactoryGirl.build(:user, name: "Star Wolf", email: "starwolf@thepiratebay.gov") }
   let(:form_recipient) { FactoryGirl.build(:user) }
