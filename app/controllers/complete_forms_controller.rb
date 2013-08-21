@@ -1,4 +1,6 @@
 class CompleteFormsController < ApplicationController
+  before_filter :authenticate_user!
+
   def show
     @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
     fields = @form_answer.form.fields
