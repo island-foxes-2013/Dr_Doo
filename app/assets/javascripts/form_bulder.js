@@ -25,13 +25,7 @@ $(function() {
     $('.selectables').remove();
   });
 
-  // $('.form_field_catcher').on('ajax:success', function(e, data){
-  //   console.log(data)
-  //   // var comment = $('.comment_append').last().clone();    
-  //   // $(comment).text(data.comment.content).append('<br><span class="comment_date">comment by: <b>' + data.user.username + '</b> on ' + formatDate() + '</span>').insertAfter($(this).parent().find('hr').last());
-  //   // $(this).parent().find('.comment_append').last().append('<hr />');
-  //   // $('.comment_form textarea').val('');
-  // });
+
 });
 
 function draggableOptions(withinCatcher) {

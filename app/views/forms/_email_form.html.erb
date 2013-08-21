@@ -1,0 +1,16 @@
+<div id='emailModal' style='display: none' class="modal hide fade">
+  <div class="modal-header">
+    <h2 class="modal-h2">Send Form Request Email</h2>
+  </div>
+  <div class="modal-body">
+    <%= form_tag('/somewhere', id: 'email_send') do %>
+      <div><%= label_tag :email, 'Type Email of Person to Send Form Request'%><br />
+      <%= email_field_tag :email, nil, :autofocus => true, class: 'span5' %>
+    </div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-block btn-inverse" type="submit">Send Email</button>
+    <% end %>
+  </div>
+</div>
+

@@ -2,7 +2,10 @@
   margin-top: 50px;
   border: 1px solid #e3e3e3;
   padding: 19px;
+}
 
+#emailModal {
+  width: 500px !important;
 }
 .form_field_catcher {
   margin: 0;
