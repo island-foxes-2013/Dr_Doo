@@ -18,7 +18,8 @@ class FormsController < ApplicationController
 	end
 
   def show
-    @form = Form.find(params[:id])
+    @form = Form.find(1)
+    @forms = Form.where(id: 2..5).paginate(page: params[:page], per_page: 1)
   end
 
   def new
@@ -29,10 +30,10 @@ class FormsController < ApplicationController
 
   def create
     @form = current_user.forms.create(params[:form])
-    params[:fields].each do |field|
-      element = Element.find(field[:element_id])
-      @form.fields.create(element_id: element.id, label: element.label)
-    end 
+    # params[:fields].each do |field|
+    #   element = Element.find(field[:element_id])
+    #   @form.fields.create(element_id: element.id, label: element.label)
+    # end 
     redirect_to form_path(@form)
   end
   

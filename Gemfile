@@ -29,6 +29,7 @@ gem 'figaro'
 gem 'rolify'
 gem 'actionmailer'
 gem 'bootstrap-sass'
+gem 'will_paginate', '~> 3.0'
 
 group :test, :development do
   gem 'meta_request'
