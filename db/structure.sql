@@ -182,7 +182,7 @@ CREATE TABLE notifications (
     form_id integer,
     recipient_email character varying(255),
     sender_id integer,
-    completed boolean,
+    completed boolean DEFAULT false,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );

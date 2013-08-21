@@ -4,7 +4,7 @@ class CreateNotifications < ActiveRecord::Migration
       t.integer :form_id
       t.string :recipient_email
       t.integer :sender_id
-      t.boolean :completed
+      t.boolean :completed, default: false
       
       t.timestamps
     end

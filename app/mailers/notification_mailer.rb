@@ -1,11 +1,11 @@
 class NotificationMailer < ActionMailer::Base
   default from: "Notifications@DrDoLittle.com"
 
-  def new_form_notification_email(form_owner, recipient_email, form)
-    @form = form
-    @form_owner = form_owner
-    @email = recipient_email
-    @url = "http://localhost:3000/forms/#{form.id}"
+  def form_new_email(notification)
+    @form = Form.find(notification.form_id)
+    @form_owner = User.find(notification.sender_id)
+    @email = notification.recipient_email
+    @url = "http://localhost:3000/forms/#{@form.id}"
     if !User.where(email: @email).empty?
       @form_recipient = User.where(email: @email).first
       mail(to: @email, subject: "#{@form_recipient.name}, #{@form_owner.name} has sent you a new form (#{@form.title}) to complete!")
@@ -14,11 +14,11 @@ class NotificationMailer < ActionMailer::Base
     end
   end
 
-  def sent_new_form_notification_email(form_owner, recipient_email, form)
-    @form = form
-    @form_owner = form_owner
-    @email = recipient_email
-    @url = "http://localhost:3000/forms/#{form.id}"
+  def form_sent_email(notification)
+    @form = Form.find(notification.form_id)
+    @form_owner = User.find(notification.sender_id)
+    @email = notification.recipient_email
+    @url = "http://localhost:3000/forms/#{@form.id}"
     if !User.where(email: @email).empty?
       @form_recipient = User.where(email: @email).first
       mail(to: @email, subject: "#{@form_owner.name}, you have sent #{@form_recipient.name} your \"#{@form.title}\" form to complete!")
@@ -28,10 +28,10 @@ class NotificationMailer < ActionMailer::Base
   end
 
   def form_completed_email(notification)
-    @form = notification.form
-    @form_owner = notification.sender
+    @form = Form.find(notification.form_id)
+    @form_owner = User.find(notification.sender_id)
     @email = notification.recipient_email
-    @url = "http://localhost:3000/forms/#{form.id}"
+    @url = "http://localhost:3000/forms/#{@form.id}"
     p User.where(email: @email)
     p !User.where(email: @email).empty?
     p @email
