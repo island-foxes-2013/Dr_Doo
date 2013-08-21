@@ -1,25 +1,13 @@
 $(function() {
 
-  $('#send_link').on('click', function(){
+  $('.send_link').on('click', function(){
+  	$('#email').val('');
     $("#emailModal").modal('show');
+    $('#email_submit').on('click', function(){
+    	 $("#emailModal").modal('hide');
+    });
+  });
 
-   // $('#email_send').on('submit', function(event){
-   //  event.preventDefault();
-
-  //   var form_input = $(this).serializeArray();
-
-  //   $.post('/login', form_input).done(function(response){
-  //     if (response.user == false) {
-  //       unverified_user();
-  //       setTimeout(function(){reset_login()}, 1500);
-  //     }else{
-  //       reset_login();
-  //       $("#loginModal").modal('hide');
-  //       location.reload();
-  //     }
-  //   });
-  // });
- });
-
-  
+   $('#email_form').on('ajax:success', function(e, data){
+   });
 });
