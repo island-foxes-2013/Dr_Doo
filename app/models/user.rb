@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	has_many :forms
 
   validates :name, :email, :password, presence: true
+  validates :email, length: { minimum: 8 }
 
   def contact_form(form)
 

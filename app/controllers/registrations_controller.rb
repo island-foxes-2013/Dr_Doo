@@ -14,7 +14,10 @@ class RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
         expire_session_data_after_sign_in!
         return render :json => {success: true}
-      end 
+      end
+    else
+      render status: :unauthorized, json: { success: false, errors: resource.errors.messages }
+
     end
   end
 
