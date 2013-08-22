@@ -12,7 +12,7 @@
 
     <% if !@request_notifications.empty? %>
       <% @request_notifications.each do |notify| %>
-        <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id)) %></h6><br/>
+        <h6 class="heading"><%=User.find(notify.sender_id).name %> Has set you the <%=Form.find(notify.form_id).title %> form to complete!<br/><%= link_to 'Complete This Form', complete_form_path(Form.find(notify.form_id), data: {form_id: notify.form.id, user_id: @current_user.id}) %></h6><br/>
       <% end %>
     <% end %>
 
