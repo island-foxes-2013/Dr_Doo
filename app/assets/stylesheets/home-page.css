@@ -51,6 +51,9 @@
   line-height: 0 !important;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
+  left: 27px;
+  top: -321px;
 }
 
 #Sign_up button {
@@ -62,6 +65,9 @@
   line-height: 0 !important;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
+  left: 27px;
+  top: -321px;
 }
 
 #Sign_in button {
