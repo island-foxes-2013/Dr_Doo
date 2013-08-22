@@ -14,19 +14,20 @@ feature "User Sign Up" do
   scenario "creates an identity and visits the forms path' do", :js => true do
       visit root_path
       click_link("Sign Up")
-      fill_in "Name", with: user.name, :match => :prefer_exact
+      fill_in "Name", with: user.name
       fill_in "Email", with: user.email, :match => :prefer_exact
       fill_in "Password", with: user.password, :match => :prefer_exact
       fill_in "Password confirmation", with: user.password, :match => :prefer_exact
+      find("#Sign_up", :visible => true)
       click_button "Sign Up"
-      expect(get('/')).to route_to('forms#index')
+      find("#profile", :visible => true)
       expect User.last.email == user.email
   end
   
   scenario "raises exception if user email or username is invalid", :js => true do
     visit root_path
     click_link("Sign Up")
-    fill_in "Name", with: user.name, :match => :prefer_exact
+    fill_in "Name", with: user.name
     fill_in "Email", with: user.email, :match => :prefer_exact
     fill_in "Password", with: 'asdfasdf'
     fill_in "Password confirmation", with: 'asdf'

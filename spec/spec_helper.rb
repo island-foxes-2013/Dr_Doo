@@ -14,14 +14,17 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 
-DatabaseCleaner.strategy = :truncation
-
 RSpec.configure do |config|
   config.include Capybara::DSL, :type => :feature
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.use_transactional_fixtures = false
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+  end
+
   config.before :each do
     DatabaseCleaner.start
   end
@@ -43,7 +46,8 @@ def log_in(user)
   click_link "Sign in"
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
-  click_button "Login"
+  click_button "Sign In"
 end
+
 
 Capybara.javascript_driver = :selenium

@@ -36,9 +36,6 @@
 <div class="modal-header">
   <h3 id="myModalLabel">Sign up</h3>
 </div>
-<div class="alert alert-error">
-
-</div>
 <div class="modal-body">
   <%= form_for(resource, :as => resource_name,
                          :url => registration_path(resource_name),
@@ -47,7 +44,7 @@
                          :remote => :true) do |f| %>
     <%= devise_error_messages! %>                 
     <div><%= f.label :name %><br />
-    <%= f.text_field :name, id: 'name_field' %></div>
+    <%= f.text_field :name %></div>
 
     <div><%= f.label :email %><br />
     <%= f.email_field :email %></div>
@@ -69,9 +66,6 @@
 
   <div class="modal-header">
     <h3 id="myModalLabel">Sign In</h3>
-  </div>
-  <div class="alert alert-error">
-
   </div>
   <div class="modal-body">
     <%= form_for(resource, :as => resource_name, 
