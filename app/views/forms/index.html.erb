@@ -18,7 +18,7 @@
 
     <% if !@send_notifications.empty? %>
       <% @send_notifications.each do |notify| %>
-        <h6 class="heading">You have sent a request to complete your <%=Form.find(notify.form_id).title %> form to <%=notify.recipient_email %>.</h6><br/>
+        <h6 class="heading">You have sent a request to complete your <span class='form_title'><%=Form.find(notify.form_id).title %></span> form to <span class='email_notify'><%=notify.recipient_email %></span>.</h6><br/>
       <% end %>
     <% end %>
   </div>

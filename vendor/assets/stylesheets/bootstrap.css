@@ -5242,7 +5242,8 @@ input[type="submit"].btn.btn-mini {
 }
 
 .modal-header .close {
-  margin-top: 2px;
+  /*margin-top: 2px;*/
+  visibility:hidden;
 }
 
 .modal-header h3 {
