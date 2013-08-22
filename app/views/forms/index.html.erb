@@ -4,7 +4,7 @@
 
 <div class='top_level'>
   <div class="notifications">
-    <% if @request_notifications.empty? && @send_notifications.empty? %>
+    <% if @request_notifications.empty? && @send_notifications.empty? && @completed_notifications.empty? %>
        <h4 class="heading">You have no new notifications.</h4>
     <% else %>
       <h4 class="heading">You have new notifications!</h4>
