@@ -39,3 +39,25 @@
    width: 75%;
    margin: 0px auto;
 }
+
+#Sign_up {
+  width: 252px !important;
+  line-height: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#Sign_up button {
+  width: 220px !important;
+}
+
+#Sign_in {
+  width: 252px !important;
+  line-height: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#Sign_in button {
+  width: 220px !important;
+}

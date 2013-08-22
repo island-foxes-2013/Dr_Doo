@@ -24,7 +24,6 @@ class FormsController < ApplicationController
   end
 
   def create
-    p 'am I ahere? ------------------------------------------'
     @form = current_user.forms.create(params[:form])
     params[:fields].each do |field|
       element = Element.find(field[:element_id])
@@ -34,8 +33,6 @@ class FormsController < ApplicationController
   end
 
   def update
-    p 'here I am again _____________________________________'
-    p params
     @form = Form.find(params[:id])
     @form.update_attributes(title: params[:form][:title])
     @form.fields.destroy_all
@@ -53,7 +50,6 @@ class FormsController < ApplicationController
   end
 
   def edit
-     p 'here I am again _____________________________________'
     @form = Form.find(params[:id])
     @form_elements = Element.all
     @field = Field.new

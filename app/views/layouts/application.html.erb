@@ -34,7 +34,6 @@
 
 <div id="Sign_up" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
   <h3 id="myModalLabel">Sign up</h3>
 </div>
 <div class="alert alert-error">
@@ -48,7 +47,7 @@
                          :remote => :true) do |f| %>
     <%= devise_error_messages! %>                 
     <div><%= f.label :name %><br />
-    <%= f.text_field :name, :autofocus => true %></div>
+    <%= f.text_field :name, id: 'name_field' %></div>
 
     <div><%= f.label :email %><br />
     <%= f.email_field :email %></div>
@@ -67,8 +66,8 @@
 </div>
 
 <div id="Sign_in" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Sign In</h3>
   </div>
   <div class="alert alert-error">

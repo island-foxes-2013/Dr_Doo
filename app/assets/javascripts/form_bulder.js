@@ -28,7 +28,7 @@ function draggableOptions(withinCatcher) {
 
   var options = {
     scroll: false,
-    grid: [10, 69],
+    grid: [10, 79],
     snap: true,
     snapTolerance: 0
   };

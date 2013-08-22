@@ -34,32 +34,13 @@ describe User do
     end
 
     it "requires a password validation" do
-      user = User.new(name: "Fox McCloud", password: "password", password_confirmation: "password")
-      emails = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com]
-      emails.each do |invalid_email|
-        user.email = invalid_email
-        user.should be_invalid
-      end
+      user = User.new(name: "Fox McCloud", email: 'hhh@.com', password: "password", password_confirmation: "password")
+        expect(user).not_to be_valid
     end
 
     it "requires a password >= 8 chars long" do
-      let(:user) { user.password = @user.password_confirmation = "a" * 7 }
-      it { should be_invalid }
+      user = User.new(name: 'buddy', email: 'buddy@buddy.com', password: '123456', password_confirmation: '123456')
+      expect(user).not_to be_valid
     end
   end
 end
-
-# Add in email format validation
-# it "should be invalid" do
-#       emails = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com]
-#       emails.each do |invalid_email|
-#         user.email = invalid_email
-#         user.should be_invalid
-#       end
-#     end
-
-# TODO: Add in password format validation
-# describe "with a password that's too short" do
-#     let(:user) { user.password = @user.password_confirmation = "a" * 5 }
-#     it { should be_invalid }
-#   end
