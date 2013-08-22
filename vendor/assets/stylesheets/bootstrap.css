@@ -5242,8 +5242,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .modal-header .close {
-  /*margin-top: 2px;*/
-  visibility:hidden;
+  margin-top: 2px;
 }
 
 .modal-header h3 {

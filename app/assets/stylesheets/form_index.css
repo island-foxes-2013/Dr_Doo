@@ -1,33 +1,30 @@
 
 
 .notifications {
-  padding: 10px 19px;
+  padding: 2%;
   border-radius: 10px;
-  width: 40%;
+  width: 41%;
   height: 400px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  margin: 10px;
+  margin: 2%;
   overflow: auto;
   display: inline-block;
-
 }
 
 .user_info {
-  padding: 10px 19px;
+  padding: 2%;
   border-radius: 10px;
-  width: 40%;
+  width: 41%;
   height: 400px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  margin: 10px;
+  margin: 2%;
   overflow: auto;
   display: inline-block;
-  float: right;
 }
 
 .top_level {
-  height: 450px;
 }
 
 .user_info .show_field {
@@ -36,12 +33,12 @@
 
 
 .user_forms {
-  width: 40%;
+  width: 41%;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  margin: 10px;
+  margin: 2%;
   border-radius: 10px;
-  padding: 10px 19px;
+  padding: 2%;
 }
 
 .hr_line {
