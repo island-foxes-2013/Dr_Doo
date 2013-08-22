@@ -26,7 +26,7 @@
       <% @completed_notifications.each do |notify| %>
       <div id='<%=notify.id%>'>
       <h6 class="heading"><span class='form_title'><%=Form.find(notify.form_id).title %></span> has been completed by <span class='email_notify'><%=notify.recipient_email %></span>.</h6><%= link_to 'Delete', notification_path(notify), :method => :delete, remote: true, class: 'delete_link' %>
-        <%= link_to 'View', complete_form_path(notify.form_id), add_param: 'hello'  %><br/>
+        <%= link_to 'View', nil, class: 'view_link'%><br/>
       </div>
       <% end %>
     <% end %>

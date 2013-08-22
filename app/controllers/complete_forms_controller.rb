@@ -3,12 +3,15 @@ class CompleteFormsController < ApplicationController
 
   def show
     p "$" * 40
+    p 'here we are'
     p params 
-    @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
-    fields = @form_answer.form.fields
-    fields.each do |field|
-      @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
-    end
+
+    render json: { success: true }
+    # @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
+    # fields = @form_answer.form.fields
+    # fields.each do |field|
+    #   @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
+    # end
   end
 
   
@@ -31,6 +34,5 @@ class CompleteFormsController < ApplicationController
     end
     @form_answer.save
     redirect_to forms_path
-    # redirect_to edit_complete_form_path(@form_answer.form)
   end
 end

@@ -16,8 +16,7 @@ $(document).ready(function() {
     if(data.success == true){
       $(data.notification).remove();
     }
-  })
-
+  });
 });
 
 var NotificationsController = {
