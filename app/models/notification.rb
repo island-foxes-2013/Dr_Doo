@@ -1,5 +1,5 @@
 class Notification < ActiveRecord::Base
-  attr_accessible :recipient_email, :sender_id
+  attr_accessible :recipient_email, :sender_id, :completed
   validates :form_id, :recipient_email, :sender_id, presence: true
    
   after_create :send_notification

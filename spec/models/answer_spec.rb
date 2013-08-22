@@ -2,9 +2,10 @@ require 'spec_helper'
 
 describe Answer do
 
-  let(:user) { FactoryGirl.build(:user) }
+  let(:user) { FactoryGirl.create(:user) }
   let(:form) { FactoryGirl.build(:form) }
   let(:field) { FactoryGirl.build(:field) }
+  let(:answer) { FactoryGirl.create(:answer)}
 
   context "#new" do
     it "should allow mass-assignment on value" do
@@ -40,6 +41,17 @@ describe Answer do
     it "requires a valid form_id" do
       answer = Answer.new(user_id: user, value: "value...?")
       expect(answer).not_to be_valid
+    end
+  end
+
+  context "#mark_complete" do
+    it "requires a notification to be marked complete" do
+      user = User.create(name: 'Joe', email: 'hello@hello.com', password: '12345678', password_confirmation: '12345678')
+      form = Form.new(user_id: user.id, title: 'hey there')
+      form.save
+      notification = form.notifications.create(recipient_email: user.email, sender_id: 1, completed: false)
+      answer = form.answers.create( user_id: user.id, value: {key: 'value'})
+      expect(answer.complete_outstanding_notifications.first.completed).to eq true
     end
   end
 end
