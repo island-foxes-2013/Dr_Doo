@@ -5,12 +5,6 @@ class Notification < ActiveRecord::Base
   after_create :send_notification
 
   belongs_to :form
-  # DOES NOT WORK
-  # belongs_to :sender_id, class_name: "User"
-
-  # def completed
-  #   read_attribute(:completed) || update_attribute(:completed, false)
-  # end
 
   def complete?
     self.completed

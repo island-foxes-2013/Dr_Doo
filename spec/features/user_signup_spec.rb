@@ -11,24 +11,27 @@ feature "User Sign Up" do
 
   it { should have_link ("Sign Up") }
 
-  scenario "the sign up link takes the user to sign up page" do
-    click_link("Sign Up")
-    expect(current_path).to eq new_user_registration_path
-  end
-
-  scenario "the user can fill in the sign up page" do
-    visit new_user_registration_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Sign up"
-    expect User.last.email == user.email
+  scenario "creates an identity and visits the forms path' do", :js => true do
+      visit root_path
+      click_link("Sign Up")
+      fill_in "Name", with: user.name, :match => :prefer_exact
+      fill_in "Email", with: user.email, :match => :prefer_exact
+      fill_in "Password", with: user.password, :match => :prefer_exact
+      fill_in "Password confirmation", with: user.password, :match => :prefer_exact
+      click_button "Sign Up"
+      expect(get('/')).to route_to('forms#index')
+      expect User.last.email == user.email
   end
   
-  scenario "raises exception if Provider email or username is invalid" do
-    visit new_user_registration_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: 'fasdfff'
-    expect(current_path).to eq new_user_registration_path
+  scenario "raises exception if user email or username is invalid", :js => true do
+    visit root_path
+    click_link("Sign Up")
+    fill_in "Name", with: user.name, :match => :prefer_exact
+    fill_in "Email", with: user.email, :match => :prefer_exact
+    fill_in "Password", with: 'asdfasdf'
+    fill_in "Password confirmation", with: 'asdf'
+    click_button "Sign Up"
+    expect(current_path).to eq root_path
   end 
   
   
