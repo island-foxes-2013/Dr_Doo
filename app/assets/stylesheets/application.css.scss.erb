@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.ui.all
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require_tree .
+ */
+.brand {
+   font-family: "Lobster";
+   font-size: 99px;
+
+}
+
+
+
+.hero-unit {
+   background-image: url(#{ image-path('hero.jpg')});
+   background-position: -40px -450px; 
+   color: #F2E0C7;
+}
+
+.hero-unit p {
+ color: #FFFFFF;
+}
+
+
+
+.btn-primary {
+ background-image: url("");
+ background-color: #A5967D;
+}
+
+.btn-primary:hover {
+   background-image: url("");
+   background-color: #595144;
+}
+.navbar-inner {
+   margin-bottom: 0;
+   background-color: #25231F;
+}
+
+.row-fluid {
+   padding: 0px;
+}
+
+body {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  min-width: 900px;
+}
+  /*width: 95% !important;*/
+

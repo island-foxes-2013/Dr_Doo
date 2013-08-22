@@ -3,15 +3,21 @@
    font-size: 99px;
 }
 
+
 .hero-unit {
-   background-image:url('http://www.nlm.nih.gov/hmd/happening/acquisitions/images/Hecht_Braunwald.jpg');
-   background-position: -30px -450px; 
    color: #F2E0C7;
+}
+
+h1 { 
+  text-shadow: 2px 2px 2px #000;
 }
 
 .hero-unit p {
  color: #FFFFFF;
+ text-shadow: 2px 2px 2px #000;
 }
+
+
 
 .btn-primary {
  background-image: url("");
