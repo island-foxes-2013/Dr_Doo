@@ -4,10 +4,10 @@ $(document).ready(function() {
   	$('#email').val('');
     $("#emailModal").modal('show');
     $("input[name=form_id]").val($(this).data('form'));
-    $('#email_submit').on('click', function(){
-      $("#emailModal form_id").val('');
-    	 $("#emailModal").modal('hide');
-    });
+    // $('#email_submit').on('click', function(){
+    //   $("#emailModal form_id").val('');
+    // 	 $("#emailModal").modal('hide');
+    // });
   });
 
   NotificationsController.bindEvents();
@@ -29,26 +29,26 @@ var NotificationsController = {
   },
 
   onSuccess: function(e, response, status) {
-    $("#emailModal form_id").val('');
-    $("#emailModal").modal('hide');
-    if ($('h4').first().text() === 'You have no new notifications.') {
-      $('h4').first().text('You have new notifications!');
-      $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"<span class="form_title">' + response["form_title"] + '</span>' + '\" form to <span class="email_notify">' + response["recipient_email"] + '</span>.</h6>');
+    if (response["error"] === "Email cannot be blank.")
+    {
+      $('#errors').text();
+      $('#errors').text(response["error"]);
     }
-    else if ($('h4').first().text() === 'You have new notifications!') {
-      $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"<span class="form_title">' + response["form_title"] + '\" form to <span class="email_notify">' + response["recipient_email"] + '</span>.</h6>');
+    else
+    {
+      $("#emailModal form_id").val('');
+      $("#emailModal").modal('hide');
+      if ($('h4').first().text() === 'You have no new notifications.') {
+        $('h4').first().text('You have new notifications!');
+        $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"<span class="form_title">' + response["form_title"] + '</span>' + '\" form to <span class="email_notify">' + response["recipient_email"] + '</span>.</h6>');
+      }
+      else if ($('h4').first().text() === 'You have new notifications!') {
+        $('.notifications').append('<h6 class=\"heading\">You have sent a request to complete your \"<span class="form_title">' + response["form_title"] + '\" form to <span class="email_notify">' + response["recipient_email"] + '</span>.</h6>');
+      }
     }
   },
 
   onError: function(e, xhr, status, message) {
     alert(response["error"]);
-    // if (xhr.responseJSON == null)
-    // {
-    //   window.alert("Please enter a valid email.");
-    // }
-    // else
-    // {
-    //   $(e.target).parent().html(xhr.responseJSON.html);
-    // }
   }
 }
