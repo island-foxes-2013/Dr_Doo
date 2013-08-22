@@ -2,16 +2,18 @@ class CompleteFormsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
-    p "$" * 40
-    p 'here we are'
-    p params 
 
-    render json: { success: true }
-    # @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
-    # fields = @form_answer.form.fields
-    # fields.each do |field|
-    #   @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
-    # end
+    if params[:user_id]
+    @user = User.find(params[:user_id])
+    @client = true
+    else
+    @user = current_user
+    end
+    @form_answer = @user.answers.find_or_create_by_form_id(params[:id])
+    fields = @form_answer.form.fields
+    fields.each do |field|
+      @form_answer.value[field.label] = "" unless @form_answer.value.has_key?(field.label)
+    end
   end
 
   

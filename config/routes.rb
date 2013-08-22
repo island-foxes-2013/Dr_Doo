@@ -28,7 +28,7 @@ DrDoo::Application.routes.draw do
 
   resources :complete_forms, only: [:show, :edit, :update]
   resources :notifications, only: [:create, :destroy]
-
+  get 'complete_forms/:id/:user_id' => 'complete_forms#show', as: 'view_completed_form'
   authenticated :user do
     root to: 'forms#index'
   end
