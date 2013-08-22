@@ -18,4 +18,13 @@ class NotificationsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    success = Notification.find(params[:id]).destroy
+    if success
+      render json: { success: true, notification: "#" + params[:id].to_s }
+    else
+      render json: { success: false }
+    end
+  end
 end

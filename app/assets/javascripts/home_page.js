@@ -4,8 +4,6 @@ $(function() {
   });
 
   $("#sign_in_user").on("ajax:error", function(e, xhr, message, status) {
-    console.log('this is sign_in or is it')
-    console.log(xhr)
     $('.alert').append(xhr.responseJSON.errors).css('color', 'red');
   });
 

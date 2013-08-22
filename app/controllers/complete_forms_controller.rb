@@ -2,6 +2,8 @@ class CompleteFormsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
+    p "$" * 40
+    p params 
     @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
     fields = @form_answer.form.fields
     fields.each do |field|
@@ -23,8 +25,6 @@ class CompleteFormsController < ApplicationController
   end
 
   def update
-
-    p params
     @form_answer = current_user.answers.find_or_create_by_form_id(params[:id])
     params[:fields].each do |field|
       @form_answer.value[field['label']] = field['value'] 

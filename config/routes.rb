@@ -27,7 +27,7 @@ DrDoo::Application.routes.draw do
   # end
 
   resources :complete_forms, only: [:show, :edit, :update]
-  resources :notifications, only: [:create]
+  resources :notifications, only: [:create, :destroy]
 
   authenticated :user do
     root to: 'forms#index'

@@ -11,6 +11,13 @@ $(document).ready(function() {
   });
 
   NotificationsController.bindEvents();
+
+  $('.delete_link').on('ajax:success', function(e, data){
+    if(data.success == true){
+      $(data.notification).remove();
+    }
+  })
+
 });
 
 var NotificationsController = {

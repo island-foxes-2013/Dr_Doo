@@ -6,6 +6,7 @@ class FormsController < ApplicationController
       @user = current_user
       @request_notifications = Notification.where(recipient_email: @user.email, completed: false)
       @send_notifications = Notification.where(sender_id: @user.id, completed: false)
+      @completed_notifications = Notification.where(sender_id: @user.id, completed: true)
       @form = @user.forms.find_or_create_by_title('User Contact Info')
       @form_answer = @user.contact_form(@form)
     else
