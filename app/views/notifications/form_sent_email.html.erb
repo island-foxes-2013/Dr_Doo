@@ -6,7 +6,7 @@
   <body>
     <h1><%= @form_owner.name %>,</h1>
     <p>
-      You've sent <% if @form_recipient %><%=@form_recipient.name %><% else %><%=@email %><% end %> your "<%=@form.title %>" form to complete!
+      You've sent <% if @form_recipient %><%=@form_recipient.name %> (<%=@email %>)<% else %><%=@email %><% end %> your "<%=@form.title %>" form to complete!
     </p>
     <p>
       &nbsp;
