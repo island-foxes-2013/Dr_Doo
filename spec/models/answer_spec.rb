@@ -21,35 +21,24 @@ describe Answer do
       expect{ answer = Answer.new(form_id: form) }.to raise_error
     end
 
-    it "should allow mass-assignment on field_id" do
-      expect{ answer = Answer.new(field_id: 1) }.not_to raise_error
-      expect{ answer = Answer.new(field_id: field) }.not_to raise_error
-    end
-
     it { should respond_to(:value) }
     it { should respond_to(:user_id) }
     it { should respond_to(:form_id) }
-    it { should respond_to(:field_id) }
   end
 
   context "#save" do
     it "requires a valid value" do
-      answer = form.answers.new(user_id: 1, field_id: field)
+      answer = form.answers.new( user_id: user )
       expect(answer).not_to be_valid
     end
 
     it "requires a valid user_id" do
-      answer = form.answers.new(field_id: 1, value: "value...?")
+      answer = form.answers.new( value: "value...?")
       expect(answer).not_to be_valid
     end
 
     it "requires a valid form_id" do
-      answer = Answer.new(user_id: user, field_id: field, value: "value...?")
-      expect(answer).not_to be_valid
-    end
-
-    it "requires a valid field_id" do
-      answer = form.answers.new(user_id: user, value: "value...?")
+      answer = Answer.new(user_id: user, value: "value...?")
       expect(answer).not_to be_valid
     end
   end
