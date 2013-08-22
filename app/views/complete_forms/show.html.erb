@@ -2,14 +2,16 @@
   <% form_builder = build_field_data(@form_answer.form, @form_answer) %>
   <% if form_builder %>
     <h2><%= @form_answer.form.title %></h2>
+      <% @disable = false %>
     <% if @client == true %>
-      <p>Form completed by: <%= @user.name %></p>
+      <p>Form completed by: <span class='send_link'><b><%= @user.name.humanize %></b></span></p>
+      <%= @disable = true %>
     <% end %>
     <%= form_tag complete_form_path(@form_answer.form), method: 'put' do %>
       <% form_builder.each do |form| %>
         <div class='show_field'>
           <%= label_tag nil, form[0].humanize, class: form[2] %><br>
-          <%= text_field_tag 'fields[][value]', form[1], class: form[2] %>
+          <%= text_field_tag 'fields[][value]', form[1], class: form[2], disabled: @disable %>
           <%= hidden_field_tag 'fields[][label]', form[0] %>
         </div>
       <% end %>

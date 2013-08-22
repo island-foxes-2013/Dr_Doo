@@ -1,6 +1,5 @@
 $(function() {
    
-
   $('.field_type').draggable(draggableOptions(false));
   $('.added').draggable(draggableOptions(true));
   $('.form_block.well').on('dblclick', '.added', function() {

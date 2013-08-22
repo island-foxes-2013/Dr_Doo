@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>doolittle</title>
-<head>
+  <title>doolittle</title>
+  <head>
+    <title>DrDoo</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  </head>
 
-  <title>DrDoo</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <%= link_to "doolittle", root_path, method: :get, class: "brand" %>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Create Form", new_form_path %></li>
+            <li><%= link_to "Profile", forms_path %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li id='create_li'><%=link_to "Sign Up", '#Sign_up', data: {toggle: "modal"} %></li>
+            <li id='create_li'><%=link_to "Sign In", '#Sign_in', data: {toggle: "modal"} %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
-  <%= csrf_meta_tags %>
-<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <%= yield %>
 
+    <div id="Sign_up" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Sign up</h3>
+      </div>
 
-</head>
-
-<body>
-  <div class="navbar">
-    <div class="navbar-inner">
-      <%= link_to "doolittle", root_path, method: :get, class: "brand" %>
-      <ul class="nav pull-right">
-        <% if user_signed_in? %>
-        <li><%= link_to "Create Form", new_form_path %></li>
-        <li><%= link_to "Profile", forms_path %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li id='create_li'><%=link_to "Sign Up", '#Sign_up', data: {toggle: "modal"} %></li>
-        <li id='create_li'><%=link_to "Sign In", '#Sign_in', data: {toggle: "modal"} %></li>
+      <div class="modal-body">
+        <%= form_for(resource, :as => resource_name,
+                             :url => registration_path(resource_name),
+                             :html => {:id => "sign_up_user"},
+                             :format => :json,
+                             :remote => :true) do |f| %>
+          <%= devise_error_messages! %>                 
+          <div><%= f.label :name %><br />
+            <%= f.text_field :name %>
+          </div>
+          <div><%= f.label :email %><br />
+            <%= f.email_field :email %>
+          </div>
+          <div><%= f.label :password %><br />
+            <%= f.password_field :password %>
+          </div>
+          <div id='sign_up_password'><%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation %><br>
+          </div>  
+          <div class="modal-footer">
+            <button type='submit' class="btn btn-primary">Sign Up</button>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <%= yield %>
-
-
-<div id="Sign_up" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-  <h3 id="myModalLabel">Sign up</h3>
-</div>
-<div class="modal-body">
-  <%= form_for(resource, :as => resource_name,
-                         :url => registration_path(resource_name),
-                         :html => {:id => "sign_up_user"},
-                         :format => :json,
-                         :remote => :true) do |f| %>
-    <%= devise_error_messages! %>                 
-    <div><%= f.label :name %><br />
-    <%= f.text_field :name %></div>
-
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email %></div>
-
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
-
-    <div id='sign_up_password'><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %><br>
-  </div>  
-</div>
-  <div class="modal-footer">
-    <button type='submit' class="btn btn-primary">Sign Up</button>
-  </div>
-  <% end %>
-</div>
-
-<div id="Sign_in" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-  <div class="modal-header">
-    <h3 id="myModalLabel">Sign In</h3>
-  </div>
-  <div class="modal-body">
-    <%= form_for(resource, :as => resource_name, 
-                         :url => session_path(resource_name),
-                         :html => {:id => "sign_in_user"},
-                         :format => :json,
-                         :remote => :true) do |f| %>
-    <div>
-      <%= f.label :email %><br />
-      <%= f.email_field :email, :autofocus => true %>
+      </div>
     </div>
 
-    <div id='sign_in_password'><%= f.label :password %><br />
-      <%= f.password_field :password %>
-    <br></div>
-    <%= render "devise/shared/links" %>
-  </div>
-  <div class="modal-footer">
-    <button type='submit' class="btn btn-primary">Sign In</button>
-  </div>
-  <% end %>
-</div>
+    <div id="Sign_in" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Sign In</h3>
+      </div>
 
-  <%= javascript_include_tag "application" %>
-
-</body>
+      <div class="modal-body">
+        <%= form_for(resource, :as => resource_name, 
+                             :url => session_path(resource_name),
+                             :html => {:id => "sign_in_user"},
+                             :format => :json,
+                             :remote => :true) do |f| %>
+          <div>
+            <%= f.label :email %><br />
+            <%= f.email_field :email, :autofocus => true %>
+          </div>
+          <div id='sign_in_password'><%= f.label :password %><br />
+            <%= f.password_field :password %><br>
+          </div>
+          <%= render "devise/shared/links" %>
+          <div class="modal-footer">
+            <button type='submit' class="btn btn-primary">Sign In</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

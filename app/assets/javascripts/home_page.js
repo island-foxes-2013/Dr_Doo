@@ -14,5 +14,4 @@ $(function() {
 
   $("#sign_up_user").on("ajax:error", function(e, xhr, message, status) { 
   });
-
 });

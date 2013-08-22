@@ -4,10 +4,6 @@ $(document).ready(function() {
   	$('#email').val('');
     $("#emailModal").modal('show');
     $("input[name=form_id]").val($(this).data('form'));
-    // $('#email_submit').on('click', function(){
-    //   $("#emailModal form_id").val('');
-    // 	 $("#emailModal").modal('hide');
-    // });
   });
 
   NotificationsController.bindEvents();

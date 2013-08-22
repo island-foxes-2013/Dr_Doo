@@ -6,12 +6,13 @@
     <h5 id="errors" class="error">&nbsp;</h5>
     <%= form_tag(notifications_path, remote: true, id: 'email_form', 'data-type' => :json) do %>
       <input type="hidden" name="form_id" />
-      <div><%= label_tag :email, 'Type Email of Person to Send Form Request'%><br />
-      <%= email_field_tag :email, nil, :autofocus => true, class: 'span5' %>
-    </div>
-  </div>
-  <div class="modal-footer">
-      <button class="btn btn-block btn-inverse" type="submit" id='email_submit'>Send Email</button>
+      <div>
+        <%= label_tag :email, 'Type Email of Person to Send Form Request'%><br />
+        <%= email_field_tag :email, nil, :autofocus => true, class: 'span5' %>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-block btn-inverse" type="submit" id='email_submit'>Send Email</button>
+      </div>
     <% end %>
   </div>
 </div>

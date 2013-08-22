@@ -11,5 +11,4 @@ class SessionsController < Devise::SessionsController
       render status: :unauthorized, json: { success: false, errors: "Invalid username or password."  }
     end
   end
-
 end

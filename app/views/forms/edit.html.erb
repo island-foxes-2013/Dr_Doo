@@ -2,17 +2,17 @@
 
 <div class='form_block well'>
   <%= form_tag(form_path(@form), method: :put, class: 'form_field_catcher' )%>
-    <%= submit_tag 'Submit Form →', class: 'btn btn-primary btn-large create_form_submit' %><br><br>
-      <div class='title_tag'>
-        <%=  label_tag 'form', 'Title', class: 'span3' %><br>
-        <%= text_field_tag 'form[title]', @form.title, placeholder: 'Enter New Form Title Here' %>
-      </div>
-      <% @form.fields.each do |field| %>
-      <div class='ui-draggable added' style='position:relative;'>
-        <%= label_tag field.label, nil, class: field.element.size %><br>
-        <%= text_field_tag nil, nil, placeholder: field.label.humanize, class: field.element.size %>
-        <%= hidden_field_tag 'fields[][element_id]', field.element.id %>
-      </div>
+  <%= submit_tag 'Submit Form →', class: 'btn btn-primary btn-large create_form_submit' %><br><br>
+  <div class='title_tag'>
+    <%=  label_tag 'form', 'Title', class: 'span3' %><br>
+    <%= text_field_tag 'form[title]', @form.title, placeholder: 'Enter New Form Title Here' %>
+  </div>
+  <% @form.fields.each do |field| %>
+    <div class='ui-draggable added' style='position:relative;'>
+      <%= label_tag field.label, nil, class: field.element.size %><br>
+      <%= text_field_tag nil, nil, placeholder: field.label.humanize, class: field.element.size %>
+      <%= hidden_field_tag 'fields[][element_id]', field.element.id %>
+    </div>
   <% end %>
 </div>  
 
@@ -27,3 +27,4 @@
     <% end %>
   <% end %>
 </div>
+ 

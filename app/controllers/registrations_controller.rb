@@ -17,7 +17,6 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       render status: :unauthorized, json: { success: false, errors: resource.errors.messages }
-
     end
   end
 

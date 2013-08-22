@@ -25,12 +25,16 @@ class FormsController < ApplicationController
   end
 
   def create
-    @form = current_user.forms.create(params[:form])
-    params[:fields].each do |field|
-      element = Element.find(field[:element_id])
-      @form.fields.create(element_id: element.id, label: element.label)
+    if params[:fields]
+      @form = current_user.forms.create(params[:form])
+      params[:fields].each do |field|
+        element = Element.find(field[:element_id])
+        @form.fields.create(element_id: element.id, label: element.label)
+      end
+      redirect_to form_path(@form)
+    else
+      redirect_to new_form_path
     end 
-    redirect_to form_path(@form)
   end
 
   def update
