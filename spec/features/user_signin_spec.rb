@@ -12,7 +12,7 @@ feature "Provider Sign In" do
 
   it { should have_link ("Sign In") }
 
-  scenario "the sign up link takes the user to sign in page" do
+  scenario "the sign in link takes the user to sign in page", :js => true do
     click_link("Sign In")
     expect(current_path).to eq new_user_session_path
   end

@@ -43,6 +43,7 @@ group :test, :development do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'quiet_assets'
 end
 
 
