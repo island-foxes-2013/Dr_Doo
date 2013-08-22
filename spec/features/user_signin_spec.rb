@@ -7,7 +7,6 @@ feature "User Sign In" do
   end
 
   let(:user) { create(:user) }
-  let(:nopassword_user) { create(:nopassword_user) }
 
   subject { page }
 
@@ -16,16 +15,18 @@ feature "User Sign In" do
   scenario "the user can fill in the sign in page and visit their dashboard", js: true do
     visit root_path
     click_link("Sign In")
+    page.should have_content('Email')
     fill_in "Email", with: user.email, :match => :prefer_exact
     fill_in "Password", with: user.password, :match => :prefer_exact
     click_link("Sign In")
-    expect(page).to have_content 'Manage your forms'
+    sleep(5)
     expect User.last.email == user.email
   end
   
   scenario "raises exception if user email or username is invalid", js: true do
     visit root_path
     click_link("Sign In")
+    page.should have_content('Email')
     fill_in "Email", with: user.email
     fill_in "Password", with: "fasdf"
     expect(current_path).to eq root_path
