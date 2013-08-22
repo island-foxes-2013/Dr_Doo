@@ -17,13 +17,13 @@ class NotificationMailer < ActionMailer::Base
   def form_sent_email(notification)
     @form = Form.find(notification.form_id)
     @form_owner = User.find(notification.sender_id)
-    @email = @form_owner.email
+    @email = notification.recipient_email
     @url = "http://localhost:3000/forms/#{@form.id}"
     if !User.where(email: notification.recipient_email).empty?
-      @form_recipient = User.where(email: @email).first
-      mail(to: @email, subject: "#{@form_owner.name}, you have sent #{@form_recipient.name} the form \"#{@form.title}\"", template_path: 'notifications', template_name: 'form_sent_email')
+      @form_recipient = User.where(email: notification.recipient_email).first
+      mail(to: @form_owner.email, subject: "#{@form_owner.name}, you have sent #{@form_recipient.name} the form \"#{@form.title}\"", template_path: 'notifications', template_name: 'form_sent_email')
     else
-      mail(to: @email, subject: "#{@form_owner.name}, you have sent #{@email} your \"#{@form.title}\" form to complete!", template_path: 'notifications', template_name: 'form_sent_email')
+      mail(to: @form_owner.email, subject: "#{@form_owner.name}, you have sent #{@email} your \"#{@form.title}\" form to complete!", template_path: 'notifications', template_name: 'form_sent_email')
     end
   end
 

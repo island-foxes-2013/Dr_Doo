@@ -11,7 +11,7 @@ class NotificationsController < ApplicationController
         format.js   { render json: response }
       end
     else
-      response = {error: "Please enter a valid email."}
+      response = {error: "Email cannot be blank."}
       respond_to do |format|
         format.html { redirect_to forms_path }
         format.js   { render json: response }
